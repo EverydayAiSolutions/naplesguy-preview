@@ -356,3 +356,57 @@
 
 .fe-ccps-next{margin:8px 0 0;font-size:14px;line-height:1.45;color:var(--ink2)}
 .fe-ccps-next a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+
+/* Senior Living Directory — Style 3 cards + how-to */
+#dir-empty[hidden],.dir-card[hidden]{display:none!important}
+#dir-grid .fe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-bottom:16px}
+#dir-grid .fe-card{display:flex;flex-direction:column;border-radius:16px;background:#fff;box-shadow:var(--sh1)}
+#dir-grid .st-photo-mini{height:118px}
+#dir-grid .st-ov{padding:22px 8px 8px}
+#dir-grid .st-ov-name{font-size:15px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+#dir-grid .st-blurb{padding:8px 10px 10px;font-size:12.5px;line-height:1.35;-webkit-line-clamp:3}
+#dir-grid .st-card.open{grid-column:1/-1;cursor:pointer}
+#dir-grid .st-card.open .st-photo-mini{height:168px}
+#dir-grid .st-card.open .st-ov-name{font-size:22px;-webkit-line-clamp:3}
+#dir-grid .st-card.open a,
+#dir-grid .st-card.open .st-actions .btn{cursor:pointer}
+#dir-grid .st-card.open .pl-note{margin:12px 0 8px;padding:12px 14px;font-size:15px;line-height:1.45}
+.dir-spec{margin:0 0 8px}
+.dir-spec:last-child{margin-bottom:0}
+.dir-howto{margin:8px 0 28px}
+.dir-howto h2{font-size:clamp(26px,3vw,36px);margin:0 0 16px;color:var(--navy)}
+.dir-howto-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.dir-howto-card{background:#fff;border-radius:18px;box-shadow:var(--sh1);padding:22px 22px 24px}
+.dir-howto-card h3{margin:0 0 12px;font-size:24px;color:var(--navy)}
+.dir-howto-card ul{margin:0;padding:0 0 0 1.15em}
+.dir-howto-card li{margin:0 0 8px;font-size:16px;line-height:1.5;color:var(--ink)}
+.dir-howto-card a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.dir-call{margin:16px 0 0;background:var(--sand);border-radius:16px;padding:18px 20px;border-left:4px solid var(--gold)}
+.dir-call p{margin:0;font-size:17px;line-height:1.45;color:var(--navy)}
+.dir-call a{color:var(--navy);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.dir-bar{row-gap:10px}
+.dir-toggle{
+  font:500 12px/1 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  padding:12px 18px;border-radius:999px;border:1px solid var(--gold2);
+  background:var(--ivory);color:var(--navy);cursor:pointer
+}
+.dir-toggle[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.dir-source-note a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.dir-intro-sec .pl-intro a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+@media (min-width:800px){
+  #dir-grid .fe-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  #dir-grid .st-card.open .st-panel{display:grid;grid-template-columns:1fr;gap:4px;align-items:start}
+  .dir-howto-grid{grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+}
+@media (min-width:1100px){
+  #dir-grid .fe-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:700px){
+  #dir-grid .fe-grid{grid-template-columns:1fr 1fr}
+  .dir-hero .txt{padding:90px 20px 24px 20px!important}
+  .dir-howto-card{padding:18px 16px 20px}
+}
+@media (max-width:559px){
+  #dir-grid .fe-grid{grid-template-columns:1fr}
+}
