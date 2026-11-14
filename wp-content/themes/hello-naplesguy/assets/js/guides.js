@@ -39,7 +39,7 @@
       var out = document.getElementById('ng-time-out');
       var html = '';
       if (count === 0) {
-        html = '<p>You did not check any of the official signs on this list. Not every day looks the same. If you are unsure, talk with the older adult, and call Jeff or start with <a href="/senior-care/is-it-time/">Is It Time? Choosing the Right Care</a>. This checklist is not a diagnosis.</p>';
+        html = '<p>You did not check any of the official signs on this list. Not every day looks the same. If you are unsure, talk with the older adult, and call Jeff or start with <a href="/senior-care/memory-care/#is-it-time">Memory Care: official signs and a checklist</a>. This checklist is not a diagnosis.</p>';
       } else {
         html = '<p>You noticed ' + count + ' of the signs the National Institute on Aging describes. That can be a reason to look more closely. This is not a diagnosis, and it does not decide what kind of care someone needs.</p>';
         html += '<p>A gentle next step is to talk with the older adult, a doctor if you have one, and Jeff. You can also open <a href="/senior-care/where-to-start/">Your first 7 days</a> or call <a href="tel:6095758626">609-575-8626</a>.</p>';

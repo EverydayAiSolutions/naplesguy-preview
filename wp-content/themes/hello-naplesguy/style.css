@@ -884,3 +884,47 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
   .sc-dir-link .ph{height:140px;min-height:0}
   .sc-dir-link .bd{padding:18px 16px 22px}
 }
+
+/* Senior Care hub: 8 cards (Talk to Jeff + 7 types). 4-col desktop, 3-col mid, 2-col phone. */
+.g-row-care{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px;min-width:0;max-width:100%}
+.g-row-care > *{min-width:0;max-width:100%}
+.g-row-care .sc-talk{grid-column:span 2}
+.sc-talk{display:grid;grid-template-columns:minmax(140px,220px) 1fr;background:var(--ivory);border-radius:18px;overflow:hidden;box-shadow:var(--sh2);outline:2px solid var(--gold);outline-offset:0;color:inherit;min-width:0;max-width:100%}
+.sc-talk .ph{min-height:200px;overflow:hidden;background:var(--sand)}
+.sc-talk .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.sc-talk .bd{padding:22px 22px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.sc-talk .lbl{font:500 11px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
+.sc-talk h3{font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:8px 0 8px}
+.sc-talk h3 a{color:inherit;text-decoration:none}
+.sc-talk h3 a:hover{color:var(--coral)}
+.sc-talk p{margin:0;color:var(--ink2);font-size:15px;line-height:1.45}
+.sc-talk-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;min-width:0;max-width:100%}
+.sc-talk-acts .btn{text-decoration:none;font-size:14px;padding:12px 16px;display:inline-flex;align-items:center;gap:8px}
+.sc-talk .ft{margin-top:14px;font:500 12px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.sc-talk .ft a{color:var(--gold);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.sc-mini .sc-talk .ph{height:auto;min-height:200px}
+.sc-mini .sc-talk .bd{padding:22px 22px 20px}
+.sc-mini .sc-talk h3{font-size:clamp(22px,2.4vw,30px);-webkit-line-clamp:unset;overflow:visible}
+.sc-mini .sc-talk p{display:block;-webkit-line-clamp:unset;overflow:visible;font-size:15px;line-height:1.45;margin:0}
+@media (max-width:1099px){
+  .g-row-care{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .g-row-care .sc-talk{grid-column:span 2;grid-template-columns:1fr}
+  .sc-talk .ph,.sc-mini .sc-talk .ph{height:180px;min-height:0}
+  .sc-talk-acts .btn{width:100%;justify-content:center;max-width:100%;box-sizing:border-box}
+}
+@media (max-width:699px){
+  .g-row-care{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:24px}
+  .g-row-care .sc-talk{grid-column:1 / -1;grid-template-columns:1fr}
+  .sc-talk .ph,.sc-mini .sc-talk .ph{height:150px;min-height:0}
+  .sc-talk .bd,.sc-mini .sc-talk .bd{padding:16px 14px 18px}
+  .sc-talk-acts .btn{width:100%;justify-content:center}
+}
+@media (max-width:559px){
+  .g-row-care{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
+
+/* Tappable sub-topic choices at the top of each care-type guide */
+.g-choices{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 28px;align-items:stretch}
+.g-choices > b{font:500 11px/1 Jost,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);align-self:center;margin-right:6px;flex:0 0 100%}
+.g-choices a{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 16px;border-radius:14px;background:var(--ivory);border:1px solid var(--line);color:var(--navy);font:500 15px/1.25 "Cormorant Garamond",Cormorant,serif;text-decoration:none;flex:1 1 140px;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.g-choices a:hover{border-color:var(--gold);box-shadow:var(--sh1)}

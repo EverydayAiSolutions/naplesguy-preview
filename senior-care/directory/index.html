@@ -65,7 +65,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link rel='stylesheet' id='naplesguy-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/style.css?ver=1794691843' media='all' />
+<link rel='stylesheet' id='naplesguy-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/style.css?ver=1794693242' media='all' />
 <link rel='stylesheet' id='naplesguy-family-events-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/assets/css/family-events.css?ver=1794691376' media='all' />
 <link rel="https://api.w.org/" href="/naplesguy-preview/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/naplesguy-preview/wp-json/wp/v2/pages/1151" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/naplesguy-preview/xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 7.1.4" />
@@ -133,7 +133,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <section class="fe-filters pl-filters dir-intro-sec">
   <div class="wrap">
     <p class="pl-intro">This is a neutral list of every currently licensed assisted living facility, nursing home, adult day care center, and adult family care home in Naples and nearby Bonita Springs, Estero, and Fort Myers, taken from Florida’s official license records. Life plan (continuing care) communities listed by the Florida Office of Insurance Regulation are included as a separate type. Nothing here is a recommendation, a ranking, or a review.</p>
-    <p class="pl-intro">Licenses and ratings change. Confirm the current license, inspections, and any Medicaid participation on the official profile before you decide. Related guides: <a href="/naplesguy-preview/senior-care/types-of-care/#assisted-living">Assisted Living</a>, <a href="/naplesguy-preview/senior-care/types-of-care/#memory-care">Memory Care</a>, and <a href="/naplesguy-preview/senior-care/types-of-care/#skilled-nursing">Skilled Nursing &amp; Rehab</a>.</p>
+    <p class="pl-intro">Licenses and ratings change. Confirm the current license, inspections, and any Medicaid participation on the official profile before you decide. Related guides: <a href="/naplesguy-preview/senior-care/assisted-living/">Assisted Living</a>, <a href="/naplesguy-preview/senior-care/memory-care/">Memory Care</a>, and <a href="/naplesguy-preview/senior-care/skilled-nursing-rehab/">Skilled Nursing &amp; Rehab</a>.</p>
 
     <div class="dir-howto" id="how-to-use">
       <h2>How to use this list</h2>
@@ -6117,6 +6117,30 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       apply();
     });
   }
+  (function initFromQuery(){
+    var p=new URLSearchParams(window.location.search);
+    var type=p.get('type');
+    if(type && typeSel){
+      typeSel.value=type;
+      filters.type=typeSel.value||'';
+    }
+    if(p.get('memory')==='1' || p.get('memory')==='true'){
+      filters.memory=true;
+      var btn=document.querySelector('[data-dir-toggle="memory"]');
+      if(btn) btn.setAttribute('aria-pressed','true');
+    }
+    if(p.get('medicaid')==='1' || p.get('medicaid')==='true'){
+      filters.medicaid=true;
+      var btn=document.querySelector('[data-dir-toggle="medicaid"]');
+      if(btn) btn.setAttribute('aria-pressed','true');
+    }
+    var area=p.get('area');
+    if(area && areaSel){ areaSel.value=area; filters.area=areaSel.value||''; }
+    var size=p.get('size');
+    if(size && sizeSel){ sizeSel.value=size; filters.size=sizeSel.value||''; }
+    var q=p.get('q');
+    if(q && qInput){ qInput.value=q; filters.q=q; }
+  })();
   apply();
 })();
 </script>
@@ -6142,9 +6166,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <h4>Real Estate</h4>
       <ul>
         <li><a href="/naplesguy-preview/real-estate/guides/">Florida real estate guides</a></li>
-        <li><a href="/naplesguy-preview/real-estate/steps-to-buying/">Steps to Buying</a></li>
-        <li><a href="/naplesguy-preview/real-estate/closing-costs/">Closing Costs</a></li>
-        <li><a href="/naplesguy-preview/real-estate/homestead-exemption/">Homestead Exemption</a></li>
+        <li><a href="/naplesguy-preview/real-estate/buying-in-naples/#buying-steps">Steps to Buying</a></li>
+        <li><a href="/naplesguy-preview/real-estate/buying-in-naples/#closing-costs">Closing Costs</a></li>
+        <li><a href="/naplesguy-preview/real-estate/buying-in-naples/#homestead">Homestead Exemption</a></li>
         <li><a href="/naplesguy-preview/real-estate/neighborhoods/">Neighborhoods</a></li>
         <li><a href="/naplesguy-preview/real-estate/#communities">Communities &amp; HOAs</a></li>
       </ul>
@@ -6321,7 +6345,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 			</script>
 			<script id="tec-user-agent-js" src="/naplesguy-preview/wp-content/plugins/the-events-calendar/common/build/js/user-agent.js?ver=da75d0bdea6dde3898df"></script>
 <script id="hello-theme-frontend-js" src="/naplesguy-preview/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.5.2"></script>
-<script id="ng-guides-js" src="/naplesguy-preview/wp-content/themes/hello-naplesguy/assets/js/guides.js?ver=1794691921"></script>
+<script id="ng-guides-js" src="/naplesguy-preview/wp-content/themes/hello-naplesguy/assets/js/guides.js?ver=1794692709"></script>
 <script id="wp-emoji-settings" type="application/json">
 {"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/naplesguy-preview/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
 </script>
