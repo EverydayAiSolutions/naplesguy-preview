@@ -816,3 +816,54 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
   .comm-find-box{padding:22px 16px 24px}
   .rehero .ctas .btn{padding:12px 16px}
 }
+
+
+/* Senior Care hub: Style 3-sized cards, 5-across top row, One call band */
+.one-call{padding:28px 0 8px}
+.one-call-box{background:var(--ivory);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh1);padding:32px 28px 36px;min-width:0;max-width:100%}
+.one-call-box h2{font-size:clamp(26px,3.6vw,44px);line-height:1.12;margin:8px 0 14px;max-width:18em}
+.one-call-box .lead{color:var(--ink2);font-size:17px;line-height:1.5;margin:0 0 22px;max-width:760px}
+.one-call-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px 28px}
+.one-call-list li{margin:0;padding:12px 14px 14px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;color:var(--ink2);font-size:15.5px;line-height:1.45;min-width:0}
+.one-call-list strong{display:block;color:var(--navy);font-weight:600;margin-bottom:2px}
+.one-call-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.one-call-acts .btn{text-decoration:none}
+@media (min-width:800px){
+  .one-call-box{padding:40px 40px 44px}
+  .one-call-list{grid-template-columns:1fr 1fr}
+  .one-call-list li:last-child{grid-column:1 / -1}
+}
+
+/* Compact photo cards, sized like Family Events Style 3 */
+.sc-mini{min-width:0;max-width:100%}
+.sc-mini > *{min-width:0;max-width:100%}
+.sc-mini .ev{border-radius:16px}
+.sc-mini .ev .ph{height:118px}
+.sc-mini .ev .num{display:none}
+.sc-mini .ev .bd{padding:14px 12px 14px}
+.sc-mini .ev .lbl{font-size:9.5px;letter-spacing:.16em}
+.sc-mini .ev h3{font-size:16px;line-height:1.2;margin-top:6px;overflow-wrap:anywhere}
+.sc-mini .ev p{font-size:12.5px;line-height:1.35;margin:6px 0 10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sc-mini .ev .ft{padding-top:10px;font-size:10.5px;letter-spacing:.12em}
+.sc-mini .ev.is-directory{box-shadow:var(--sh2);outline:1px solid var(--goldlt);outline-offset:0}
+.sc-mini .ev.is-directory .lbl{color:var(--coral)}
+
+.g-row5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px;min-width:0;max-width:100%}
+@media (max-width:1099px){
+  .g-row5{grid-template-columns:repeat(3,1fr);gap:14px}
+}
+@media (max-width:699px){
+  .g-row5{grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+  .sc-mini .ev .ph{height:110px}
+  .sc-mini .ev .bd{padding:12px 10px 12px}
+  .sc-mini .ev h3{font-size:15px}
+  .one-call-box{padding:22px 16px 24px}
+  .one-call-acts .btn{width:100%;justify-content:center}
+}
+@media (max-width:559px){
+  /* Keep two compact columns like Style 3; titles wrap, no horizontal scroll */
+  .g-row5,.sc-hub .g-row4{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1100px){
+  .sc-hub .g-row4{gap:16px}
+}
