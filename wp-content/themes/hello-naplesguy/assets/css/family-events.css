@@ -353,3 +353,6 @@
 }
 .fe-grid,.fe-card,.st-card,.st-ov-name{min-width:0}
 .st-ov-name,.fe-card h2{overflow-wrap:anywhere}
+
+.fe-ccps-next{margin:8px 0 0;font-size:14px;line-height:1.45;color:var(--ink2)}
+.fe-ccps-next a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:3px}
