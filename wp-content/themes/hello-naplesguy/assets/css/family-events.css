@@ -343,3 +343,13 @@
 @media (min-width:800px){
   #fe-grid .st-when{font-size:13px;padding:10px 12px 0}
 }
+
+
+/* Match sitewide card breakpoints: one column under 560px so titles and cards stay in view */
+@media (max-width:559px){
+  .fe-grid,
+  #fe-grid .fe-grid,
+  #pl-grid .fe-grid{grid-template-columns:1fr}
+}
+.fe-grid,.fe-card,.st-card,.st-ov-name{min-width:0}
+.st-ov-name,.fe-card h2{overflow-wrap:anywhere}
