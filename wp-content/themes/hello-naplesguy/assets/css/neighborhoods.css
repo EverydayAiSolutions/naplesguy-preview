@@ -295,3 +295,78 @@
   .nbg-hubcard{padding:16px 14px 6px}
   .nbg-hubcard h3{font-size:20px}
 }
+/* Tiles: 4/5 */
+.t-mist{background:#E3ECF5}.t-mist .ic,.t-mist .go{color:#2A64A8}
+.nbg-tiles-in.n5{grid-template-columns:repeat(5,1fr)}
+@media (max-width:1100px){.nbg-tiles-in.n5{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){.nbg-tiles-in.n5{grid-template-columns:1fr 1fr}.nbg-tiles-in.n5>*:last-child{grid-column:1/-1}}
+
+/* Due diligence */
+.nbg-dd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.nbg-ddcard{border-radius:20px;padding:20px;border:1px solid var(--line);box-shadow:var(--sh1);min-width:0;background:var(--ivory)}
+.nbg-ddcard.wide{grid-column:1/-1}
+.nbg-ddcard h3{display:flex;align-items:center;gap:10px;font-size:23px;margin:0 0 14px;color:var(--navy)}
+.nbg-ddcard h3 svg{flex:none}
+.nbg-ddcard h4{font:600 15px/1.3 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin:18px 0 8px}
+.dd-sky{background:#EEF4FB;border-color:#DCE7F2}.dd-sky h3 svg{color:#2A64A8}
+.dd-teal{background:#ECF6F2;border-color:#CFE5DD}.dd-teal h3 svg{color:#1F7A66}
+.dd-butter{background:#FCF5DE;border-color:#F0E2B0}.dd-butter h3 svg{color:#9A6B12}
+.dd-sage{background:#EEF4E6;border-color:#D3E3C2}.dd-sage h3 svg{color:#4C7A2A}
+.dd-coral{background:#FFF;border-color:#F2C9C0}.dd-coral h3 svg{color:var(--coral)}
+.nbg-ftable{display:grid;gap:8px}
+.nbg-ftable .fr{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(120px,.8fr) 2.4fr;gap:12px;background:#fff;border:1px solid rgba(14,42,69,.08);border-radius:12px;padding:12px 14px;align-items:start}
+.nbg-ftable .fi{font:600 15px/1.35 Jost,sans-serif;color:var(--navy)}
+.nbg-ftable .fv{font:600 20px/1.2 'Cormorant Garamond',serif;color:var(--navy)}
+.nbg-ftable .fn{font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.nbg-rules{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.nbg-rules li{background:#fff;border-radius:12px;padding:11px 14px;border:1px solid rgba(14,42,69,.08);display:flex;flex-direction:column;gap:3px}
+.nbg-rules .rl{font:600 15px/1.3 Jost,sans-serif;color:var(--navy)}
+.nbg-rules .rv{font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.nbg-rules .rv.ask{display:inline-block;align-self:flex-start;background:#FFF1C9;color:#7A5200;border-radius:999px;padding:2px 10px;font-weight:600;font-size:13px}
+.nbg-flags{background:#fff;border-radius:12px;border:1px solid rgba(14,42,69,.08);padding:4px 14px;margin:12px 0}
+.nbg-flags summary{cursor:pointer;font:600 16px/1.3 Jost,sans-serif;color:var(--navy);padding:10px 0}
+.nbg-flags ul{margin:0 0 10px;padding-left:18px}.nbg-flags li{margin:0 0 8px;font-size:14.5px;line-height:1.5}
+.nbg-mkt{display:grid;gap:14px}
+.nbg-mkt .mz{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(14,42,69,.08)}
+.nbg-mkt .mzh{font:600 16px/1.3 Jost,sans-serif;color:var(--navy);margin-bottom:10px}
+.nbg-mkt dl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:0}
+.nbg-mkt dl>div{background:#F6F9F2;border-radius:10px;padding:10px}
+.nbg-mkt dt{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+.nbg-mkt dd{margin:2px 0 0;font:600 26px/1.1 'Cormorant Garamond',serif;color:var(--navy)}
+.nbg-mkt dl p{margin:3px 0 0;font-size:12.5px;line-height:1.35;color:var(--ink2)}
+.nbg-estgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
+.nbg-estgrid label{display:flex;flex-direction:column;gap:5px;font:600 14px/1.3 Jost,sans-serif;color:var(--navy)}
+.nbg-estgrid input,.nbg-estgrid select{font:500 17px Jost,sans-serif;padding:11px 12px;border:1px solid #C9D6E3;border-radius:10px;background:#fff;color:var(--navy);min-height:48px;width:100%;box-sizing:border-box}
+.nbg-estgrid small{font:400 12.5px/1.4 Jost,sans-serif;color:var(--ink2)}
+.nbg-estout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.nbg-estout>div{background:#fff;border-radius:12px;padding:12px 14px;border:1px solid rgba(14,42,69,.08)}
+.nbg-estout span{display:block;font-size:13px;color:var(--ink2)}
+.nbg-estout strong{font:600 26px/1.2 'Cormorant Garamond',serif;color:var(--navy)}
+.nbg-estout .tot{background:#FFE58A;border-color:#F0D060}
+.nbg-cklist{margin:0;padding-left:22px}
+.nbg-cklist li{margin:0 0 12px;font-size:15px;line-height:1.45}
+.nbg-cklist .ck-links{display:block;font-size:13px;margin-top:3px}
+.nbg-cklist a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+/* Address lookup */
+.nbg-lookup{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin:18px 0 22px}
+.lk-tool{background:#EEF4FB;border:1px solid #DCE7F2;border-radius:20px;padding:20px;box-shadow:var(--sh1);min-width:0}
+.lk-tool h3,.lk-form h3{display:flex;align-items:center;gap:10px;font-size:23px;margin:0 0 10px;color:var(--navy)}
+.lk-tool p{font-size:15px;line-height:1.5;margin:0 0 10px}
+.lk-in{font:600 14px Jost,sans-serif;color:var(--navy)}
+.lk-addr{display:block;width:100%;box-sizing:border-box;font:500 18px Jost,sans-serif;padding:13px 14px;border:2px solid #2A64A8;border-radius:12px;margin:6px 0 12px;min-height:52px}
+.lk-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lk-link{display:flex;flex-direction:column;gap:3px;background:#fff;border:1px solid rgba(14,42,69,.12);border-radius:12px;padding:11px 13px;text-decoration:none;color:var(--navy);min-height:56px;box-sizing:border-box}
+.lk-link:hover{border-color:#2A64A8}
+.lk-name{font:600 15px/1.3 Jost,sans-serif;text-decoration:underline;text-decoration-color:rgba(14,42,69,.25);text-underline-offset:3px}
+.lk-tag{font-size:12.5px;color:#1F7A66;font-weight:600}
+.lk-form{min-width:0}
+@media (max-width:820px){
+  .nbg-dd-grid,.nbg-lookup{grid-template-columns:1fr}
+  .nbg-ftable .fr{grid-template-columns:1fr;gap:4px}
+  .nbg-mkt dl{grid-template-columns:1fr 1fr}
+  .nbg-estgrid,.nbg-estout{grid-template-columns:1fr 1fr}
+  .lk-list{grid-template-columns:1fr}
+  .nbg-ddcard{padding:16px 14px}
+  .nbg-ddcard h3,.lk-tool h3,.lk-form h3{font-size:21px}
+}
+@media (max-width:420px){ .nbg-estgrid{grid-template-columns:1fr} }
