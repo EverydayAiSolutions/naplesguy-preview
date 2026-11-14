@@ -867,3 +867,20 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 @media (min-width:1100px){
   .sc-hub .g-row4{gap:16px}
 }
+
+
+/* Senior Care hub: prominent directory banner above the five guides */
+.sc-dir-banner{padding:28px 0 0}
+.sc-dir-link{display:grid;grid-template-columns:minmax(160px,280px) 1fr;gap:0;background:var(--ivory);border-radius:20px;overflow:hidden;box-shadow:var(--sh2);color:inherit;min-width:0;max-width:100%;outline:1px solid var(--goldlt);outline-offset:0}
+.sc-dir-link .ph{min-height:180px;overflow:hidden}
+.sc-dir-link .ph img{width:100%;height:100%;object-fit:cover}
+.sc-dir-link .bd{padding:28px 32px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.sc-dir-link .lbl{font:500 11px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
+.sc-dir-link h2{font-size:clamp(26px,3.2vw,40px);line-height:1.12;margin:8px 0 10px}
+.sc-dir-link p{margin:0;color:var(--ink2);font-size:16px;line-height:1.45}
+.sc-dir-link .lk{margin-top:16px;font:500 12px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px}
+@media (max-width:699px){
+  .sc-dir-link{grid-template-columns:1fr}
+  .sc-dir-link .ph{height:140px;min-height:0}
+  .sc-dir-link .bd{padding:18px 16px 22px}
+}
