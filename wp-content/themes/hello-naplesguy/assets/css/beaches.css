@@ -1,0 +1,59 @@
+/* Naples Beaches Guide */
+.be-intro-sec .pl-intro{max-width:820px;margin:0 0 16px;color:var(--ink);font-size:17px;line-height:1.55}
+.be-parking{margin:8px 0 22px;padding:22px 24px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh1)}
+.be-parking h2{margin:0 0 14px;font-size:clamp(26px,3vw,34px);color:var(--navy)}
+.be-parking-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.be-parking h3{margin:0 0 8px;font-size:22px;color:var(--navy)}
+.be-parking p{margin:0 0 10px;color:var(--ink);font-size:15.5px;line-height:1.5}
+.be-parking a{color:var(--navy);font-weight:500}
+.be-filters{margin-top:8px}
+.be-chip{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:8px 14px;font:500 13px/1.2 Jost,sans-serif;cursor:pointer}
+.be-chip[aria-pressed="true"],.be-chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.be-chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.be-map-sec{padding:10px 0 8px}
+.be-map-sec h2{margin:0 0 8px;color:var(--navy)}
+.be-map-note{margin:0 0 14px;max-width:820px;color:var(--ink2);font-size:15px;line-height:1.5}
+#be-map{height:360px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--sand);box-shadow:var(--sh1)}
+#be-map .leaflet-container{font-family:Jost,sans-serif;background:var(--sand)}
+.be-pin{background:var(--navy);border:2px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(14,42,69,.3)}
+.be-popup h3{margin:0 0 4px;font-size:18px;color:var(--navy)}
+.be-popup a{color:var(--navy);font-weight:600}
+#be-grid .fe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-bottom:16px}
+#be-grid .fe-card{display:flex;flex-direction:column;border-radius:16px;background:#fff;box-shadow:var(--sh1)}
+#be-grid .st-photo-mini{height:118px}
+#be-grid .st-ov-name{font-size:15px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+#be-grid .st-card.open{grid-column:1/-1}
+#be-grid .st-card.open .st-photo-mini{height:168px}
+#be-grid .st-card.open .st-ov-name{font-size:22px;-webkit-line-clamp:3}
+.be-area{margin:8px 14px 0;font:500 11px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.be-tags{list-style:none;margin:0;padding:0 10px 12px;display:flex;flex-wrap:wrap;gap:6px}
+.be-tags li{padding:4px 8px;border:1px solid var(--line);border-radius:999px;background:var(--ivory);color:var(--navy);font:500 11px/1.2 Jost,sans-serif}
+#be-grid .st-card.open .st-panel{padding:8px 18px 20px}
+#be-grid .st-actions{display:flex;flex-wrap:wrap;gap:10px}
+#be-grid .st-actions .btn{text-decoration:none;text-align:center}
+.be-access-list{margin:16px 0 8px}
+.be-access-list h3{margin:0 0 8px;font:500 10.5px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.be-access-list ul{margin:0;padding:0 0 0 1.15em}
+.be-access-list li{margin:0 0 5px;font-size:15.5px;line-height:1.4;color:var(--ink)}
+.be-faq{padding-top:40px;padding-bottom:10px}
+.be-faq h2{margin:16px 0 18px;color:var(--navy)}
+.be-sources{padding-top:10px;padding-bottom:40px}
+.be-empty{margin:12px 0 40px;color:var(--ink2)}
+.be-card[hidden],.fe-group[hidden]{display:none!important}
+@media (min-width:900px){
+  #be-grid .fe-grid{grid-template-columns:1fr 1fr 1fr}
+  #be-grid .st-card.open{grid-column:1/-1}
+  #be-grid .st-card.open .st-panel{display:grid;grid-template-columns:1.15fr .85fr;gap:4px 28px;align-items:start}
+  #be-grid .st-card.open .st-facts{grid-column:1;grid-row:1}
+  #be-grid .st-card.open .be-access-list{grid-column:2;grid-row:1}
+  #be-grid .st-card.open .pl-notes{grid-column:1/-1}
+  #be-grid .st-card.open .st-actions{grid-column:1/-1}
+}
+@media (max-width:800px){
+  .be-parking-grid{grid-template-columns:1fr}
+  .be-parking{padding:18px 16px}
+}
+@media (max-width:700px){
+  #be-map{height:280px}
+  #be-grid .fe-grid{grid-template-columns:1fr 1fr;gap:8px}
+}
