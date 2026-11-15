@@ -1170,6 +1170,7 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 .re-intro .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
 .re-intro-links{margin-top:16px;font-size:15.5px;color:var(--ink2)}
 .re-intro-links a{color:var(--navy)}
+.re-license{font:500 13.5px/1.45 Jost,sans-serif !important;color:var(--mut);letter-spacing:.01em;margin:0 0 1em !important}
 @media (max-width:700px){
   .about-bio{padding:8px 16px 56px}
   .about-bio-work{gap:18px;flex-direction:column}
