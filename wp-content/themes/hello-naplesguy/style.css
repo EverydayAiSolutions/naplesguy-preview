@@ -1030,15 +1030,15 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 .sp-intro .lead{font-size:17.5px;line-height:1.55;color:var(--ink2);margin-top:14px;max-width:760px}
 .sp-intro .lead + .lead{margin-top:10px}
 .sp-intro-link{margin-top:18px}
-.ng-cbar{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:22px}
-.ng-cbar-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;font:500 13px/1.2 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:inherit;transition:background .25s,box-shadow .25s,border-color .25s,transform .25s}
+.ng-cbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px}
+.ng-cbar-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;font:500 13px/1.2 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;background:var(--coral);color:#fff;box-shadow:0 8px 22px rgba(213,96,60,.28);flex:0 1 auto;max-width:100%;transition:background .25s,box-shadow .25s,transform .25s}
 .ng-cbar-btn svg{flex:none}
 .ng-cbar-btn b{font-weight:600;letter-spacing:.04em}
-.ng-cbar-btn.call{background:var(--coral);color:#fff;box-shadow:0 8px 22px rgba(213,96,60,.28)}
-.ng-cbar-btn.call:hover{background:var(--coraldk)}
-.ng-cbar-btn.text,.ng-cbar-btn.email{border:1px solid var(--gold2);color:var(--navy);background:var(--ivory)}
-.ng-cbar-btn.text:hover,.ng-cbar-btn.email:hover{border-color:var(--gold);background:#fff}
-.ng-cbar-em{text-transform:none;letter-spacing:.01em;font-weight:500}
+.ng-cbar-btn:hover{background:var(--coraldk)}
+.ng-cbar-em{text-transform:none;letter-spacing:.01em;font-weight:500;color:#fff}
+.ng-cbar.after-hero{margin-top:18px;margin-bottom:8px}
+.re-intro .ng-cbar,.about-bio-cta .ng-cbar{margin-top:16px}
+.sc-talk-cbar{margin-top:16px}
 .one-call{padding:16px 0 8px}
 .one-call-box{background:var(--ivory);border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh1);padding:22px 22px 20px;min-width:0;max-width:100%}
 .one-call-box h2{font-size:clamp(24px,3.2vw,36px);line-height:1.15;margin:6px 0 10px;max-width:22em}
@@ -1084,8 +1084,7 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
   .sp-intro h1{font-size:clamp(28px,8vw,36px)}
   .sp-intro .lead{font-size:16px}
   .ng-cbar{gap:8px;margin-top:16px}
-  .ng-cbar-btn{padding:12px 16px;flex:1 1 auto}
-  .ng-cbar-btn.email{flex:1 1 100%}
+  .ng-cbar-btn{padding:12px 16px;flex:1 1 100%}
   .one-call-box{padding:18px 14px 16px;border-radius:16px}
   .one-call-tiles{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
   .one-call-tile .ph{height:100px}
@@ -1099,7 +1098,7 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 }
 @media (max-width:399px){
   .sp-short-hero-ph{height:176px}
-  .ng-cbar-btn{letter-spacing:.04em;padding:12px 12px}
+  .ng-cbar-btn{letter-spacing:.04em;padding:12px 14px}
 }
 
 .sp-section .ng-cbar a,
