@@ -197,17 +197,17 @@
       /* Show a pin's name only where it does not collide with another label. */
       function declutter() {
         var box = el.getBoundingClientRect();
+        var pinEls = el.querySelectorAll('.ng-pin');
+        var pins = Array.prototype.map.call(pinEls, function (p) { return p.getBoundingClientRect(); });
         var kept = [];
-        Array.prototype.forEach.call(el.querySelectorAll('.ng-pin-lbl'), function (lbl) {
+        function hits(r, k) { return !(r.right + 3 < k.left || r.left - 3 > k.right || r.bottom + 2 < k.top || r.top - 2 > k.bottom); }
+        Array.prototype.forEach.call(el.querySelectorAll('.ng-pin-lbl'), function (lbl, i) {
           lbl.style.visibility = 'visible';
           var r = lbl.getBoundingClientRect();
-          var pin = lbl.previousElementSibling ? lbl.previousElementSibling.getBoundingClientRect() : r;
           var out = r.right > box.right - 4 || r.left < box.left + 4 || r.top < box.top + 4 || r.bottom > box.bottom - 18;
-          var hit = out || kept.some(function (k) {
-            return !(r.right + 4 < k.left || r.left - 4 > k.right || r.bottom + 2 < k.top || r.top - 2 > k.bottom);
-          });
+          var hit = out || kept.some(function (k) { return hits(r, k); }) || pins.some(function (k, j) { return j !== i && hits(r, k); });
           if (hit) { lbl.style.visibility = 'hidden'; return; }
-          kept.push(r); kept.push(pin);
+          kept.push(r);
         });
       }
       map.on('zoomend moveend', declutter);
