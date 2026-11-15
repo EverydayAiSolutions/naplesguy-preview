@@ -119,12 +119,12 @@
       var keys = [];
       function add(k) { if (keys.indexOf(k) === -1) keys.push(k); }
       var main = '';
-      if (mem === 'yes') { main = 'Memory Care'; add('memory'); }
+      if (mem === 'yes') { main = 'Memory Care'; add('memory'); add('memory-local'); add('memory-approach'); add('memory-signs'); }
       if (help === 'nursing') { if (!main) main = 'Skilled Nursing & Rehab'; add('snf'); if (when === 'now') add('discharge'); }
       if (where === 'home') { if (!main) main = 'Home Care'; add('home'); add('home-vs'); }
       if (help === 'daily') { if (!main) main = 'Assisted Living'; add('assisted'); }
       if (help === 'little') { if (!main) main = 'Independent Living'; add('independent'); }
-      if (mem === 'some') add('memory-signs');
+      if (mem === 'some') { add('memory-signs'); add('memory'); add('memory-local'); }
       if (where && where !== 'home' && where !== 'unsure') add('town-' + where);
       if (where !== 'home') add('directory');
       if (when === 'now') add('placement');
@@ -132,7 +132,7 @@
       if (when === 'later' || when === 'soon') add('paying');
       if (where === 'home' && who !== 'self') add('respite');
       if ((who === 'parent') && where !== 'home') add('parent-move');
-      keys = keys.slice(0, 6);
+      keys = keys.slice(0, 8);
 
       recs.innerHTML = '';
       keys.forEach(function (k) {
