@@ -192,7 +192,26 @@
         m.bindPopup('<a class="ng-pop" href="' + esc(p.url) + '"><strong>' + esc(p.name) + '</strong>' + sub + '<span class="ng-pop-go">Open the guide →</span></a>');
         bounds.push([p.lat, p.lng]);
       });
-      map.fitBounds(bounds, { padding: [28, 28] });
+      var narrow = el.clientWidth < 600;
+      map.fitBounds(bounds, narrow ? { padding: [14, 14] } : { paddingTopLeft: [24, 24], paddingBottomRight: [90, 24] });
+      /* Show a pin's name only where it does not collide with another label. */
+      function declutter() {
+        var box = el.getBoundingClientRect();
+        var kept = [];
+        Array.prototype.forEach.call(el.querySelectorAll('.ng-pin-lbl'), function (lbl) {
+          lbl.style.visibility = 'visible';
+          var r = lbl.getBoundingClientRect();
+          var pin = lbl.previousElementSibling ? lbl.previousElementSibling.getBoundingClientRect() : r;
+          var out = r.right > box.right - 4 || r.left < box.left + 4 || r.top < box.top + 4 || r.bottom > box.bottom - 18;
+          var hit = out || kept.some(function (k) {
+            return !(r.right + 4 < k.left || r.left - 4 > k.right || r.bottom + 2 < k.top || r.top - 2 > k.bottom);
+          });
+          if (hit) { lbl.style.visibility = 'hidden'; return; }
+          kept.push(r); kept.push(pin);
+        });
+      }
+      map.on('zoomend moveend', declutter);
+      setTimeout(declutter, 60);
       el.classList.add('ready');
     }).catch(function () { el.classList.add('failed'); });
   }
