@@ -1160,6 +1160,7 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 .about-bio-cta .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
 .re-intro{max-width:960px;margin:0 auto;padding:40px 40px 12px}
 .re-intro-in{display:flex;gap:28px;align-items:flex-start}
+.re-intro-copy{flex:1;min-width:0}
 .re-intro .eyebrow{margin-bottom:8px}
 .re-intro h2{font-size:clamp(28px,3.2vw,40px);line-height:1.15;color:var(--navy);margin:0 0 16px}
 .re-intro-portrait{flex:none;width:148px;margin:4px 0 0}
@@ -1171,17 +1172,15 @@ footer.lux.slim .slim-in .note{margin-left:auto;font-size:11px;letter-spacing:.1
 .re-intro-links a{color:var(--navy)}
 @media (max-width:700px){
   .about-bio{padding:8px 16px 56px}
-  .about-bio-work{gap:18px}
+  .about-bio-work{gap:18px;flex-direction:column}
   .about-bio-portrait,
   .about-bio-portrait img{width:112px}
   .re-intro{padding:28px 16px 8px}
-  .re-intro-in{gap:18px}
+  .re-intro-in{flex-direction:column;gap:16px}
   .re-intro-portrait,
   .re-intro-portrait img{width:104px}
 }
 @media (max-width:420px){
-  .about-bio-work,
-  .re-intro-in{flex-direction:row}
   .about-bio-portrait,
   .about-bio-portrait img{width:96px}
   .re-intro-portrait,
