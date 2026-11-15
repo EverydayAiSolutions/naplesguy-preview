@@ -78,7 +78,7 @@
   function bindNeighborhoodSearch() {
     var input = document.getElementById('n-q');
     if (!input) return;
-    var cards = Array.prototype.slice.call(document.querySelectorAll('.ncard[data-name], .n-tile[data-name]'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.ncard[data-name],.n-tile[data-name]'));
     if (!cards.length) return;
     var empty = document.getElementById('nb-empty');
     var form = input.closest('form');
