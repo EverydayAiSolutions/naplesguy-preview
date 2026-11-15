@@ -13,15 +13,17 @@
 	<!-- This site is optimized with the Yoast SEO plugin v28.8 - https://yoast.com/product/yoast-seo-wordpress/ -->
 	<title>Naples Family Events, Senior Care &amp; Real Estate | The Naples Guy</title>
 	<meta name="description" content="Naples family events, senior care, and real estate, with a local agent to call. Jeff Silberman, The Naples Guy." />
-	<link rel="canonical" href="https://wallpapers-greensboro-apache-revolutionary.trycloudflare.com/" />
+	<link rel="canonical" href="http://localhost:8080/" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Naples Family Events, Senior Care &amp; Real Estate | The Naples Guy" />
 	<meta property="og:description" content="Naples family events, senior care, and real estate, with a local agent to call. Jeff Silberman, The Naples Guy." />
-	<meta property="og:url" content="https://wallpapers-greensboro-apache-revolutionary.trycloudflare.com/" />
+	<meta property="og:url" content="http://localhost:8080/" />
 	<meta property="og:site_name" content="The Naples Guy" />
 	<meta property="article:modified_time" content="2026-11-12T20:03:14+00:00" />
-	<meta property="og:image" content="http://localhost:8080/wp-content/uploads/2026/11/naples-festival-walk-150x150.jpg" />
+	<meta property="og:image" content="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/og-default.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<!-- / Yoast SEO plugin. -->
 
@@ -51,7 +53,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link rel='stylesheet' id='naplesguy-css' href='http://localhost:8080/wp-content/themes/hello-naplesguy/style.css?ver=1794695773' media='all' />
+<link rel='stylesheet' id='naplesguy-css' href='http://localhost:8080/wp-content/themes/hello-naplesguy/style.css?ver=1794706486' media='all' />
 <link rel="https://api.w.org/" href="http://localhost:8080/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="http://localhost:8080/wp-json/wp/v2/pages/26" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost:8080/xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 7.1.4" />
 <link rel='shortlink' href='http://localhost:8080/' />
@@ -74,7 +76,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 					}
 				}
 			</style>
-			<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"http://localhost:8080/#business","name":"The Naples Guy","alternateName":"Jeff Silberman","url":"http://localhost:8080/","telephone":"+1-609-575-8626","email":"TheNaplesGuyJeff@gmail.com","areaServed":{"@type":"City","name":"Naples, FL"},"founder":{"@type":"Person","name":"Jeff Silberman"},"description":"Naples family events, senior care help, and neighborhoods, from a local dad and licensed real estate agent."}]}</script>
+			<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","RealEstateAgent"],"@id":"http://localhost:8080/#business","name":"The Naples Guy","alternateName":"Jeff Silberman","url":"http://localhost:8080/","telephone":"+1-609-575-8626","email":"TheNaplesGuyJeff@gmail.com","areaServed":{"@type":"City","name":"Naples, FL"},"founder":{"@type":"Person","name":"Jeff Silberman"},"description":"Naples family events, senior care help, and neighborhoods, from a local dad and licensed real estate agent."}]}</script>
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
 <body class="home wp-singular page-template-default page page-id-26 wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-naplesguy tribe-no-js hello-elementor-default elementor-default elementor-kit-5">
@@ -106,7 +108,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   </div>
 </header>
 <section class="hero has-video" data-hero-rotate="[{&quot;desktop&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/hero-waves-1920.mp4&quot;,&quot;mobile&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/hero-waves-960.mp4&quot;},{&quot;desktop&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-pier-aerial.mp4&quot;,&quot;mobile&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-pier-aerial-960.mp4&quot;},{&quot;desktop&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-beach-and-pier.mp4&quot;,&quot;mobile&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-beach-and-pier-960.mp4&quot;},{&quot;desktop&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-beach-aerial-homes.mp4&quot;,&quot;mobile&quot;:&quot;http:\/\/localhost:8080\/wp-content\/themes\/hello-naplesguy\/assets\/video\/naples-beach-aerial-homes-960.mp4&quot;}]" aria-label="Daytime aerial video rotating through a palm-lined beach, Naples Pier, and a sunny Naples shore">
-  <img class="hero-poster" src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/video/hero-waves-poster.webp" alt="" width="1920" height="1080" decoding="async">
+  <img class="hero-poster" src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/video/hero-waves-poster.webp" alt="Sunlit waves rolling onto a sandy Gulf beach on a bright day" width="1920" height="1080" decoding="async">
   <div class="glow vid"></div>
   <div class="txt">
     <div class="eyebrow center light">Naples · Collier County · Florida</div>
@@ -116,19 +118,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </section>
 <div class="cards" aria-label="Main sections">
   <a href="http://localhost:8080/family-events/" class="card lift">
-    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/marco-island-resort-beach-palapas.webp" alt="White-sand Gulf beach with palapa umbrellas, lawn, and palms on a sunny day in Marco Island, Florida" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/marco-island-resort-beach-palapas.webp" alt="White-sand Gulf beach with palapa umbrellas, lawn, and palms on a sunny day in Marco Island, Florida" loading="lazy" decoding="async" width="2400" height="1349" style="object-position:50% 50%"></div>
     <div class="bd"><h2>Family Events</h2><span class="go"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </a>
   <a href="http://localhost:8080/senior-care/" class="card lift">
-    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/naples-beach-day-white-sand.webp" alt="A couple sitting on a wide white-sand beach in Naples, Florida, on a sunny day, looking toward the turquoise Gulf" loading="lazy" decoding="async" style="object-position:50% 88%"></div>
+    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/naples-beach-day-white-sand.webp" alt="A couple sitting on a wide white-sand beach in Naples, Florida, on a sunny day, looking toward the turquoise Gulf" loading="lazy" decoding="async" width="2400" height="3200" style="object-position:50% 88%"></div>
     <div class="bd"><h2>Senior Care</h2><span class="go"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </a>
   <a href="http://localhost:8080/real-estate/" class="card lift">
-    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/marco-island-luxury-highrise-beach.webp" alt="Aerial view of luxury beachfront high-rises, white sand, and turquoise water on a sunny day in Marco Island, Florida" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/marco-island-luxury-highrise-beach.webp" alt="Aerial view of luxury beachfront high-rises, white sand, and turquoise water on a sunny day in Marco Island, Florida" loading="lazy" decoding="async" width="2400" height="1349" style="object-position:50% 50%"></div>
     <div class="bd"><h2>Neighborhoods &amp; Real Estate</h2><span class="go"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </a>
   <a href="http://localhost:8080/about-me/" class="card lift">
-    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/jeff-family-wide-cream-card.webp" alt="Jeff Silberman with his wife and their three daughters, smiling together" loading="lazy" decoding="async" style="object-position:50% 28%"></div>
+    <div class="ph"><img src="http://localhost:8080/wp-content/themes/hello-naplesguy/assets/img/jeff-family-wide-cream-card.webp" alt="Jeff Silberman with his wife and their three daughters, smiling together" loading="lazy" decoding="async" width="1200" height="1500" style="object-position:50% 28%"></div>
     <div class="bd"><h2>About Jeff</h2><span class="go"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </a>
 </div>
@@ -138,6 +140,32 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <a class="btn ghost" href="http://localhost:8080/family-events/beaches/">Naples Beaches Guide</a>
   <span>Parking, restrooms, lifeguards, and official links for public beaches and beach accesses.</span>
 </p>
+<section class="home-start" aria-label="How to start">
+  <div class="home-start-in">
+    <div class="eyebrow center">Naples · A local person to call</div>
+    <h2>How to start, depending on what you need</h2>
+    <p class="home-start-lead">Families use this site for weekend plans, help for a parent, or a move. These are the most useful starting points, with official Florida and Collier links on the pages they open.</p>
+    <div class="home-start-grid">
+      <a class="home-start-card" href="http://localhost:8080/family-events/">
+        <h3>A weekend with kids</h3>
+        <p>Upcoming family events from official sources, plus places to go anytime and the Naples Beaches Guide.</p>
+      </a>
+      <a class="home-start-card" href="http://localhost:8080/senior-care/">
+        <h3>Help for a parent</h3>
+        <p>Talk to Jeff about senior placement, or start with Which Care Fits and the state-licensed Senior Living Directory.</p>
+      </a>
+      <a class="home-start-card" href="http://localhost:8080/real-estate/buying-in-naples/">
+        <h3>Buying in Naples</h3>
+        <p>Neighborhood guides and the buying guide cover official steps, flood zones, homestead, and HOA or condo rules.</p>
+      </a>
+      <a class="home-start-card" href="http://localhost:8080/real-estate/selling-your-home/">
+        <h3>Selling or moving</h3>
+        <p>Guides for selling, moving or downsizing, and helping a parent move, with a licensed agent to call.</p>
+      </a>
+    </div>
+    <p class="home-start-contact">Call or text Jeff at <a href="tel:6095758626">609-575-8626</a> or email <a href="mailto:TheNaplesGuyJeff@gmail.com">TheNaplesGuyJeff@gmail.com</a>. Official starting points include the <a href="https://elderaffairs.org/about-us/elder-helpline-1-800-963-5337/" target="_blank" rel="noopener noreferrer">Florida Elder Helpline</a> and the <a href="https://www.collierappraiser.com/" target="_blank" rel="noopener noreferrer">Collier County Property Appraiser</a>.</p>
+  </div>
+</section>
 <footer class="lux slim">
   <div class="slim-in">
     <a href="tel:6095758626"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/></svg> 609-575-8626</a>
