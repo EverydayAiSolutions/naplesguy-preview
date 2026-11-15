@@ -475,3 +475,33 @@
   #fe-grid .st-place{font-size:13px}
   #fe-grid .st-photo-mini{height:140px}
 }
+
+/* Family Events SEO landing pages and hub links. Scoped; do not touch homepage cards. */
+.fe-landing-head{padding:8px 0 8px}
+.fe-landing-head h1{margin:6px 0 0;color:var(--navy);font-family:"Cormorant Garamond",Cormorant,serif;font-weight:500;font-size:clamp(36px,5vw,58px);line-height:1.12;max-width:18ch}
+.fe-landing-date{margin:8px 0 0;color:var(--navy);font:600 16px/1.4 Jost,sans-serif;letter-spacing:.02em}
+.fe-landing-intro{max-width:740px;margin:18px 0 0;color:var(--ink2);font-size:16.5px;line-height:1.55}
+.fe-landing-intro p{margin:0 0 12px}
+.fe-landing-intro p:last-child{margin-bottom:0}
+.fe-landing-sources{font-size:15px}
+.fe-landing-sources a,.fe-landing-intro a,.fe-landing-more a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.fe-landing-nav{margin:22px 0 0}
+.fe-landing-nav ul{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:0;padding:0}
+.fe-landing-nav a{display:inline-flex;align-items:center;min-height:40px;padding:6px 12px;border:1px solid var(--goldlt);border-radius:999px;color:var(--navy);font:500 14px/1.2 Jost,sans-serif;text-decoration:none;background:#fff}
+.fe-landing-nav a:hover{border-color:var(--gold);background:#fffdf8}
+.fe-landing-nav li.is-current a,
+.fe-landing-nav a[aria-current="page"]{border-color:var(--navy);background:var(--navy);color:#fff}
+.fe-landing-list{padding:10px 0 20px}
+.fe-landing-next{margin-top:36px;padding-top:8px}
+.fe-landing-next-lead,.fe-landing-more-lead{color:var(--ink2);font-size:15.5px;margin:0 0 16px}
+.fe-group-sub{font-size:22px}
+.fe-landing-faq{padding:20px 0 10px}
+.fe-landing-faq h2{margin:6px 0 0;color:var(--navy);font-family:"Cormorant Garamond",Cormorant,serif;font-weight:500;font-size:clamp(26px,3vw,36px)}
+.fe-landing-more{padding:12px 0 48px}
+.fe-landing-hub{padding:6px 0 18px}
+.fe-landing-hub-label{margin:0 0 8px;color:var(--ink);font:500 15.5px/1.4 Jost,sans-serif}
+.fe-landing-hub .fe-landing-nav{margin-top:0}
+@media (max-width:700px){
+  .fe-landing-head h1{font-size:34px}
+  .fe-landing-nav a{min-height:44px;padding:8px 12px}
+}
