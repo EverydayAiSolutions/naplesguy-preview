@@ -152,7 +152,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <div class="nbg-estgrid">
         <label>Price <input type="number" inputmode="numeric" min="0" step="1000" data-k="price" value=""></label>
         <label>Homestead (primary home)? <select data-k="home"><option value="1">Yes</option><option value="0">No</option></select></label>
-        <label>Millage (total mills) <input type="number" inputmode="decimal" min="0" step="0.0001" data-k="mill" value=""><small>Enter the total millage from the parcel’s tax bill. Your parcel’s exact rate is on its bill: <a href="https://colliertaxcollector.com/tax-search/" target="_blank" rel="noopener">Tax Collector search</a>.</small></label>
+        <label>Millage (total mills) <input type="number" inputmode="decimal" min="0" step="0.0001" data-k="mill" value=""><small>The total mills are on the parcel’s tax bill. Your parcel’s exact rate is on its bill: <a href="https://colliertaxcollector.com/tax-search/" target="_blank" rel="noopener">Tax Collector search</a>.</small></label>
         <label>HOA / Foundation / condo dues per year <input type="number" inputmode="decimal" min="0" step="1" data-k="hoa" value="0"></label>
         <label>CDD and other tax-bill assessments per year <input type="number" inputmode="decimal" min="0" step="1" data-k="cdd" value="0"></label>
         <label>Club dues per year <input type="number" inputmode="decimal" min="0" step="1" data-k="club" value="0"></label>
@@ -201,10 +201,10 @@ document.addEventListener('DOMContentLoaded',function(){
       if(home){ tS=Math.max(0,p-25000); tN=Math.max(0,p-25000-Math.min(25000,Math.max(0,p-50000))); }
       var tax=tS*sch/1000 + tN*non/1000, fees=v('hoa')+v('cdd')+v('club')+v('ins'), tot=tax+fees;
       var nm=!(m>0);
-      box.querySelector('[data-o="tax"]').textContent=nm?'— (enter millage)':money(tax);
+      box.querySelector('[data-o="tax"]').textContent=nm?'—':money(tax);
       box.querySelector('[data-o="fees"]').textContent=money(fees);
-      box.querySelector('[data-o="total"]').textContent=nm?money(fees)+' + tax':money(tot);
-      box.querySelector('[data-o="month"]').textContent=nm?money(fees/12)+' + tax':money(tot/12);
+      box.querySelector('[data-o="total"]').textContent=nm?'—':money(tot);
+      box.querySelector('[data-o="month"]').textContent=nm?'—':money(tot/12);
     }
     box.querySelectorAll('input,select').forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc);});
     calc();
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="bot">
           <div class="lg">Jeff Silberman, licensed real estate agent · Brokerage: Marzucco</div>
         <div>
-      Preview · not the live site. Photos and hero video from Unsplash and Pexels (under their site licenses)
+      Preview · not the live site.
       <a href="/naplesguy-preview/photo-credits/">Photo credits</a>.
       Logo from Jeff's business card. General information, not legal, financial or medical advice.
       <a href="/naplesguy-preview/privacy-policy/">Privacy</a>
