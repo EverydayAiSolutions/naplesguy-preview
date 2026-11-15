@@ -50,7 +50,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=global-styles-inline-css */
 </style>
 <link rel='stylesheet' id='naplesguy-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/style.css?ver=1794695773' media='all' />
-<link rel='stylesheet' id='naplesguy-neighborhoods-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/assets/css/neighborhoods.css?ver=1794697837' media='all' />
+<link rel='stylesheet' id='naplesguy-neighborhoods-css' href='/naplesguy-preview/wp-content/themes/hello-naplesguy/assets/css/neighborhoods.css?ver=1794704029' media='all' />
 <link rel="https://api.w.org/" href="/naplesguy-preview/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/naplesguy-preview/wp-json/wp/v2/community/335" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/naplesguy-preview/xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 7.1.4" />
 <link rel='shortlink' href='/naplesguy-preview/?p=335' />
@@ -201,10 +201,11 @@ document.addEventListener('DOMContentLoaded',function(){
       var tS=p, tN=p;
       if(home){ tS=Math.max(0,p-25000); tN=Math.max(0,p-25000-Math.min(25000,Math.max(0,p-50000))); }
       var tax=tS*sch/1000 + tN*non/1000, fees=v('hoa')+v('cdd')+v('club')+v('ins'), tot=tax+fees;
-      box.querySelector('[data-o="tax"]').textContent=money(tax);
+      var nm=!(m>0);
+      box.querySelector('[data-o="tax"]').textContent=nm?'— (enter millage)':money(tax);
       box.querySelector('[data-o="fees"]').textContent=money(fees);
-      box.querySelector('[data-o="total"]').textContent=money(tot);
-      box.querySelector('[data-o="month"]').textContent=money(tot/12);
+      box.querySelector('[data-o="total"]').textContent=nm?money(fees)+' + tax':money(tot);
+      box.querySelector('[data-o="month"]').textContent=nm?money(fees/12)+' + tax':money(tot/12);
     }
     box.querySelectorAll('input,select').forEach(function(el){el.addEventListener('input',calc);el.addEventListener('change',calc);});
     calc();
@@ -340,7 +341,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="bot">
           <div class="lg">Jeff Silberman, licensed real estate agent · Brokerage: Marzucco</div>
         <div>
-      Preview · not the live site. Photos and hero video from Unsplash and Pexels (free licenses), used as atmosphere, not as pictures of named neighborhoods or listings.
+      Preview · not the live site. Photos and hero video from Unsplash and Pexels (under their site licenses), used as atmosphere, not as pictures of named neighborhoods or listings.
       <a href="/naplesguy-preview/photo-credits/">Photo credits</a>.
       Logo from Jeff's business card. General information, not legal, financial or medical advice.
       <a href="/naplesguy-preview/privacy-policy/">Privacy</a>

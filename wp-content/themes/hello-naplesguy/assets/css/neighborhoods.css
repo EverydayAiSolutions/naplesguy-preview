@@ -370,3 +370,16 @@
   .nbg-ddcard h3,.lk-tool h3,.lk-form h3{font-size:21px}
 }
 @media (max-width:420px){ .nbg-estgrid{grid-template-columns:1fr} }
+
+/* Moving-guides index */
+.nbg-gidx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.nbg-gi{display:flex;flex-direction:column;background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:var(--sh1);color:var(--navy);text-decoration:none;min-width:0}
+.nbg-gi .gi-h{font:600 24px/1.1 'Cormorant Garamond',serif;overflow-wrap:anywhere}
+.nbg-gi .gi-z{font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-top:4px;overflow-wrap:anywhere}
+.nbg-gi dl{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:12px 0 10px}
+.nbg-gi dl div{min-width:0}
+.nbg-gi dt{font-size:12px;letter-spacing:.04em;text-transform:uppercase;opacity:.7}
+.nbg-gi dd{margin:2px 0 0;font-weight:600;font-size:15px;line-height:1.25;overflow-wrap:anywhere}
+.nbg-gi .gi-go{margin-top:auto;font-weight:600;font-size:14px;text-decoration:underline;text-decoration-color:var(--gold)}
+@media (max-width:980px){.nbg-gidx{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.nbg-gidx{grid-template-columns:1fr}}
