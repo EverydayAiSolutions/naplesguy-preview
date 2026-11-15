@@ -505,3 +505,19 @@
   .fe-landing-head h1{font-size:34px}
   .fe-landing-nav a{min-height:44px;padding:8px 12px}
 }
+
+/* This Weekend in Naples weekly posts. Scoped; do not touch homepage cards. */
+.ng-weekend-index{padding:12px 0 56px}
+.ng-weekend-list{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.ng-weekend-list li>a{display:flex;gap:18px;align-items:center;text-decoration:none;color:var(--navy);padding:12px;border:1px solid var(--goldlt);background:#fff;border-radius:8px}
+.ng-weekend-list li>a:hover{border-color:var(--gold)}
+.ng-weekend-thumb{flex:none;width:200px;max-width:36%;display:block}
+.ng-weekend-thumb img{display:block;width:100%;height:auto}
+.ng-weekend-copy{display:flex;flex-direction:column;gap:4px}
+.ng-weekend-kicker{font:500 13px/1.3 Jost,sans-serif;color:var(--ink2);letter-spacing:.04em;text-transform:uppercase}
+.ng-weekend-copy strong{font-family:"Cormorant Garamond",Cormorant,serif;font-weight:500;font-size:28px;line-height:1.2}
+.ng-weekend-count{color:var(--ink2);font-size:15px}
+@media (max-width:600px){
+  .ng-weekend-list li>a{flex-direction:column;align-items:flex-start}
+  .ng-weekend-thumb{width:100%;max-width:none}
+}
