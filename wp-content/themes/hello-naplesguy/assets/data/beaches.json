@@ -1082,10 +1082,6 @@
       "city-permit-accesses",
       "lowdermilk-park"
     ],
-    "port-royal": [
-      "city-permit-accesses",
-      "naples-pier"
-    ],
     "park-shore": [
       "lowdermilk-park",
       "seagate-drive-beach-access",
@@ -1123,12 +1119,6 @@
       "tigertail-beach",
       "south-marco-beach-access",
       "keewaydin-island"
-    ],
-    "estero-bonita-springs": [
-      "lovers-key-state-park",
-      "bonita-beach-park",
-      "barefoot-beach-access",
-      "barefoot-beach-preserve"
     ],
     "east-naples": [
       "keewaydin-island",
