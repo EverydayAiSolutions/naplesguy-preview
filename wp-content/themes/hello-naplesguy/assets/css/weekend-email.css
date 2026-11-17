@@ -1,0 +1,21 @@
+.we-hero .txt h1{font-size:clamp(44px,6vw,80px);line-height:1;margin-top:22px;color:#fff;text-shadow:0 2px 18px rgba(14,42,69,.45)}
+.we-hero .txt h1 em{color:#f6efe4;font-weight:500;text-shadow:0 2px 18px rgba(14,42,69,.5)}
+.we-hero p.sub{margin-top:22px;max-width:640px;color:#fff;font-size:18px}
+@media (max-width:700px){
+  .we-hero .txt{padding:80px 16px 0 !important}
+}
+.we-body{padding:64px 0 80px}
+.we-split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.we-copy h2{margin:12px 0 18px}
+.we-points{margin:0 0 22px;padding:0 0 0 20px;color:var(--ink);font-size:17px}
+.we-points li{margin:0 0 12px}
+.we-box{margin:0;text-align:left}
+.we-box h2{font-size:clamp(28px,3vw,40px);text-align:center}
+.we-box .eyebrow{text-align:center}
+.we-box p{text-align:center}
+.we-box .ml-embedded{margin:22px 0 8px;min-height:80px}
+.we-fallback{font-size:14.5px;color:var(--ink2);margin:12px 0 16px;text-align:center}
+.we-box .btn{display:flex;justify-content:center;width:100%}
+@media (max-width:900px){
+  .we-split{grid-template-columns:1fr;gap:28px}
+}

@@ -1,0 +1,310 @@
+{
+  "retrieved": "2026-11-17",
+  "areas": [
+    {
+      "id": "naples",
+      "label": "Naples",
+      "communities": [
+        {
+          "id": "404230",
+          "name": "All Seasons Naples",
+          "town": "Naples",
+          "phone": "(239) 316-4400",
+          "website": "https://www.allseasonsliving.com/naples/"
+        },
+        {
+          "id": "440717",
+          "name": "American House Naples",
+          "town": "Naples",
+          "phone": "(239) 734-5639",
+          "website": "https://www.americanhouse.com/naples"
+        },
+        {
+          "id": "3746",
+          "name": "Arden Courts at Lely Palms",
+          "town": "Naples",
+          "phone": "(239) 417-8511",
+          "website": "https://www.arden-courts.com/communities/lely-palms/"
+        },
+        {
+          "id": "4738",
+          "name": "Aston Gardens at Pelican Marsh",
+          "town": "Naples",
+          "phone": "(239) 566-7902",
+          "website": "https://astongardensatpelicanmarsh.com/"
+        },
+        {
+          "id": "382215",
+          "name": "Beach House Naples Assisted Living & Memory Care",
+          "town": "Naples",
+          "phone": "(239) 307-1800",
+          "website": "https://gracemanagement.com/communities/beach-house/"
+        },
+        {
+          "id": "1754",
+          "name": "Bentley Village",
+          "town": "Naples",
+          "phone": "(239) 431-2050",
+          "website": "https://www.viliving.com/locations/fl/naples-bentley-village/well-being/care/memory-support"
+        },
+        {
+          "id": "4039",
+          "name": "Colliers at Naples",
+          "town": "Naples",
+          "phone": "(239) 430-3535",
+          "website": "https://colliersassistedliving.com/naples-senior-living/"
+        },
+        {
+          "id": "371610",
+          "name": "Discovery Village at Naples",
+          "town": "Naples",
+          "phone": "(239) 207-3275",
+          "website": "https://discoveryvillagenaples.seniorlivingnearme.com/living-options/shine-memory-care"
+        },
+        {
+          "id": "573503",
+          "name": "GardenView Assisted Living",
+          "town": "Naples",
+          "phone": "(239) 227-2817",
+          "website": "https://www.mooringspark.org/gardenview"
+        },
+        {
+          "id": "542935",
+          "name": "Grand Living at Naples",
+          "town": "Naples",
+          "phone": "(239) 610-3336",
+          "website": "https://grandliving.com/communities/senior-living-naples-florida/"
+        },
+        {
+          "id": "400130",
+          "name": "Moorings Park Oakstone at Grey Oaks",
+          "town": "Naples",
+          "phone": "(239) 213-7554",
+          "website": "https://www.mooringspark.org/moorings-park-at-grey-oaks"
+        },
+        {
+          "id": "2545",
+          "name": "Naples Green Village",
+          "town": "Naples",
+          "phone": "(239) 514-0300",
+          "website": "https://naplesgreenvillage.com/"
+        },
+        {
+          "id": "3949",
+          "name": "North Haven Senior Living",
+          "town": "Naples",
+          "phone": "(239) 598-1213",
+          "website": "https://northhavenseniorliving.com/northhaven-memory-care/"
+        },
+        {
+          "id": "375025",
+          "name": "Oakton Place at The Arlington",
+          "town": "Naples",
+          "phone": "(239) 307-3100",
+          "website": "https://thearlingtonofnaples.com/"
+        },
+        {
+          "id": "3613",
+          "name": "Orchid Terrace",
+          "town": "Naples",
+          "phone": "(239) 261-1616",
+          "website": "https://www.mooringspark.org/"
+        },
+        {
+          "id": "445925",
+          "name": "The Pineapple House at Sapphire Lakes",
+          "town": "Naples",
+          "phone": "(239) 259-0707",
+          "website": "https://www.pineapplehousenaples.com/"
+        },
+        {
+          "id": "425232",
+          "name": "Seascape at Naples",
+          "town": "Naples",
+          "phone": "(239) 354-7081",
+          "website": "https://seascapeatnaples.com/service/memory-care/"
+        },
+        {
+          "id": "1880",
+          "name": "Solaris Senior Living North Naples",
+          "town": "Naples",
+          "phone": "(239) 592-5501",
+          "website": "https://solarishealthcare.org/locations/senior-living-north-naples/"
+        },
+        {
+          "id": "481004",
+          "name": "The Fairways at Naples",
+          "town": "Naples",
+          "phone": "(239) 799-7100",
+          "website": "https://thefairwaysatnaples.com/"
+        },
+        {
+          "id": "566410",
+          "name": "The Gallery at Hacienda Lakes",
+          "town": "Naples",
+          "phone": "(239) 799-1080",
+          "website": "https://gallerysrliving.com/communities/the-gallery-at-hacienda-lakes/"
+        },
+        {
+          "id": "4271",
+          "name": "The Opal at North Naples (The Elite ALF at Naples)",
+          "town": "Naples",
+          "phone": "(239) 598-1368",
+          "website": "https://opalseniorliving.com/home/"
+        },
+        {
+          "id": "158085",
+          "name": "The Vista at Hammock Cove",
+          "town": "Naples",
+          "phone": "(239) 775-5050",
+          "website": "https://vistanaples.com/memory-care/"
+        },
+        {
+          "id": "369489",
+          "name": "Villa at Terracina Grand",
+          "town": "Naples",
+          "phone": "(239) 455-1459",
+          "website": "https://terracinaseniorliving.com/"
+        }
+      ]
+    },
+    {
+      "id": "bonita-estero",
+      "label": "Bonita Springs & Estero",
+      "communities": [
+        {
+          "id": "368512",
+          "name": "American House Bonita Springs",
+          "town": "Bonita Springs",
+          "phone": "(239) 494-8857",
+          "website": "https://www.americanhouse.com/bonita-springs"
+        },
+        {
+          "id": "387703",
+          "name": "American House Coconut Point",
+          "town": "Estero",
+          "phone": "(239) 494-4724",
+          "website": "https://www.americanhouse.com/coconut-point"
+        },
+        {
+          "id": "390908",
+          "name": "Gulf Coast Memory Care",
+          "town": "Estero",
+          "phone": "(239) 221-6120",
+          "website": "https://gulfcoastmemorycare.com/"
+        },
+        {
+          "id": "381759",
+          "name": "Inspired Living at Bonita Springs",
+          "town": "Bonita Springs",
+          "phone": "(239) 301-3095",
+          "website": "https://inspiredlivingatbonitasprings.com/"
+        }
+      ]
+    },
+    {
+      "id": "fort-myers",
+      "label": "Fort Myers",
+      "communities": [
+        {
+          "id": "411452",
+          "name": "American House Fort Myers",
+          "town": "Fort Myers",
+          "phone": "(239) 689-4646",
+          "website": "https://www.americanhouse.com/ft-myers"
+        },
+        {
+          "id": "2185",
+          "name": "American House The Palms",
+          "town": "Fort Myers",
+          "phone": "(239) 275-7800",
+          "website": "https://www.americanhouse.com/the-palms"
+        },
+        {
+          "id": "3978",
+          "name": "Arden Courts at Fort Myers",
+          "town": "Fort Myers",
+          "phone": "(239) 454-1277",
+          "website": "https://www.arden-courts.com/communities/ft-myers/"
+        },
+        {
+          "id": "4648",
+          "name": "Barrington Terrace",
+          "town": "Fort Myers",
+          "phone": "(239) 334-2500",
+          "website": "https://www.arborcompany.com/locations/florida/ft-myers-barrington-terrace"
+        },
+        {
+          "id": "3948",
+          "name": "Brookdale Fort Myers Cypress Lake",
+          "town": "Fort Myers",
+          "phone": "(239) 454-4100",
+          "website": "https://www.brookdale.com/en/communities/brookdale-fort-myers-cypress-lake.html"
+        },
+        {
+          "id": "3198",
+          "name": "Brookdale Fort Myers The Colony",
+          "town": "Fort Myers",
+          "phone": "(239) 561-2463",
+          "website": "https://www.brookdale.com/en/communities/brookdale-fort-myers-the-colony.html"
+        },
+        {
+          "id": "4136",
+          "name": "Cypress Cove at HealthPark",
+          "town": "Fort Myers",
+          "phone": "(239) 425-1625",
+          "website": "https://cypresscoveliving.org/memory-care/"
+        },
+        {
+          "id": "401720",
+          "name": "Discovery Commons Cypress Point",
+          "town": "Fort Myers",
+          "phone": "(239) 768-4044",
+          "website": "https://discoverycommonscypresspoint.seniorlivingnearme.com/living-options/shine-memory-care"
+        },
+        {
+          "id": "351344",
+          "name": "Discovery Village at the Forum",
+          "town": "Fort Myers",
+          "phone": "(239) 989-0445",
+          "website": "https://discoveryvillagetheforum.seniorlivingnearme.com/living-options/shine-memory-care"
+        },
+        {
+          "id": "3798",
+          "name": "HealthPark Senior Living",
+          "town": "Fort Myers",
+          "phone": "(239) 219-1600",
+          "website": "https://healthparkseniorliving.com/"
+        },
+        {
+          "id": "403925",
+          "name": "Keystone Place at Beachwalk",
+          "town": "Fort Myers",
+          "phone": "(239) 349-3769",
+          "website": "https://www.keystonesenior.com/senior-living/fl/fort-myers/keystone-place-at-beachwalk/memory-care"
+        },
+        {
+          "id": "3601",
+          "name": "The Opal at Lakes Park",
+          "town": "Fort Myers",
+          "phone": "(239) 481-6666",
+          "website": "https://opalseniorliving.com/the-opal-at-lakes-park/"
+        },
+        {
+          "id": "430034",
+          "name": "The Preserve",
+          "town": "Fort Myers",
+          "phone": "(239) 574-0078",
+          "website": "https://thepreservevoa.org/"
+        },
+        {
+          "id": "330331",
+          "name": "The Springs at Shell Point",
+          "town": "Fort Myers",
+          "phone": "(239) 600-6400",
+          "website": "https://shellpoint.org/memory-care/"
+        }
+      ]
+    }
+  ]
+}
