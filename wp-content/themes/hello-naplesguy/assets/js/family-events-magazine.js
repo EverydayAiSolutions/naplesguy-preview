@@ -1,0 +1,142 @@
+/* Family Events magazine page: When / Where / Search filter, featured weekend card, Show more. */
+(function(){
+  var main = document.querySelector('.fm-main');
+  var grid = document.getElementById('fm-grid');
+  if(!main || !grid) return;
+  var PAGE = parseInt(main.getAttribute('data-fm-page')||'12',10) || 12;
+  var whenSel = document.querySelector('[data-fm-when]');
+  var onInput = document.querySelector('[data-fm-on]');
+  var whereSel = document.querySelector('[data-fm-where]');
+  var qInput = document.querySelector('[data-fm-q]');
+  var featSec = document.querySelector('[data-fm-featured]');
+  var featCard = featSec ? featSec.querySelector('.fm-card') : null;
+  var featId = featCard ? featCard.getAttribute('data-id') : '';
+  var emptyEl = document.querySelector('[data-fm-empty]');
+  var moreWrap = document.querySelector('[data-fm-more-wrap]');
+  var moreBtn = document.querySelector('[data-fm-more]');
+  var listHead = document.querySelector('[data-fm-listhead]');
+  var cards = [].slice.call(grid.querySelectorAll('.fm-card'));
+  var limit = PAGE;
+
+  function pad(n){ return (n<10?'0':'')+n; }
+  function iso(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+  function addDays(d,n){ var x=new Date(d.getTime()); x.setDate(x.getDate()+n); return x; }
+  var now = new Date();
+  var today = iso(now);
+  var serverToday = main.getAttribute('data-fm-today') || today;
+  if(today < serverToday) today = serverToday;
+  var t0 = new Date(today+'T12:00:00');
+  function ranges(){
+    var dow = t0.getDay(); /* 0 Sun .. 6 Sat */
+    var sat, sun;
+    if(dow===6){ sat=t0; sun=addDays(t0,1); }
+    else if(dow===0){ sat=t0; sun=t0; }
+    else { sat=addDays(t0,6-dow); sun=addDays(sat,1); }
+    var monthEnd = new Date(t0.getFullYear(), t0.getMonth()+1, 0, 12);
+    return {
+      today:[today,today],
+      weekend:[iso(sat),iso(sun)],
+      week:[today,iso(addDays(t0,6))],
+      month:[today,iso(monthEnd)]
+    };
+  }
+  var R = ranges();
+
+  function datesOf(c){
+    var raw = c.getAttribute('data-dates')||'';
+    return raw ? raw.split(',') : [];
+  }
+  function inRange(c, a, b){
+    var ds = datesOf(c);
+    if(ds.length) return ds.some(function(d){ return d>=a && d<=b; });
+    var s = c.getAttribute('data-start')||'', e = c.getAttribute('data-end')||s;
+    if(s) return s<=b && (e||s)>=a;
+    return false;
+  }
+  function upcoming(c){
+    var ds = datesOf(c);
+    if(ds.length) return ds.some(function(d){ return d>=today; });
+    var s = c.getAttribute('data-start')||'', e = c.getAttribute('data-end')||s;
+    if(!s) return true;
+    return (e||s) >= today;
+  }
+  function range(){
+    var w = whenSel ? whenSel.value : '';
+    if(w==='date'){
+      var d = onInput && onInput.value ? onInput.value : '';
+      return d ? [d,d] : null;
+    }
+    return R[w] || null;
+  }
+  function matches(c){
+    var where = whereSel ? whereSel.value : 'all';
+    if(where && where!=='all' && (c.getAttribute('data-region')||'naples')!==where) return false;
+    var q = (qInput && qInput.value || '').trim().toLowerCase();
+    if(q){
+      var hay = c.getAttribute('data-search')||'';
+      var words = q.split(/\s+/);
+      for(var i=0;i<words.length;i++){ if(hay.indexOf(words[i])===-1) return false; }
+    }
+    var r = range();
+    if(r) return inRange(c, r[0], r[1]);
+    return upcoming(c);
+  }
+  function loadImg(c){
+    var img = c.querySelector('img[data-src]');
+    if(img){ img.setAttribute('src', img.getAttribute('data-src')); img.removeAttribute('data-src'); }
+  }
+  function apply(resetLimit){
+    if(resetLimit) limit = PAGE;
+    var w = whenSel ? whenSel.value : '';
+    var showFeat = false;
+    if(featCard && (w==='' || w==='weekend')) showFeat = matches(featCard);
+    if(featSec) featSec.hidden = !showFeat;
+    var shown = 0, total = 0;
+    cards.forEach(function(c){
+      var ok = matches(c);
+      if(ok && showFeat && c.getAttribute('data-id')===featId) ok = false;
+      if(ok){
+        total++;
+        if(shown < limit){ c.hidden = false; loadImg(c); shown++; }
+        else c.hidden = true;
+      } else {
+        c.hidden = true;
+      }
+    });
+    if(emptyEl) emptyEl.hidden = total!==0;
+    if(moreWrap) moreWrap.hidden = total <= shown;
+    if(listHead){
+      var labels = {'':'Coming up', today:'Today', weekend:'This weekend', week:'This week', month:'This month', date:'On that day'};
+      listHead.textContent = labels[w] || 'Coming up';
+      listHead.hidden = total===0;
+    }
+  }
+  if(whenSel) whenSel.addEventListener('change', function(){
+    if(onInput){
+      onInput.hidden = whenSel.value!=='date';
+      if(whenSel.value==='date'){ try{ onInput.focus(); if(onInput.showPicker) onInput.showPicker(); }catch(e){} }
+    }
+    apply(true);
+  });
+  if(onInput) onInput.addEventListener('change', function(){ apply(true); });
+  if(whereSel) whereSel.addEventListener('change', function(){ apply(true); });
+  if(qInput){
+    var tmr;
+    qInput.addEventListener('input', function(){ clearTimeout(tmr); tmr = setTimeout(function(){ apply(true); }, 120); });
+  }
+  if(moreBtn) moreBtn.addEventListener('click', function(){ limit += PAGE; apply(false); });
+
+  /* Optional deep links: ?when=weekend&area=naples&q=santa */
+  try{
+    var u = new URL(window.location.href);
+    var w = u.searchParams.get('when') || u.searchParams.get('filter') || '';
+    if(w==='this-weekend') w='weekend';
+    if(w==='this-week' || w==='next-7') w='week';
+    if(whenSel && ['today','weekend','week','month'].indexOf(w)!==-1) whenSel.value = w;
+    var a = u.searchParams.get('area');
+    if(whereSel && a && whereSel.querySelector('option[value="'+a+'"]')) whereSel.value = a;
+    var q = u.searchParams.get('q');
+    if(qInput && q) qInput.value = q;
+  }catch(e){}
+  apply(true);
+})();
