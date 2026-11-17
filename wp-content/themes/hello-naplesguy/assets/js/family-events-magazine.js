@@ -21,8 +21,16 @@
   function pad(n){ return (n<10?'0':'')+n; }
   function iso(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
   function addDays(d,n){ var x=new Date(d.getTime()); x.setDate(x.getDate()+n); return x; }
-  var now = new Date();
-  var today = iso(now);
+  /* Today's date in Naples (America/New_York), whatever the visitor's device zone is. */
+  function nyToday(){
+    try{
+      var parts = new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+      var o = {}; parts.forEach(function(p){ o[p.type]=p.value; });
+      if(o.year && o.month && o.day) return o.year+'-'+o.month+'-'+o.day;
+    }catch(e){}
+    return iso(new Date());
+  }
+  var today = nyToday();
   var serverToday = main.getAttribute('data-fm-today') || today;
   if(today < serverToday) today = serverToday;
   var t0 = new Date(today+'T12:00:00');
@@ -60,6 +68,35 @@
     if(!s) return true;
     return (e||s) >= today;
   }
+  var DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function label(d){ var x=new Date(d+'T12:00:00'); return DOW[x.getDay()]+', '+MON[x.getMonth()]+' '+x.getDate(); }
+  /* First date this card actually happens inside [a,b]; '' when it doesn't. */
+  function firstIn(c, a, b){
+    var ds = datesOf(c).filter(function(d){ return d>=a && d<=b; }).sort();
+    if(ds.length) return ds[0];
+    if(datesOf(c).length) return '';
+    var s = c.getAttribute('data-start')||'', e = c.getAttribute('data-end')||s;
+    if(s && s<=b && e>=a) return s>a ? s : a;
+    return '';
+  }
+  function relabel(c, d){
+    var meta = c.querySelector('.fm-meta');
+    var chip = c.querySelector('.fm-chip');
+    if(meta && !meta.hasAttribute('data-orig')) meta.setAttribute('data-orig', meta.textContent);
+    if(chip && !chip.hasAttribute('data-orig')) chip.setAttribute('data-orig', chip.textContent);
+    if(!d){
+      if(meta) meta.textContent = meta.getAttribute('data-orig');
+      if(chip) chip.textContent = chip.getAttribute('data-orig');
+      return;
+    }
+    var t = c.getAttribute('data-time')||'', v = c.getAttribute('data-venue')||'';
+    if(meta) meta.textContent = [label(d), t, v].filter(Boolean).join(' · ');
+    if(chip){
+      var ct = c.getAttribute('data-ctime')||'';
+      chip.textContent = DOW[new Date(d+'T12:00:00').getDay()] + (ct ? ' '+ct : '');
+    }
+  }
   function range(){
     var w = whenSel ? whenSel.value : '';
     if(w==='date'){
@@ -78,7 +115,7 @@
       for(var i=0;i<words.length;i++){ if(hay.indexOf(words[i])===-1) return false; }
     }
     var r = range();
-    if(r) return inRange(c, r[0], r[1]);
+    if(r) return firstIn(c, r[0], r[1]) !== '';
     return upcoming(c);
   }
   function loadImg(c){
@@ -91,8 +128,18 @@
     var showFeat = false;
     if(featCard && (w==='' || w==='weekend')) showFeat = matches(featCard);
     if(featSec) featSec.hidden = !showFeat;
+    var r = range();
+    if(featCard) relabel(featCard, w==='weekend' && r ? firstIn(featCard, r[0], r[1]) : '');
+    /* Order by the date each event happens inside the chosen window, then start time. */
+    var order = cards.slice();
+    if(r){
+      order.forEach(function(c){ c._fmd = firstIn(c, r[0], r[1]) || '9999'; });
+      order.sort(function(x,y){ return x._fmd<y._fmd?-1:x._fmd>y._fmd?1:((x.getAttribute('data-stime')||'99')<(y.getAttribute('data-stime')||'99')?-1:((x.getAttribute('data-stime')||'99')>(y.getAttribute('data-stime')||'99')?1:0)); });
+    }
+    order.forEach(function(c){ grid.appendChild(c); });
     var shown = 0, total = 0;
-    cards.forEach(function(c){
+    order.forEach(function(c){
+      relabel(c, r ? firstIn(c, r[0], r[1]) : '');
       var ok = matches(c);
       if(ok && showFeat && c.getAttribute('data-id')===featId) ok = false;
       if(ok){
