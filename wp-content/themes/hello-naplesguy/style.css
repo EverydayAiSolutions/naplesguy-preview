@@ -1508,72 +1508,79 @@ footer.lux .ng-review-line a:hover,footer.lux.slim .ng-review-link:hover{color:#
   .sc-call-cta{padding-bottom:112px}
 }
 
-/* Homepage video hero + 4 compact cards in one row (phone: swipe carousel) */
+/* Homepage: one-screen welcome — video fills the viewport, four compact cards over the bottom */
+html:has(body.home),body.home{
+  height:100%;
+  max-height:100dvh;
+  overflow:hidden;
+}
+body.home{
+  display:flex;
+  flex-direction:column;
+  min-height:100dvh;
+  max-height:100dvh;
+  box-sizing:border-box;
+}
 body.home .hero.has-video{background:#5fa3b8}
 body.home .hero.has-video .glow.vid{
   background:linear-gradient(180deg,transparent 58%,rgba(247,241,232,.55) 100%);
 }
+body.home .hero.home-welcome{
+  flex:1 1 auto;
+  height:auto;
+  min-height:0;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+}
 body.home .cards.home-cards-row{
+  position:relative;
+  z-index:3;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:14px;
-  max-width:1180px;
-  margin-top:-90px;
-  padding:0 32px;
+  gap:12px;
+  max-width:920px;
+  width:100%;
+  margin:0 auto 20px;
+  padding:0 24px;
+  overflow:visible;
 }
-body.home .cards.home-cards-row .card .ph{height:88px}
+body.home .cards.home-cards-row .card{border-radius:14px}
+body.home .cards.home-cards-row .card .ph{height:76px}
 body.home .cards.home-cards-row .card .bd{padding:8px 10px 10px}
-body.home .cards.home-cards-row .card h2{font-size:clamp(13.5px,1.15vw,16.5px);line-height:1.2}
-body.home .cards.home-cards-row .card .go{width:26px;height:26px}
-body.home .cards.home-cards-row + .tng-fe-tiles,
-body.home .tng-fe-tiles-home{margin-top:18px}
-
-body.home .home-save-tri{
-  display:flex;
-  flex-wrap:nowrap;
-  justify-content:center;
-  align-items:stretch;
-  gap:26px;
-  max-width:1180px;
-  margin:14px auto 28px;
-  padding:0 32px;
-}
-body.home .home-save-tri a{
-  flex:0 1 280px;
-  max-width:calc((100% - 26px) / 2);
-}
+body.home .cards.home-cards-row .card h2{font-size:clamp(13px,1.1vw,16px);line-height:1.2}
+body.home .cards.home-cards-row .card .go{width:24px;height:24px}
+body.home footer.lux.slim{flex:0 0 auto}
+body.home .ng-stats.on-senior{padding-top:48px}
 @media (max-width:1100px){
-  body.home .cards.home-cards-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 24px}
+  body.home .cards.home-cards-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 16px;max-width:860px}
 }
 @media (max-width:800px){
   body.home .cards.home-cards-row{
-    display:flex;
-    gap:12px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-snap-type:x mandatory;
-    scroll-padding-left:16px;
-    -webkit-overflow-scrolling:touch;
-    overscroll-behavior-x:contain;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    margin-top:-70px;
-    padding:0 0 8px 16px;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:6px;
+    overflow:visible;
+    margin:0 0 10px;
+    padding:0 8px 4px;
     max-width:none;
+    scroll-snap-type:none;
   }
-  body.home .cards.home-cards-row::-webkit-scrollbar{display:none}
   body.home .cards.home-cards-row .card{
-    flex:0 0 72%;
-    width:72%;
-    max-width:72%;
-    scroll-snap-align:start;
+    flex:none;
+    width:auto;
+    max-width:none;
+    margin:0;
+    scroll-snap-align:unset;
   }
-  body.home .cards.home-cards-row .card:last-child{margin-right:16px;flex-basis:72%;}
-  body.home .cards.home-cards-row .card .ph{height:110px}
-  body.home .cards.home-cards-row .card h2{font-size:16px}
-  body.home .home-save-tri{flex-wrap:nowrap;gap:16px;padding:0 16px;margin-top:16px;margin-bottom:22px}
-  body.home .home-save-tri a{flex:1 1 0;max-width:none;min-height:48px}
+  body.home .cards.home-cards-row .card .ph{height:52px}
+  body.home .cards.home-cards-row .card .bd{padding:5px 4px 6px;gap:0;min-height:0;justify-content:flex-start}
+  body.home .cards.home-cards-row .card h2{font-size:10.5px;line-height:1.2;font-weight:600}
+  body.home .cards.home-cards-row .card .go{display:none}
+  body.home footer.lux.slim .slim-in{padding:8px 10px;gap:8px 12px;font-size:12.5px}
 }
-
-/* Jeff: remove Toddlers / Classes & Sports / Camps shortcut tiles everywhere */
-nav.tng-fe-tiles,.tng-fe-tiles-home{display:none!important}
+@media (max-width:767px){
+  body.home{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+}
