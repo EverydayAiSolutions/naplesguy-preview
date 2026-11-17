@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The Naples Guy · Jeff Silberman</title>
+<link rel="icon" href="assets/logo-no-senior-resources.png" type="image/png">
+<style>
+@font-face{font-family:"Cormorant Garamond";src:url("assets/fonts/cormorant-garamond-latin.woff") format("woff");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url("assets/fonts/cormorant-garamond-italic-latin.woff") format("woff");font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:Jost;src:url("assets/fonts/jost-latin.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --cream:#FBF7F0;--ivory:#FFFDF9;--sand:#F4ECDF;--line:#E9DFCF;
+  --navy:#0E2A45;--navy2:#1B3A57;--ink:#22303B;--ink2:#4A5560;--mut:#7A7266;
+  --teal:#0B7F8A;--tealdk:#096E77;
+  --sh:0 1px 2px rgba(60,45,20,.05),0 10px 28px rgba(60,45,20,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--cream);color:var(--ink);font:400 16px/1.5 Jost,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input{font:inherit}
+.serif{font-family:"Cormorant Garamond",Cormorant,serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Cormorant,serif;font-weight:500;letter-spacing:-.005em;color:var(--navy)}
+
+/* Slim one-bar header: logo, phone once, menu. No utility bar, no footer chrome. */
+.top{
+  flex:none;
+  background:var(--ivory);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  z-index:40;
+}
+.top .in{
+  max-width:1440px;
+  margin:0 auto;
+  padding:8px 20px;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.brand{flex:none;display:flex;align-items:center}
+.brand img{height:48px;width:auto}
+.phone{
+  flex:1;
+  font:400 13.5px/1.3 Jost,sans-serif;
+  color:var(--navy);
+  letter-spacing:.01em;
+  min-width:0;
+}
+.phone a{color:var(--navy);border-bottom:1px solid rgba(14,42,69,.35);padding-bottom:1px}
+.phone a:hover,.phone a:focus-visible{color:var(--teal);border-bottom-color:var(--teal)}
+.btn{
+  flex:none;
+  background:var(--teal);
+  color:#fff;
+  font:500 12px/1 Jost,sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:12px 20px;
+  border-radius:999px;
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+}
+.btn:hover,.btn:focus-visible{background:var(--tealdk)}
+.burger{
+  flex:none;
+  width:44px;height:44px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--ivory);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  cursor:pointer;
+}
+.burger span{display:block;width:18px;height:1.5px;background:var(--navy)}
+#navt{position:absolute;opacity:0;pointer-events:none}
+nav.menu{
+  display:none;
+  position:absolute;
+  right:16px;top:calc(100% + 8px);
+  background:var(--ivory);
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--sh);
+  padding:10px;
+  min-width:260px;
+  z-index:50;
+}
+#navt:checked ~ nav.menu{display:block}
+nav.menu a{
+  display:block;
+  font:500 15px/1.25 Jost,sans-serif;
+  letter-spacing:.04em;
+  color:var(--navy);
+  padding:12px 14px;
+  border-radius:10px;
+  min-height:44px;
+}
+nav.menu a:hover,nav.menu a:focus-visible{background:var(--sand)}
+nav.menu .ask{margin-top:6px;text-align:center}
+
+@media (max-width:799px){
+  .top .in{padding:6px 14px 8px;min-height:62px;flex-wrap:wrap;gap:4px 12px}
+  .brand img{height:42px}
+  .phone{flex:1 1 100%;order:3;font-size:12.5px;padding:2px 0 2px 2px}
+  .btn.desk{display:none}
+}
+@media (min-width:800px){
+  .top .in{padding:0 28px;min-height:68px;gap:22px}
+  .brand img{height:52px}
+  .phone{font-size:14.5px}
+}
+
+/* Shared card arrow */
+.go{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--teal);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+}
+a:hover .go,a:focus-visible .go{background:var(--tealdk)}
+
+.page{height:100%;display:flex;flex-direction:column}
+.stage{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;position:relative}
+.hero{
+  position:relative;
+  flex:1 1 auto;
+  min-height:0;
+  overflow:hidden;
+  color:#fff;
+}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.slide.is-on{opacity:1}
+.slide img{
+  width:100%;height:100%;object-fit:cover;
+  transform:scale(1.04);
+  animation:kb 22s ease-in-out alternate infinite;
+}
+.slide:nth-child(2) img{animation-delay:-6s;object-position:50% 55%}
+.slide:nth-child(3) img{animation-delay:-12s;object-position:50% 42%}
+.slide:nth-child(4) img{object-position:50% 42%}
+.slide:nth-child(5) img{object-position:50% 50%}
+.slide:nth-child(6) img{object-position:50% 40%}
+@keyframes kb{
+  from{transform:scale(1.04) translate(0,0)}
+  to{transform:scale(1.12) translate(-1.2%,-1%)}
+}
+.scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(14,42,69,.10) 0%,rgba(14,42,69,.04) 36%,rgba(14,42,69,.10) 62%,rgba(14,42,69,.40) 100%);
+  pointer-events:none;z-index:1;
+}
+.hero .txt{
+  position:relative;z-index:2;
+  text-align:center;
+  padding:28px 20px 0;
+  max-width:900px;
+  margin:0 auto;
+}
+.eyebrow{
+  font:500 11px/1 Jost,sans-serif;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.92);
+  text-shadow:0 1px 10px rgba(5,20,35,.35);
+}
+.hero h1{
+  color:#fff;
+  font-size:clamp(34px,5vw,64px);
+  line-height:1.04;
+  margin-top:12px;
+  text-shadow:0 2px 22px rgba(5,20,35,.45),0 1px 3px rgba(5,20,35,.3);
+}
+.hero .sub{
+  margin-top:10px;
+  font:400 16px/1.4 Jost,sans-serif;
+  color:rgba(255,255,255,.95);
+  text-shadow:0 1px 12px rgba(5,20,35,.45);
+}
+.band{position:relative;z-index:3}
+.doors{display:grid;gap:12px}
+.door{
+  background:var(--ivory);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--sh);
+  display:flex;flex-direction:column;
+  min-width:0;
+}
+.door .ph{position:relative;overflow:hidden;background:var(--sand)}
+.door .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.door:hover .ph img,.door:focus-visible .ph img{transform:scale(1.06)}
+.door .bd{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px 11px}
+.door h2{font-size:20px;line-height:1.1;margin:0}
+
+@media (max-width:799px){
+  .hero .txt{padding:18px 16px 0}
+  .hero h1{font-size:38px}
+  .hero .sub{font-size:14.5px}
+  .scrim{background:linear-gradient(180deg,rgba(14,42,69,.08) 0%,rgba(14,42,69,.02) 28%,rgba(14,42,69,.08) 50%,rgba(14,42,69,.38) 100%)}
+  .band{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:0 14px 14px;
+  }
+  .doors{grid-template-columns:1fr 1fr}
+  .door .ph{height:118px}
+  .door h2{font-size:18px}
+}
+@media (min-width:800px){
+  .hero .txt{padding-top:52px}
+  .band{
+    flex:none;
+    background:var(--ivory);
+    padding:16px 28px 20px;
+    border-top:1px solid var(--line);
+  }
+  .doors{grid-template-columns:repeat(4,1fr);max-width:1440px;margin:0 auto;gap:16px}
+  .hero{display:flex;flex-direction:column;justify-content:center}
+  .hero .txt{padding-top:0;padding-bottom:24px}
+  .door .ph{height:168px}
+  .door h2{font-size:24px}
+  .door .bd{padding:12px 16px 14px}
+  .go{width:32px;height:32px}
+  .door .ph img.senior{object-position:50% 28%}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide img,.door .ph img{animation:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <div class="in">
+    <a class="brand" href="#" aria-label="The Naples Guy, Jeff Silberman">
+      <picture>
+        <source type="image/webp" srcset="assets/logo-no-senior-resources.webp">
+        <img src="assets/logo-no-senior-resources.png" alt="The Naples Guy, Jeff Silberman" width="220" height="68">
+      </picture>
+    </a>
+    <p class="phone">Call or Text Jeff at <a href="tel:+16095758626">609-575-8626</a></p>
+    <a class="btn desk" href="#">Ask Jeff</a>
+    <input type="checkbox" id="navt">
+    <label class="burger" for="navt" aria-label="Menu"><span></span><span></span><span></span></label>
+    <nav class="menu" aria-label="Menu">
+      <a href="#">Family</a>
+      <a href="#">Senior Living</a>
+      <a href="#">Neighborhoods &amp; Real Estate</a>
+      <a href="#">Amazon Holiday Deals</a>
+      <a href="#">About Me</a>
+      <a href="#">Weekend Email</a>
+      <a class="btn ask" href="#">Ask Jeff</a>
+    </nav>
+  </div>
+</header>
+
+  <div class="stage">
+    <section class="hero" aria-label="Bright photos of beaches, turquoise water, and wildlife in and around Naples">
+      <div class="slides" id="slides">
+        <div class="slide is-on"><img src="assets/img/hero-aerial-palms-turquoise.webp" alt="Aerial view of coconut palms along a white-sand beach and turquoise water on a bright day"></div>
+        <div class="slide"><img src="assets/img/vanderbilt-beach-gulf.webp" alt="Turquoise Gulf water and a bright sky at Vanderbilt Beach in Naples, Florida"></div>
+        <div class="slide"><img src="assets/img/hero-heron-gulf.webp" alt="A great blue heron flying over clear turquoise Gulf water on a bright day"></div>
+        <div class="slide"><img src="assets/img/gulf-beach-palm-boardwalk.webp" alt="Wooden beach-access boardwalk, sea grapes, and a coconut palm on a sunny Gulf beach"></div>
+        <div class="slide"><img src="assets/img/hero-roseate-spoonbill.webp" alt="A roseate spoonbill wading in shallow water on a sunny Florida beach"></div>
+        <div class="slide"><img src="assets/img/hero-clam-pass-beach.webp" alt="A sandy Gulf beach and clear water at Clam Pass, Naples, Florida"></div>
+      </div>
+      <div class="scrim" aria-hidden="true"></div>
+      <div class="txt">
+        <p class="eyebrow">Naples · Florida</p>
+        <h1>Your Naples Guide</h1>
+        <p class="sub">Family events, senior placement &amp; real estate</p>
+      </div>
+    </section>
+    <div class="band">
+      <nav class="doors" aria-label="Main sections">
+        <a class="door" href="#" aria-label="Family">
+          <div class="ph"><img src="assets/img/gulf-beach-palm-boardwalk.webp" alt="Wooden beach boardwalk and a leaning coconut palm on a sunny Gulf beach"></div>
+          <div class="bd"><h2>Family</h2><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="door" href="#" aria-label="Senior Living">
+          <div class="ph"><img class="senior" src="assets/img/hero-seniors-beach-joy.webp" alt="A smiling couple at the beach, the man giving the woman a piggyback ride in the surf"></div>
+          <div class="bd"><h2>Senior Living</h2><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="door" href="#" aria-label="Neighborhoods and Real Estate">
+          <div class="ph"><img src="assets/img/hero-pool-lanai-canal.webp" alt="A waterfront home with a pool, palms, and a lawn along a canal on a bright day"></div>
+          <div class="bd"><h2>Real Estate</h2><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="door" href="#" aria-label="Amazon Holiday Deals">
+          <div class="ph"><img src="assets/img/fe-theme-holiday-lights.webp" alt="Palm-lined walkway with holiday lights and red poinsettias on a sunny day"></div>
+          <div class="bd"><h2>Holiday Deals</h2><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('#slides .slide'));
+  if(slides.length<2) return;
+  var i=0;
+  setInterval(function(){
+    slides[i].classList.remove('is-on');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('is-on');
+  }, 5500);
+})();
+</script>
+</body>
+</html>
