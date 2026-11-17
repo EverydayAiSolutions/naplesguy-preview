@@ -1,7 +1,7 @@
 (function(){
 var R=window.SU_ROWS||[],TODAY=window.REG_TODAY||'',MODE=document.documentElement.getAttribute('data-su')||'1';
 var ACTS=[['','All activities',[]],['swim','Swimming',['swim']],['soccer','Soccer',['soccer']],['baseball','Baseball & Softball',['baseball']],['basketball','Basketball',['basketball']],['football','Flag Football',['football']],['volleyball','Volleyball',['volleyball']],['golf','Golf',['golf']],['gym','Gymnastics',['gym']],['cheer','Cheer',['cheer']],['dance','Dance',['dance']],['music','Music',['music']],['art','Art',['art']],['theater','Acting & Theater',['theater']],['stem','STEM & Nature',['stem','nature']],['daycamp','Day Camps',['daycamp']],['teens','Teens',['teens']]];
-var AREAS=[['naples','Naples, Marco Island & Immokalee'],['bonita','Bonita Springs & Estero'],['fortmyers','Fort Myers & Cape Coral'],['home','Comes to your home']];
+var AREAS=[['naples','Naples'],['bonita','Bonita Springs & Estero'],['fortmyers','Fort Myers & Cape Coral'],['home','Comes to your home']];
 var $=function(i){return document.getElementById(i)};
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function dt(s){var w=(s.when||'').replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun), /g,'');return w.replace(/^([A-Z][a-z]{2}) (\d+) – \1 (\d+)/,'$1 $2–$3').replace(/ – /g,'–')}

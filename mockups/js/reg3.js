@@ -23,7 +23,7 @@ var ACTS=[
 ['daycamp','Day Camps',T+'fe-theme-camp.webp',['daycamp']],
 ['teens','Teens',T+'fe-theme-bmx-skate.webp',['teens']]
 ];
-var AREAS=[['naples','Naples, Marco Island & Immokalee'],['bonita','Bonita Springs & Estero'],['fortmyers','Fort Myers & Cape Coral'],['home','Comes to your home']];
+var AREAS=[['naples','Naples'],['bonita','Bonita Springs & Estero'],['fortmyers','Fort Myers & Cape Coral'],['home','Comes to your home']];
 var $=function(id){return document.getElementById(id)};
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function actBy(k){for(var i=0;i<ACTS.length;i++)if(ACTS[i][0]==k)return ACTS[i];return null}
