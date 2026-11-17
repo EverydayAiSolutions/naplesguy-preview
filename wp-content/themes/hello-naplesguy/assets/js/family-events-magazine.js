@@ -1,4 +1,4 @@
-/* Family Events magazine page: When / Where / Search filter, featured weekend card, Show more. */
+/* Family Events page: When / Where / Search filter, Style 3 compact cards, Show more. */
 (function(){
   var main = document.querySelector('.fm-main');
   var grid = document.getElementById('fm-grid');
@@ -9,14 +9,17 @@
   var whereSel = document.querySelector('[data-fm-where]');
   var qInput = document.querySelector('[data-fm-q]');
   var featSec = document.querySelector('[data-fm-featured]');
-  var featCard = featSec ? featSec.querySelector('.fm-card') : null;
+  var featCard = featSec ? featSec.querySelector('.st-card, .fm-card') : null;
   var featId = featCard ? featCard.getAttribute('data-id') : '';
   var emptyEl = document.querySelector('[data-fm-empty]');
   var moreWrap = document.querySelector('[data-fm-more-wrap]');
   var moreBtn = document.querySelector('[data-fm-more]');
   var listHead = document.querySelector('[data-fm-listhead]');
-  var cards = [].slice.call(grid.querySelectorAll('.fm-card'));
+  var cards = [].slice.call(grid.querySelectorAll('.st-card, .fm-card, .fe-card'));
   var limit = PAGE;
+  var REGION = {naples:0,'bonita-estero':1,'fort-myers':2};
+  function regionRank(c){ var r=c.getAttribute('data-region')||'naples'; return REGION.hasOwnProperty(r)?REGION[r]:0; }
+  function stime(c){ return c.getAttribute('data-stime')||c.getAttribute('data-start-time')||'99'; }
 
   function pad(n){ return (n<10?'0':'')+n; }
   function iso(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
@@ -82,20 +85,15 @@
     return '';
   }
   function relabel(c, d){
-    var meta = c.querySelector('.fm-meta');
-    var chip = c.querySelector('.fm-chip');
-    if(meta && !meta.hasAttribute('data-orig')) meta.setAttribute('data-orig', meta.textContent);
+    var chip = c.querySelector('.st-whenchip, .fm-chip');
     if(chip && !chip.hasAttribute('data-orig')) chip.setAttribute('data-orig', chip.textContent);
     if(!d){
-      if(meta) meta.textContent = meta.getAttribute('data-orig');
       if(chip) chip.textContent = chip.getAttribute('data-orig');
       return;
     }
-    var t = c.getAttribute('data-time')||'', v = c.getAttribute('data-venue')||'';
-    if(meta) meta.textContent = [label(d), t, v].filter(Boolean).join(' · ');
     if(chip){
       var ct = c.getAttribute('data-ctime')||'';
-      chip.textContent = slabel(d) + (ct ? ' · '+ct : '');
+      chip.textContent = label(d) + (ct ? ' · '+ct : '');
     }
   }
   function range(){
@@ -131,12 +129,22 @@
     if(featSec) featSec.hidden = !showFeat;
     var r = range();
     if(featCard) relabel(featCard, w==='weekend' && r ? firstIn(featCard, r[0], r[1]) : '');
-    /* Order by the date each event happens inside the chosen window, then start time. */
+    /* Order by the date in the chosen window, then Naples → Bonita & Estero → Fort Myers, then start time. */
     var order = cards.slice();
     if(r){
       order.forEach(function(c){ c._fmd = firstIn(c, r[0], r[1]) || '9999'; });
-      order.sort(function(x,y){ return x._fmd<y._fmd?-1:x._fmd>y._fmd?1:((x.getAttribute('data-stime')||'99')<(y.getAttribute('data-stime')||'99')?-1:((x.getAttribute('data-stime')||'99')>(y.getAttribute('data-stime')||'99')?1:0)); });
+      order.sort(function(x,y){
+        if(x._fmd<y._fmd) return -1;
+        if(x._fmd>y._fmd) return 1;
+        var rr = regionRank(x)-regionRank(y);
+        if(rr) return rr;
+        var sx=stime(x), sy=stime(y);
+        if(sx<sy) return -1;
+        if(sx>sy) return 1;
+        return 0;
+      });
     }
+    closeAllCards();
     order.forEach(function(c){ grid.appendChild(c); });
     var shown = 0, total = 0;
     order.forEach(function(c){
@@ -186,6 +194,69 @@
     var q = u.searchParams.get('q');
     if(qInput && q) qInput.value = q;
   }catch(e){}
+  function closeCard(card){
+    var b=card.querySelector('.st-face');
+    var p=card.querySelector('.st-panel');
+    if(b) b.setAttribute('aria-expanded','false');
+    if(p) p.hidden=true;
+    card.classList.remove('open');
+  }
+  function closeAllCards(){
+    grid.querySelectorAll('.st-card.open').forEach(closeCard);
+  }
+  function isInteractive(el){
+    return !!(el && el.closest && el.closest('a, button, input, select, textarea, label, [role="button"], [role="link"]'));
+  }
+  grid.addEventListener('click', function(e){
+    var share=e.target.closest('.st-share');
+    if(share && grid.contains(share)){
+      e.preventDefault();
+      e.stopPropagation();
+      var url=share.getAttribute('data-url');
+      var title=share.getAttribute('data-title')||'';
+      if(navigator.share){ navigator.share({title:title, url:url}).catch(function(){}); return; }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){
+          var prev=share.textContent;
+          share.textContent='Link copied';
+          setTimeout(function(){ share.textContent=prev; }, 2000);
+        });
+        return;
+      }
+      window.prompt('Copy this event link', url);
+      return;
+    }
+    var card=e.target.closest('.st-card');
+    if(!card || !grid.contains(card)) return;
+    var btn=card.querySelector('.st-face');
+    var panel=card.querySelector('.st-panel');
+    if(!btn||!panel) return;
+    if(btn.contains(e.target)){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      closeAllCards();
+      if(!open){
+        btn.setAttribute('aria-expanded','true');
+        panel.hidden=false;
+        card.classList.add('open');
+        try{ card.scrollIntoView({block:'nearest', behavior:'smooth'}); }catch(err){}
+      }
+      return;
+    }
+    if(card.classList.contains('open')){
+      if(isInteractive(e.target) && !btn.contains(e.target)) return;
+      closeCard(card);
+      btn.focus();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key!=='Escape') return;
+    var open=grid.querySelector('.st-card.open');
+    if(!open) return;
+    var b=open.querySelector('.st-face');
+    closeCard(open);
+    if(b) b.focus();
+  });
+
   apply(true);
 })();
 
