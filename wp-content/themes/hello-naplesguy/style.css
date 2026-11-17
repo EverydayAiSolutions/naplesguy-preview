@@ -46,6 +46,9 @@ header.site .btn{padding:14px 24px}
 .util .in{width:100%;max-width:1320px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .util .it{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:inherit}
 .util .it svg{color:var(--gold2)}
+.util .it.calltext{display:inline;color:inherit;line-height:1.2;padding:14px 0}
+.util .calltext a{color:#fff;border-bottom:1px solid rgba(255,255,255,.45);padding:0 0 1px;display:inline;min-height:0;line-height:inherit}
+.util .calltext a:hover,.util .calltext a:focus-visible{border-bottom-color:#fff}
 .util .serve{color:rgba(255,255,255,.6)}
 .util .r{margin-left:auto;display:flex;align-items:center;gap:14px}
 .util .note{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)}
@@ -54,11 +57,19 @@ header.site .btn{padding:14px 24px}
 header.site{background:var(--ivory);min-height:96px;position:relative;z-index:20;border-bottom:1px solid var(--line)}
 header.site .in{max-width:1320px;margin:0 auto;padding:0 40px;min-height:96px;display:flex;align-items:center;gap:16px}
 header.site .logo{height:68px;width:auto}
-header.site .brand{flex:none}
-nav.main{margin-left:auto;display:flex;align-items:center;gap:4px;margin-right:22px}
-nav.main a{font:500 13px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);padding:12px 14px;position:relative;display:inline-flex;gap:6px;align-items:center}
-nav.main a.on:after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1px;background:var(--gold)}
-#navt,.burger{display:none}
+header.site .brand,header.site .btn,.burger{flex:none}
+nav.hubs{flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:space-evenly;gap:8px;padding:0 20px}
+nav.hubs a{font:500 15px/1.2 Jost,sans-serif;letter-spacing:.08em;color:var(--navy);white-space:nowrap;position:relative;padding:10px 4px 12px;flex:0 0 auto}
+nav.hubs a:after{content:"";position:absolute;left:4px;right:4px;bottom:4px;height:2px;background:#0B7F8A;transform:scaleX(0);transform-origin:center;transition:transform .2s ease}
+nav.hubs a:hover:after,nav.hubs a:focus-visible:after,nav.hubs a.on:after{transform:scaleX(1)}
+nav.hubs a:focus-visible{outline:2px solid #0B7F8A;outline-offset:3px}
+#navt{display:none}
+.burger{display:flex;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;align-items:center;justify-content:center;background:var(--ivory);flex-direction:column;gap:5px;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--navy)}
+nav.main{display:none;position:absolute;left:16px;right:16px;top:100%;background:var(--ivory);border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch;padding:10px;margin:8px 0 0;box-shadow:var(--sh2);z-index:30}
+#navt:checked ~ nav.main{display:flex}
+nav.main a{font:500 15px/1.25 Jost,sans-serif;letter-spacing:.06em;color:var(--navy);padding:14px 16px;position:relative;display:block;width:fit-content;max-width:100%;min-height:44px}
+nav.main a.on:after,nav.main a:hover:after,nav.main a:focus-visible:after{content:"";position:absolute;left:16px;right:16px;bottom:8px;height:2px;background:#0B7F8A}
 .crumbs{max-width:1320px;margin:0 auto;padding:18px 40px 14px;font:400 12.5px/1 Jost,sans-serif;letter-spacing:.08em;color:var(--mut);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .crumbs a{color:var(--mut)}
 .crumbs a:hover{color:var(--navy)}
@@ -257,8 +268,9 @@ a.chip{display:inline-flex;align-items:center}
 
 /* mobile-first adjustments */
 @media (max-width:1280px){
-  nav.main{gap:0;margin-right:14px}
-  nav.main a{padding:12px 8px;letter-spacing:.12em;font-size:12px}
+  nav.hubs{padding:0 12px;gap:6px}
+  nav.hubs a{font-size:14px;letter-spacing:.06em;padding:10px 2px 12px}
+  nav.hubs a:after{left:2px;right:2px}
 }
 @media (max-width:1100px){
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -266,15 +278,13 @@ a.chip{display:inline-flex;align-items:center}
   .jeff{grid-template-columns:1fr;padding:36px;gap:36px}
   .jeff .jeffph{height:280px}
   footer.lux .top{grid-template-columns:1fr 1fr;gap:32px}
-  header.site .in{min-height:72px}
-  .burger{display:flex;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;align-items:center;justify-content:center;background:var(--ivory);flex-direction:column;gap:5px;cursor:pointer}
-  .burger span{display:block;width:18px;height:1.5px;background:var(--navy)}
-  nav.main{display:none;position:absolute;left:16px;right:16px;top:100%;background:var(--ivory);border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch;padding:10px;margin:8px 0 0;box-shadow:var(--sh2);z-index:30}
-  #navt:checked ~ nav.main{display:flex}
-  nav.main a{padding:14px 16px;font-size:13px;letter-spacing:.16em}
+  header.site .in{min-height:72px;gap:10px}
+  nav.hubs{padding:0 8px 0 12px;gap:4px}
+  nav.hubs a{font-size:13px;letter-spacing:.04em;padding:8px 2px 10px}
   header.site .btn{padding:12px 16px;margin-left:8px}
 }
 @media (max-width:900px){
+  nav.hubs{display:none}
   .wrap,.crumbs,.util .in,header.site .in,.rehero,.nhero,.com-hero,.subnav,.page-main{padding-left:16px;padding-right:16px}
   .util .serve,.util .note{display:none}
   .util .in{gap:14px;padding-top:8px;padding-bottom:8px}
