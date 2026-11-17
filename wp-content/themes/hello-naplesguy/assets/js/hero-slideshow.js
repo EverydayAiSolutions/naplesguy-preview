@@ -1,6 +1,7 @@
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var HOLD = 6000;
+  var HOLD_DEFAULT = 6000;
+  var HOLD_HOME = 5000;
 
   function loadSlide(slide) {
     if (!slide) return;
@@ -41,6 +42,7 @@
     }
 
     var i = 0;
+    var HOLD = (document.body.classList.contains("home") && root.closest(".hero")) ? HOLD_HOME : HOLD_DEFAULT;
     window.setInterval(function () {
       var next = (i + 1) % slides.length;
       loadSlide(slides[next]);

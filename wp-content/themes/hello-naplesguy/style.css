@@ -1508,79 +1508,141 @@ footer.lux .ng-review-line a:hover,footer.lux.slim .ng-review-link:hover{color:#
   .sc-call-cta{padding-bottom:112px}
 }
 
-/* Homepage: one-screen welcome — video fills the viewport, four compact cards over the bottom */
-html:has(body.home),body.home{
-  height:100%;
-  max-height:100dvh;
-  overflow:hidden;
+/* Homepage video hero: same crop and height as the still photo it replaces */
+.home-wow-ph{position:relative}
+.home-wow-ph .hero-poster,
+.home-wow-ph video.bg{
+  width:100%;
+  height:min(52vh,420px);
+  max-height:min(52vh,420px);
+  object-fit:cover;
+  object-position:50% 45%;
+  display:block;
 }
+.home-wow-ph video.bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  max-height:none;
+}
+@media (max-width:700px){
+  .home-wow-ph .hero-poster,
+  .home-wow-ph video.bg{height:min(38vh,300px);max-height:min(38vh,300px)}
+}
+@media (prefers-reduced-motion: reduce){
+  .home-wow-ph video.bg{display:none!important}
+}
+
+/* Homepage welcome: WOW slideshow + four smaller cards, first screen, then slim footer */
 body.home{
+  min-height:100dvh;
   display:flex;
   flex-direction:column;
-  min-height:100dvh;
-  max-height:100dvh;
   box-sizing:border-box;
 }
-body.home .hero.has-video{background:#5fa3b8}
-body.home .hero.has-video .glow.vid{
-  background:linear-gradient(180deg,transparent 58%,rgba(247,241,232,.55) 100%);
-}
-body.home .hero.home-welcome{
+body.home .hero.home-welcome.has-slides{
+  position:relative;
   flex:1 1 auto;
-  height:auto;
+  height:auto !important;
   min-height:0;
   width:100%;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
+  overflow:hidden;
+  background:#5fa3b8;
+}
+body.home .hero.home-welcome .hs-stage,
+body.home .hero.home-welcome .glow,
+body.home .hero.home-welcome .hs-glow{z-index:0}
+body.home .hero.home-welcome .txt{
   position:relative;
+  z-index:2;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:28px 24px 16px;
+  color:#fff;
+}
+body.home .hero.home-welcome .txt>*{animation:none;opacity:1;transform:none}
+body.home .hero.home-welcome h1{
+  color:#fff;
+  text-shadow:0 2px 22px rgba(5,20,35,.55),0 1px 3px rgba(5,20,35,.4);
+}
+body.home .hero.home-welcome .sub{
+  color:#fff;
+  text-shadow:0 1px 14px rgba(5,20,35,.55);
 }
 body.home .cards.home-cards-row{
   position:relative;
   z-index:3;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:12px;
-  max-width:920px;
+  gap:16px;
+  max-width:1100px;
   width:100%;
-  margin:0 auto 20px;
-  padding:0 24px;
-  overflow:visible;
+  margin:0 auto 24px;
+  padding:0 40px;
 }
-body.home .cards.home-cards-row .card{border-radius:14px}
-body.home .cards.home-cards-row .card .ph{height:76px}
-body.home .cards.home-cards-row .card .bd{padding:8px 10px 10px}
-body.home .cards.home-cards-row .card h2{font-size:clamp(13px,1.1vw,16px);line-height:1.2}
-body.home .cards.home-cards-row .card .go{width:24px;height:24px}
+body.home .cards.home-cards-row .card{border-radius:14px;background:var(--ivory);box-shadow:var(--sh1)}
+body.home .cards.home-cards-row .card .ph{height:88px;background:var(--sand)}
+body.home .cards.home-cards-row .card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+body.home .cards.home-cards-row .card .bd{padding:10px 12px 12px;min-height:0;gap:8px}
+body.home .cards.home-cards-row .card h2{font-size:clamp(13px,1.15vw,16px);line-height:1.2}
+body.home .cards.home-cards-row .card .go{width:26px;height:26px;flex:none}
 body.home footer.lux.slim{flex:0 0 auto}
-body.home .ng-stats.on-senior{padding-top:48px}
-@media (max-width:1100px){
-  body.home .cards.home-cards-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 16px;max-width:860px}
+/* Keep header Ask Jeff and sticky call/email bar on the site turquoise */
+header.site .btn.coral,
+.btn.coral,
+.ng-cbar-btn,
+.ng-mbar-btn{
+  background:var(--coral,#0B7F8A);
+  color:#fff;
 }
-@media (max-width:800px){
+header.site .btn.coral:hover,
+.btn.coral:hover,
+.ng-cbar-btn:hover,
+.ng-mbar-btn:hover,
+.ng-mbar-btn:active{
+  background:var(--coraldk,#096E77);
+  color:#fff;
+}
+@media (max-width:1100px){
   body.home .cards.home-cards-row{
-    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+    padding:0 16px;
+    max-width:860px;
+    margin-bottom:16px;
+  }
+  body.home .cards.home-cards-row .card .ph{height:76px}
+}
+@media (max-width:900px){
+  body.home .hero.home-welcome.has-slides{height:auto !important}
+  body.home .hero.home-welcome .txt{padding:16px 16px 10px}
+  body.home .hero.home-welcome h1{font-size:clamp(28px,8vw,42px)}
+  body.home .hero.home-welcome .sub{font-size:16px;margin-top:12px}
+}
+@media (max-width:640px){
+  body.home .cards.home-cards-row{
     grid-template-columns:repeat(4,minmax(0,1fr));
     gap:6px;
-    overflow:visible;
-    margin:0 0 10px;
-    padding:0 8px 4px;
+    margin:0 auto 12px;
+    padding:0 10px 4px;
     max-width:none;
-    scroll-snap-type:none;
-  }
-  body.home .cards.home-cards-row .card{
-    flex:none;
-    width:auto;
-    max-width:none;
-    margin:0;
-    scroll-snap-align:unset;
   }
   body.home .cards.home-cards-row .card .ph{height:52px}
-  body.home .cards.home-cards-row .card .bd{padding:5px 4px 6px;gap:0;min-height:0;justify-content:flex-start}
-  body.home .cards.home-cards-row .card h2{font-size:10.5px;line-height:1.2;font-weight:600}
+  body.home .cards.home-cards-row .card .bd{padding:5px 3px 6px;gap:0;min-height:0;justify-content:center;text-align:center}
+  body.home .cards.home-cards-row .card h2{font-size:10px;line-height:1.15;font-weight:600;text-align:center}
   body.home .cards.home-cards-row .card .go{display:none}
-  body.home footer.lux.slim .slim-in{padding:8px 10px;gap:8px 12px;font-size:12.5px}
+}
+@media (max-width:559px){
+  body.home .cards.home-cards-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+  body.home .hero.home-welcome.has-slides{height:auto !important}
 }
 @media (max-width:767px){
   body.home{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+  body.home footer.lux.slim .slim-in{padding:8px 12px 10px;gap:8px 16px;font-size:13px;line-height:1.3}
 }

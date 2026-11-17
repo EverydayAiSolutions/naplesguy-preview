@@ -69,27 +69,9 @@
       var set = ccpsDates||[];
       return dates.some(function(d){ return set.indexOf(d)!==-1; });
     }
-    if(key==='rainy-day'){
-      if(entry.rainy!==1) return false;
-      if(!today) return true;
-      var end = new Date(today+'T12:00:00');
-      end.setDate(end.getDate()+13);
-      var endStr = end.toISOString().slice(0,10);
-      return inRangeEntry(entry, today, endStr);
-    }
-    if(key==='thanksgiving'){ return entry.thanksgiving===1; }
-    if(key==='christmas'){ return entry.christmas===1; }
-    if(key==='holiday'){ return entry.holiday===1; }
-    if(key==='farmers-markets'){ return entry.farmers===1; }
     return true;
   }
-  var specialWhen = {weekdays:1,'after-school':1,evenings:1,'no-school':1,toddlers:1,'rainy-day':1,thanksgiving:1,christmas:1,holiday:1,'farmers-markets':1};
-  var moreWhen = {tomorrow:1,'next-weekend':1,'after-weekend':1,weekdays:1,'after-school':1,evenings:1,'no-school':1,toddlers:1,'rainy-day':1,thanksgiving:1,christmas:1,holiday:1,'farmers-markets':1};
-  function openMoreIfNeeded(key){
-    if(!key || !moreWhen[key]) return;
-    var box = document.querySelector('.fe-more-filters');
-    if(box && !box.open) box.open = true;
-  }
+  var specialWhen = {weekdays:1,'after-school':1,evenings:1,'no-school':1,toddlers:1};
   function active(){
     return !!(filters.when || filters.on || filters.type || filters.q || (filters.region && filters.region!==defaultRegion));
   }
@@ -415,7 +397,6 @@
   }
   function pressWhen(when){
     if(!when) return;
-    openMoreIfNeeded(when);
     var known=!!(ranges[when] || specialWhen[when] || document.querySelector('[data-fe-when="'+when+'"]'));
     if(!known) return;
     filters.when=when;
