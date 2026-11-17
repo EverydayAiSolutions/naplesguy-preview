@@ -73,9 +73,12 @@ function kinds(g){var u=[];g.forEach(function(s){if(s.ongoing) return; if(s.kind
 function urlOf(g){var u=[];g.forEach(function(s){if(s.url&&u.indexOf(s.url)<0)u.push(s.url)}); return u}
 function groupBy(rows,f){var m={},o=[];rows.forEach(function(r){var k=f(r);if(!m[k]){m[k]=[];o.push(k)}m[k].push(r)}); return o.map(function(k){return m[k].sort(function(a,b){return key(a)<key(b)?-1:key(a)>key(b)?1:0})})}
 function photoOf(p){
-  var fam=p.fam;
-  if(fam==='nature'&&PHOTOS.nature) return PHOTOS.nature;
-  return PHOTOS[fam]||PHOTOS.daycamp;
+  var prefer=['swim','soccer','baseball','basketball','football','volleyball','tennis','pickleball','golf','martial','gym','cheer','dance','music','art','theater','stem','nature','horse'];
+  var acts=p.acts||[];
+  for(var i=0;i<prefer.length;i++){
+    if(acts.indexOf(prefer[i])>-1 && PHOTOS[prefer[i]]) return PHOTOS[prefer[i]];
+  }
+  return PHOTOS[p.fam]||PHOTOS.daycamp;
 }
 function isDayProg(r){
   if(r.kind==='Camp') return true;
@@ -133,7 +136,7 @@ function btns(g){
 function card(g){
   var p=g[0], n=g.length, ph=photoOf(p), tag=startsThisWeek(g);
   var h='<article class="su-card"><div class="su-photo">';
-  h+='<img loading="lazy" src="'+esc(ph[0])+'" alt="'+esc(ph[1])+'">';
+  var imgcls=p.fam==='music'?' class="su-img-music"':''; h+='<img loading="lazy" src="'+esc(ph[0])+'" alt="'+esc(ph[1])+'"'+imgcls+'>';
   if(tag) h+='<span class="su-tag">Starts this week</span>';
   h+='</div><div class="su-body">';
   h+='<p class="su-eyebrow">'+esc(p.famL)+kinds(g)+'</p>';
@@ -159,11 +162,11 @@ function listByMonth(gs){
   var out='', cur='', dated=gs.filter(function(g){return key(g[0])!=='9999'}), any=gs.filter(function(g){return key(g[0])==='9999'});
   dated.forEach(function(g){
     var m=monthLabel(key(g[0]));
-    if(m!==cur){ if(cur) out+='</div>'; out+='<h2 class="su-month">'+esc(m)+'</h2><div class="su-list">'; cur=m; }
+    if(m!==cur){ if(cur) out+='</div>'; out+='<div class="su-month" role="heading" aria-level="2"><span>'+esc(m)+'</span><i></i></div><div class="su-list">'; cur=m; }
     out+=card(g);
   });
   if(cur) out+='</div>';
-  if(any.length) out+='<h2 class="su-month">Sign up any time</h2><div class="su-list">'+any.map(card).join('')+'</div>';
+  if(any.length) out+='<div class="su-month" role="heading" aria-level="2"><span>Sign up any time</span><i></i></div><div class="su-list">'+any.map(card).join('')+'</div>';
   return out;
 }
 function ccpsView(rows){
@@ -171,7 +174,7 @@ function ccpsView(rows){
   CCPS.forEach(function(win){
     var hits=rows.filter(function(r){return isDayProg(r)&&covers(r,win)});
     var gs=sortGroups(groupBy(hits,function(r){return r.pk+'|'+r.prog.toLowerCase()}));
-    out+='<div class="su-break"><h2>'+esc(win.name)+'</h2><p>'+esc(win.range)+'</p></div>';
+    out+='<div class="su-break"><div class="su-break-name" role="heading" aria-level="2">'+esc(win.name)+'</div><p>'+esc(win.range)+'</p></div>';
     if(gs.length) out+='<div class="su-list">'+gs.map(card).join('')+'</div>';
     else out+='<p class="su-empty">No open sign-ups listed for this day.</p>';
   });

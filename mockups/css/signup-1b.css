@@ -27,17 +27,18 @@ html[data-su="1b"] .su input:focus,
 html[data-su="1b"] .su select:focus{outline:2px solid #0B7F8A;outline-offset:1px}
 
 html[data-su="1b"] .su-month{
-  grid-column:1/-1;display:flex;align-items:center;gap:14px;
-  margin:26px 0 4px;color:#1d2b33;
+  display:flex!important;align-items:center;gap:14px;width:100%;max-width:none;box-sizing:border-box;
+  margin:26px 0 10px;color:#1d2b33;
   font-family:"Cormorant Garamond",Cormorant,serif;font-size:26px;font-weight:600;line-height:1.2
 }
 html[data-su="1b"] .su-month:first-child{margin-top:14px}
-html[data-su="1b"] .su-month::after{content:"";flex:1;height:1px;background:#cfdadf}
+html[data-su="1b"] .su-month span{flex:none}
+html[data-su="1b"] .su-month i{flex:1 1 auto;height:1px;background:#b7c9cd;display:block;min-width:48px}
 html[data-su="1b"] .su-break{
   grid-column:1/-1;margin:28px 0 6px;padding:0 0 8px;border-bottom:1px solid #cfdadf
 }
 html[data-su="1b"] .su-break:first-child{margin-top:14px}
-html[data-su="1b"] .su-break h2{
+html[data-su="1b"] .su-break-name{
   font-family:"Cormorant Garamond",Cormorant,serif;font-size:26px;font-weight:600;
   margin:0 0 2px;color:#1d2b33;line-height:1.2
 }
@@ -88,3 +89,5 @@ html[data-su="1b"] .su-btn.alt{flex:0 1 auto;background:#fff;color:#0B7F8A!impor
 html[data-su="1b"] .su-btn.alt:hover{background:#eef7f8}
 html[data-su="1b"] .su-empty{padding:16px 18px;background:#f3f8f9;border-radius:12px;margin:0 0 8px;color:#33434b}
 html[data-su="1b"] .su-note{font-size:13.5px;color:#4a5a63;margin:24px 0 0}
+
+html[data-su="1b"] .su-img-music{object-position:18% 28%!important}
