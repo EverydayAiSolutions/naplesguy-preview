@@ -1,0 +1,238 @@
+/* Family Events layout mockups — option-specific chrome only.
+   Site fonts, colors, header, footer, and sticky bar come from the theme. */
+
+.mk-page{background:var(--cream)}
+
+/* Shared event cards — large photo-forward, luxury */
+.mk-list{display:flex;flex-direction:column;gap:18px;padding:0 16px 28px}
+.mk-card{
+  display:block;background:var(--ivory);border-radius:20px;overflow:hidden;
+  box-shadow:var(--sh1);color:inherit;text-decoration:none
+}
+.mk-card .ph{position:relative;height:210px;overflow:hidden;background:var(--sand)}
+.mk-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.mk-card .tag{
+  position:absolute;left:12px;top:12px;z-index:2;
+  padding:5px 10px;border-radius:999px;
+  background:rgba(255,253,249,.92);color:var(--navy);
+  font:500 10.5px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase
+}
+.mk-card .chip{
+  position:absolute;right:12px;top:12px;z-index:2;
+  padding:5px 10px;border-radius:999px;
+  background:var(--navy);color:#fff;
+  font:500 10.5px/1 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase
+}
+.mk-card .bd{padding:16px 18px 18px}
+.mk-card h2,.mk-card h3{
+  font:500 28px/1.15 "Cormorant Garamond",Cormorant,serif;
+  color:var(--navy);margin:0 0 6px
+}
+.mk-card .meta{margin:0;color:var(--ink2);font:400 14.5px/1.45 Jost,sans-serif}
+.mk-card .blurb{margin:8px 0 0;color:var(--ink);font:400 15px/1.45 Jost,sans-serif}
+
+.mk-card.feature .ph{height:230px}
+.mk-card.feature h2{font-size:32px}
+.mk-kicker{
+  margin:18px 16px 10px;
+  font:500 11px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)
+}
+
+.mk-note{text-align:center;color:var(--ink2);font-size:15px;max-width:720px;margin:8px auto 36px;padding:0 16px}
+
+/* ---------- Option 1: Magazine ---------- */
+.mg-banner{position:relative;height:200px;overflow:hidden}
+.mg-banner img{width:100%;height:100%;object-fit:cover;object-position:center 58%;display:block}
+.mg-banner .veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(14,42,69,.40) 0%, rgba(14,42,69,.12) 38%, rgba(14,42,69,.04) 58%, transparent 72%)
+}
+.mg-banner .txt{
+  position:absolute;left:20px;right:20px;top:16px;z-index:2;color:#fff
+}
+.mg-banner h1{
+  font:500 44px/.95 "Cormorant Garamond",Cormorant,serif;
+  color:#fff;margin:0;letter-spacing:-.02em;
+  text-shadow:0 2px 18px rgba(14,42,69,.4),0 1px 2px rgba(14,42,69,.35)
+}
+.mg-banner h1 em{font-style:italic;font-weight:400;color:#F1DDB2;text-shadow:0 2px 16px rgba(14,42,69,.45),0 1px 2px rgba(14,42,69,.3)}
+
+.mg-search-wrap{padding:0 16px;margin-top:-18px;position:relative;z-index:5}
+.mg-search{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
+  background:var(--ivory);border-radius:16px;box-shadow:var(--sh2);
+  border:1px solid var(--line);overflow:visible
+}
+.mg-field{position:relative;min-width:0}
+.mg-field + .mg-field{border-left:1px solid var(--line)}
+.mg-field > button{
+  width:100%;background:transparent;border:0;cursor:pointer;text-align:left;
+  padding:10px 12px 11px;min-height:58px;color:var(--navy)
+}
+.mg-field > button .lbl{
+  display:block;font:500 10px/1 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:5px
+}
+.mg-field > button .val{
+  display:block;font:500 13px/1.2 Jost,sans-serif;color:var(--navy);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:14px
+}
+.mg-field > button .val:after{
+  content:"";position:absolute;right:12px;bottom:16px;width:6px;height:6px;
+  border-right:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);
+  transform:rotate(45deg);opacity:.55
+}
+.mg-field.is-open > button{background:var(--sand)}
+.mg-drop{
+  display:none;position:absolute;left:-1px;right:-1px;top:calc(100% + 6px);z-index:8;
+  background:var(--ivory);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh2);
+  padding:6px;min-width:160px
+}
+.mg-field.is-open .mg-drop{display:block}
+.mg-drop[data-for="where"]{min-width:190px}
+.mg-drop button{
+  display:block;width:100%;text-align:left;border:0;background:transparent;cursor:pointer;
+  padding:11px 12px;border-radius:10px;color:var(--navy);font:500 14.5px/1.25 Jost,sans-serif
+}
+.mg-drop button[aria-pressed="true"]{background:var(--sand);color:var(--navy)}
+.mg-drop button:hover{background:var(--cream)}
+
+.mg-list{padding-top:18px}
+
+/* ---------- Option 2: Calendar strip ---------- */
+.st-banner{position:relative;height:150px;overflow:hidden}
+.st-banner img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.st-banner .veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(14,42,69,.38) 0%, rgba(14,42,69,.08) 45%, transparent 70%)
+}
+.st-banner .txt{position:absolute;left:16px;right:64px;top:16px;z-index:2}
+.st-banner h1{
+  font:500 34px/1 "Cormorant Garamond",Cormorant,serif;color:#fff;margin:0;
+  text-shadow:0 2px 14px rgba(14,42,69,.3)
+}
+.st-filter{
+  position:absolute;right:12px;top:14px;z-index:3;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,253,249,.94);color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 16px rgba(60,45,20,.16)
+}
+.st-filter[aria-expanded="true"]{background:var(--navy);color:#fff}
+.st-filter svg{display:block}
+
+.st-dates{
+  display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:14px 16px 6px;
+  scrollbar-width:none
+}
+.st-dates::-webkit-scrollbar{display:none}
+.st-day{
+  flex:0 0 68px;scroll-snap-align:start;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;min-height:88px;padding:10px 4px 8px;
+  border:1px solid var(--line);border-radius:16px;background:var(--ivory);
+  color:var(--navy);cursor:pointer;box-shadow:var(--sh1)
+}
+.st-day .dow{font:500 10.5px/1 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.st-day .num{font:500 26px/1 "Cormorant Garamond",Cormorant,serif;color:var(--navy)}
+.st-day .cnt{font:500 10px/1.15 Jost,sans-serif;color:var(--ink2);text-align:center;padding:0 2px}
+.st-day[aria-pressed="true"]{
+  background:var(--navy);border-color:var(--navy);color:#fff
+}
+.st-day[aria-pressed="true"] .dow{color:var(--gold2)}
+.st-day[aria-pressed="true"] .num{color:#fff}
+.st-day[aria-pressed="true"] .cnt{color:rgba(255,255,255,.82)}
+.st-day.is-today:not([aria-pressed="true"]){border-color:var(--gold)}
+
+.st-drawer{
+  display:none;margin:8px 16px 0;padding:14px 14px 10px;
+  background:var(--ivory);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh1)
+}
+.st-drawer.is-open{display:block}
+.st-drawer p{
+  margin:0 0 10px;font:500 11px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)
+}
+.st-drawer .choices{display:flex;flex-direction:column;gap:4px}
+.st-drawer button{
+  text-align:left;border:0;background:transparent;cursor:pointer;
+  padding:11px 12px;border-radius:12px;color:var(--navy);font:500 15px/1.2 Jost,sans-serif
+}
+.st-drawer button[aria-pressed="true"]{background:var(--sand)}
+
+.st-dayhead{
+  margin:14px 16px 10px;
+  font:500 26px/1.15 "Cormorant Garamond",Cormorant,serif;color:var(--navy)
+}
+
+/* ---------- Option 3: Featured + month calendar ---------- */
+.fx-hero{position:relative;height:196px;margin-bottom:78px}
+.fx-hero > img{width:100%;height:196px;object-fit:cover;object-position:center 60%;display:block}
+.fx-hero .veil{
+  position:absolute;left:0;right:0;top:0;height:196px;
+  background:linear-gradient(to top, rgba(14,42,69,.22), transparent 45%)
+}
+.fx-feat{
+  position:absolute;left:16px;right:16px;top:112px;z-index:3;
+  display:flex;min-height:148px;background:var(--ivory);border-radius:18px;
+  overflow:hidden;box-shadow:var(--sh2);text-decoration:none;color:inherit
+}
+.fx-feat .ph{flex:0 0 128px;width:128px;height:148px;overflow:hidden;background:var(--sand)}
+.fx-feat .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fx-feat .bd{padding:12px 14px 12px 14px;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.fx-feat .kicker{
+  margin:0 0 4px;font:500 10px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)
+}
+.fx-feat h2{
+  font:500 22px/1.15 "Cormorant Garamond",Cormorant,serif;color:var(--navy);margin:0 0 4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+.fx-feat .meta{margin:0;color:var(--ink2);font:400 13px/1.35 Jost,sans-serif;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+
+.fx-switch{
+  display:flex;margin:0 16px 14px;border:1px solid var(--line);border-radius:999px;
+  background:var(--ivory);overflow:hidden;box-shadow:var(--sh1)
+}
+.fx-switch button{
+  flex:1 1 0;min-width:0;border:0;background:transparent;cursor:pointer;
+  padding:10px 4px;min-height:44px;color:var(--navy);
+  font:500 11px/1.15 Jost,sans-serif;letter-spacing:.02em
+}
+.fx-switch button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+.fx-cal{margin:0 16px 14px;background:var(--ivory);border-radius:18px;box-shadow:var(--sh1);padding:10px 10px 12px}
+.fx-cal-head{
+  display:flex;align-items:center;justify-content:center;margin:0 0 10px
+}
+.fx-cal-head h2{
+  font:500 26px/1 "Cormorant Garamond",Cormorant,serif;color:var(--navy);margin:0
+}
+.fx-dow{
+  display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-bottom:4px
+}
+.fx-dow span{
+  text-align:center;padding:4px 0;
+  font:500 10px/1 Jost,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)
+}
+.fx-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.fx-cell{
+  aspect-ratio:1;border:0;background:transparent;cursor:pointer;border-radius:11px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  color:var(--navy);font:500 14px/1 Jost,sans-serif;padding:0
+}
+.fx-cell.is-out{color:var(--mut);opacity:.45}
+.fx-cell.is-past{color:var(--mut);opacity:.48}
+.fx-cell.is-today{box-shadow:inset 0 0 0 1px var(--gold2)}
+.fx-cell[aria-pressed="true"]{background:var(--navy);color:#fff;opacity:1}
+.fx-cell .dots{display:flex;gap:2px;height:5px;align-items:center}
+.fx-cell .dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.fx-cell[aria-pressed="true"] .dot{background:var(--gold2)}
+.fx-cell:disabled{cursor:default;opacity:.3}
+
+.fx-dayhead{
+  margin:4px 16px 10px;
+  font:500 26px/1.15 "Cormorant Garamond",Cormorant,serif;color:var(--navy)
+}
+
+.mk-empty{margin:8px 16px 40px;color:var(--ink2);font-size:15.5px}
