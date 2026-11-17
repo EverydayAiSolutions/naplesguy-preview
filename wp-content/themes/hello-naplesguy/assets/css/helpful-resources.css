@@ -1,0 +1,74 @@
+/* Helpful links & videos — light cards, no dark / purple / peach blocks. */
+.ng-helpful{margin:36px 0 8px;padding:0}
+.ng-helpful-head{margin:0 0 18px}
+.ng-helpful-head h2{margin:6px 0 8px}
+.ng-helpful-head p{margin:0;color:var(--ink2);max-width:42rem}
+.ng-helpful-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 22px}
+.ng-helpful-card{display:block;background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:18px 20px;text-decoration:none;color:inherit;min-width:0;transition:border-color .15s,box-shadow .15s}
+.ng-helpful-card:hover{border-color:var(--gold);box-shadow:var(--sh1)}
+.ng-helpful-card h3{margin:0 0 8px;font-size:22px;line-height:1.25;color:var(--navy)}
+.ng-helpful-card p{margin:0;color:var(--ink2);font-size:15px;line-height:1.45}
+.ng-helpful-go{display:inline-block;margin-top:10px;font:600 14px/1.3 Jost,sans-serif;color:var(--coral)}
+.ng-helpful-videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ng-helpful-video{background:var(--ivory);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0}
+.ng-helpful-thumb{position:relative;display:block;width:100%;padding:0;border:0;background:#EADFCB;cursor:pointer;aspect-ratio:16/9;overflow:hidden}
+.ng-helpful-thumb img,.ng-helpful-thumb iframe{display:block;width:100%;height:100%;object-fit:cover;border:0}
+.ng-helpful-thumb iframe{position:absolute;inset:0;width:100%;height:100%}
+.ng-helpful-play{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--coral);box-shadow:0 6px 16px rgba(11,127,138,.28);pointer-events:none}
+.ng-helpful-play:before{content:"";position:absolute;left:23px;top:18px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff}
+.ng-helpful-vmeta{padding:14px 16px 16px}
+.ng-helpful-vmeta h3{margin:0 0 4px;font-size:20px;line-height:1.3;color:var(--navy)}
+.ng-helpful-channel{margin:0 0 6px;font:500 12px/1.3 Jost,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.ng-helpful-vmeta p{margin:0 0 8px;color:var(--ink2);font-size:15px}
+.ng-helpful-yt{font:600 14px/1.3 Jost,sans-serif;color:var(--coral);text-decoration:none}
+.ng-helpful-yt:hover{text-decoration:underline}
+.g-more{margin:12px 0 8px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:4px 16px 8px}
+.g-more>summary{cursor:pointer;list-style:none;font:600 16px/1.4 Jost,sans-serif;color:var(--navy);padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.g-more>summary::-webkit-details-marker{display:none}
+.g-more>summary:after{content:"Show more";font:600 13px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);flex:none}
+.g-more[open]>summary:after{content:"Show less"}
+.g-more .g-more-body{padding:0 0 12px}
+.g-more .g-more-body>h3{margin:18px 0 8px;font-size:22px}
+.ng-start{margin:8px 0 28px}
+.ng-start-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.ng-start-card{display:block;background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:18px 20px;text-decoration:none;color:inherit;min-width:0;transition:border-color .15s,box-shadow .15s}
+.ng-start-card:hover{border-color:var(--gold);box-shadow:var(--sh1)}
+.ng-start-card .sell-kicker,.ng-start-card .ng-start-kicker{display:block;font:500 11px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.ng-start-card h3{margin:0 0 8px;font-size:24px;line-height:1.2;color:var(--navy)}
+.ng-start-card p{margin:0;color:var(--ink2)}
+.ng-start-card .ng-helpful-go{margin-top:10px}
+.tng-reg-grid .tng-reg-card.is-beyond,.dir-card.is-beyond,.dir-card.fe-card.is-beyond{display:none!important}
+.tng-reg-more{margin:8px 0 24px;text-align:center}
+.tng-reg-more button,.dir-more button{min-height:44px;padding:0 22px;border-radius:999px;border:1px solid var(--gold2);background:#fff;color:var(--navy);font:600 14px/1 Jost,sans-serif;letter-spacing:.06em;cursor:pointer}
+.tng-reg-more button:hover,.dir-more button:hover{border-color:var(--gold);background:var(--cream)}
+.dir-more{margin:16px 0 8px;text-align:center}
+@media (max-width:700px){
+  .ng-helpful-links,.ng-helpful-videos,.ng-start-grid{grid-template-columns:1fr}
+  .ng-helpful-card h3,.ng-start-card h3{font-size:20px}
+}
+
+
+/* Registrations: keep lists visible, chips tappable above the sticky bar, turquoise buttons */
+.tng-reg .ng-fade,.tng-reg-group.ng-fade{opacity:1!important;transform:none!important;transition:none!important}
+.tng-reg-anchor{scroll-margin-top:96px}
+.tng-reg-btn.primary{background:var(--coral,#0B7F8A);color:#fff;box-shadow:0 8px 22px rgba(11,127,138,.28)}
+.tng-reg-btn.primary:hover{background:var(--coraldk,#096E77);color:#fff}
+.tng-reg-intro a,.tng-reg-note a,.tng-reg-empty a,.tng-reg-foot a{color:var(--coraldk,#096E77)}
+.tng-reg-jump a:hover{border-color:var(--coral,#0B7F8A);color:var(--coraldk,#096E77)}
+@media (max-width:767px){
+  .tng-reg-jump{margin-bottom:8px}
+}
+
+/* Soft CTA used on Family pages */
+.fam-soft-cta{padding:36px 0 48px}
+.fam-soft-cta .wrap{max-width:720px}
+.fam-soft-lead{margin:0 0 16px;font-size:17.5px;line-height:1.5;color:var(--ink)}
+.fam-soft-cta .ng-cbar{margin-top:0}
+@media (max-width:700px){
+  .fam-soft-cta{padding:28px 0 40px}
+}
+
+.tng-reg,.tng-flyer{--fly-coral:#0B7F8A;--fly-coral-dk:#096E77}
+.tng-reg-card.accent-coral,.tng-flyer-card.accent-coral,.tng-fe-tile.tile-sports{border-top-color:var(--coral,#0B7F8A)!important}
+.tng-flyer-btn.primary{background:var(--coral,#0B7F8A);color:#fff;box-shadow:0 8px 22px rgba(11,127,138,.28)}
+.tng-flyer-btn.primary:hover{background:var(--coraldk,#096E77);color:#fff}

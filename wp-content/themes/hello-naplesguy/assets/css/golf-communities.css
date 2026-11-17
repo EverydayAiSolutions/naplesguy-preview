@@ -1,0 +1,62 @@
+/* Golf Communities page — kept in its own file so other theme work is untouched. */
+.gc-page{color:var(--ink,#1d2a33);background:#fff}
+.gc-hero{padding:8px 0 28px;background:#f7f3ee}
+.gc-hero-grid{display:grid;gap:22px;align-items:center}
+@media(min-width:800px){
+  .gc-hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:36px}
+}
+.gc-hero-ph{margin:0;border-radius:18px;overflow:hidden;background:#efe8df}
+.gc-hero-ph img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}
+.gc-hero-copy h1{font:600 clamp(1.7rem,4vw,2.4rem)/1.2 "Cormorant Garamond",Georgia,serif;color:var(--navy,#0e2a45);margin:0 0 14px}
+.gc-hero-copy .gc-intro p{margin:0 0 12px;font:400 1.05rem/1.55 Jost,sans-serif;color:var(--ink,#1d2a33)}
+.gc-hero-copy .gc-intro p:last-child{margin-bottom:0}
+.gc-license{font:500 13px/1.45 Jost,sans-serif;color:var(--ink2,#5a6570);margin:12px 0 0}
+.gc-quick{padding:8px 0 8px;background:#fff}
+.gc-quick .wrap{padding-top:12px}
+.gc-quick-grid{display:grid;gap:14px;margin-top:14px}
+@media(min-width:720px){
+  .gc-quick-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+}
+.gc-quick-card{background:#f4fafb;border:1px solid #d5e8ea;border-radius:16px;padding:18px 18px 16px}
+.gc-quick-card h3{margin:0 0 8px;font:600 1.2rem/1.25 "Cormorant Garamond",Georgia,serif;color:var(--navy,#0e2a45)}
+.gc-quick-card p{margin:0;font:400 15px/1.55 Jost,sans-serif;color:var(--ink,#1d2a33)}
+.gc-list{padding:28px 0 12px;background:#fff}
+.gc-list-head{margin-bottom:16px}
+.gc-filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.gc-filter{appearance:none;border:1px solid #c9d4d8;background:#fff;color:var(--navy,#0e2a45);font:500 13px/1.2 Jost,sans-serif;letter-spacing:.04em;padding:10px 14px;border-radius:999px;cursor:pointer;min-height:44px}
+.gc-filter[aria-pressed="true"],.gc-filter.is-on{background:var(--coral,#0B7F8A);border-color:var(--coral,#0B7F8A);color:#fff}
+.gc-grid{display:grid;gap:16px}
+@media(min-width:700px){
+  .gc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+}
+@media(min-width:1040px){
+  .gc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+.gc-card{background:#fff;border:1px solid #e4ddd4;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(14,42,69,.05)}
+.gc-card-ph{margin:0;background:#efe8df;aspect-ratio:16/10;overflow:hidden}
+.gc-card-ph img{display:block;width:100%;height:100%;object-fit:cover}
+.gc-card-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.gc-card-body h3{margin:0;font:600 1.28rem/1.2 "Cormorant Garamond",Georgia,serif;color:var(--navy,#0e2a45)}
+.gc-area{margin:0;font:500 12px/1.3 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--coral,#0B7F8A)}
+.gc-card-body p{margin:0;font:400 15px/1.55 Jost,sans-serif;color:var(--ink,#1d2a33)}
+.gc-tags{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.gc-tag{display:inline-block;background:#f4fafb;color:var(--navy,#0e2a45);border:1px solid #d5e8ea;border-radius:999px;padding:4px 10px;font:500 12px/1.3 Jost,sans-serif}
+.gc-card .btn{align-self:flex-start;margin-top:auto;text-decoration:none}
+.gc-more{margin:18px 0 0;text-align:center}
+.gc-more button{appearance:none;background:transparent;border:1px solid var(--gold2,#c4a574);color:var(--navy,#0e2a45);font:500 13px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:14px 26px;border-radius:999px;cursor:pointer;min-height:44px}
+.gc-note{margin:18px 0 0;font:400 14px/1.5 Jost,sans-serif;color:var(--ink2,#5a6570)}
+.gc-cta{padding:12px 0 36px;background:#f7f3ee}
+.gc-cta-box{background:#fff;border:1px solid #e4ddd4;border-radius:18px;padding:22px 20px;text-align:center}
+.gc-cta-box h2{margin:0 0 8px;font:600 1.6rem/1.25 "Cormorant Garamond",Georgia,serif;color:var(--navy,#0e2a45)}
+.gc-cta-box p{margin:0 0 16px;font:400 1.02rem/1.5 Jost,sans-serif}
+.gc-cta-box .btn{text-decoration:none}
+.gc-nb-link{margin:0 0 18px;padding:14px 16px;border-radius:14px;background:#f4fafb;border:1px solid #d5e8ea}
+.gc-nb-link p{margin:0;font:400 15px/1.5 Jost,sans-serif}
+.gc-nb-link a{color:var(--coral,#0B7F8A);font-weight:500}
+@media(max-width:599px){
+  .gc-hero,.gc-quick,.gc-list,.gc-cta{padding-left:0;padding-right:0}
+  .gc-hero-copy h1{padding-right:8px}
+}
+
+/* The hidden attribute must beat .gc-grid{display:grid} */
+.gc-grid[hidden],.gc-card[hidden],.gc-more[hidden]{display:none !important}

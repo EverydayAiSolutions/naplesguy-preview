@@ -7,7 +7,7 @@
   /* ---------- Fade-in on scroll ---------- */
   function fadeIn() {
     if (reduce || !hasIO) return;
-    var sel = 'main section, body > section, body > .cards, body > div.wrap > section, .home-start-card, .home-wk-card, .ng-stat, .ng-fit-promo, .n-grid > *, .g-row-care > *, footer.lux .top > div';
+    var sel = 'main section, body > section, body > .cards, body > div.wrap > section, .home-start-card, .home-wk-card, .ng-stat, .ng-fit-promo, .n-grid > *, .g-row-care > *';
     var vh = window.innerHeight || 800;
     var nodes = Array.prototype.slice.call(document.querySelectorAll(sel));
     var io = new IntersectionObserver(function (es) {
@@ -17,14 +17,15 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     var groups = new Map();
     nodes.forEach(function (el) {
+      if (el.closest('footer, header.site, .util, .ng-mbar')) return;
       if (el.classList.contains('reveal') || el.closest('.reveal')) return;
-      if (el.closest('.hero, .rehero, .has-slides, .ng-mbar, header.site, .util, .leaflet-container, [data-fit]')) return;
+      if (el.closest('.hero, .rehero, .has-slides, .leaflet-container, [data-fit], .tng-reg, .tng-reg-group, .tng-reg-anchor, .fe-calendar, .fe-places-strip, .fam-hub, .fam-soft-cta')) return;
       if (el.matches('.hero, .has-slides')) return;
       var parentFade = el.parentElement && el.parentElement.closest('.ng-fade');
-      if (parentFade && !el.matches('.home-start-card, .home-wk-card, .ng-stat, .n-grid > *, .g-row-care > *, footer.lux .top > div')) return;
+      if (parentFade && !el.matches('.home-start-card, .home-wk-card, .ng-stat, .n-grid > *, .g-row-care > *')) return;
       var r = el.getBoundingClientRect();
       if (r.top < vh * 0.92 || r.height === 0) return; /* never hide what is already on screen */
       el.classList.add('ng-fade');
@@ -34,6 +35,18 @@
       if (i) el.style.transitionDelay = Math.min(i, 5) * 70 + 'ms';
       io.observe(el);
     });
+    function revealVisible() {
+      document.querySelectorAll('.ng-fade:not(.ng-in)').forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < vh) {
+          el.classList.add('ng-in');
+          if (io) io.unobserve(el);
+        }
+      });
+    }
+    revealVisible();
+    window.addEventListener('scroll', revealVisible, { passive: true });
+    window.addEventListener('load', revealVisible);
   }
 
   /* ---------- Count-up stats ---------- */

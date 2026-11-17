@@ -294,7 +294,7 @@
 }
 
 
-/* This week's picks */
+/* Weekend event pages */
 .pk-page,.pk-archive{padding:8px 0 64px}
 .pk-flyer{margin:0 0 22px;border-radius:18px;overflow:hidden;box-shadow:var(--sh1);background:var(--sand)}
 .pk-flyer-open{display:block;width:100%;border:0;padding:0;margin:0;background:none;cursor:zoom-in;position:relative;text-align:left}
@@ -495,7 +495,7 @@
 .fe-landing-next{margin-top:36px;padding-top:8px}
 .fe-landing-next-lead,.fe-landing-more-lead{color:var(--ink2);font-size:15.5px;margin:0 0 16px}
 .fe-group-sub{font-size:22px}
-.fe-landing-faq{padding:20px 0 10px}
+.fe-landing-faq{padding-top:20px;padding-bottom:10px}
 .fe-landing-faq h2{margin:6px 0 0;color:var(--navy);font-family:"Cormorant Garamond",Cormorant,serif;font-weight:500;font-size:clamp(26px,3vw,36px)}
 .fe-landing-more{padding:12px 0 48px}
 .fe-landing-hub{padding:6px 0 18px}
@@ -520,4 +520,313 @@
 @media (max-width:600px){
   .ng-weekend-list li>a{flex-direction:column;align-items:flex-start}
   .ng-weekend-thumb{width:100%;max-width:none}
+}
+
+.fe-more.is-loading button{opacity:.6;cursor:wait}
+
+/* SEO quick row on Home and Family Events */
+.fe-seo-row{margin:8px auto 28px;max-width:1100px;padding:0 20px}
+.wrap .fe-seo-row{padding-left:0;padding-right:0}
+.home-save + .fe-seo-row{margin-top:4px}
+.fe-seo-row-label{margin:0 0 10px;font:600 12px/1.3 Jost,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--navy,#0e2a45)}
+.fe-seo-row ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.fe-seo-row a{display:inline-block;padding:10px 14px;border:1px solid var(--navy,#0e2a45);border-radius:999px;color:var(--navy,#0e2a45);text-decoration:none;font:500 13px/1.2 Jost,sans-serif;background:#fff}
+.fe-seo-row a:hover,.fe-seo-row a:focus{background:#f7f3ee}
+/* Things to Do pillar */
+.ttd-page .ttd-topics,.ttd-page .ttd-spots{padding-top:8px;padding-bottom:36px}
+.ttd-topic-grid,.ttd-spot-grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:700px){
+  .ttd-topic-grid,.ttd-spot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1000px){
+  .ttd-topic-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+.ttd-topic,.ttd-spot{display:block;background:#f7f3ee;border-radius:16px;padding:16px 18px;color:inherit;text-decoration:none}
+.ttd-topic h3,.ttd-spot h3{margin:0 0 8px;font:600 1.15rem/1.3 "Cormorant Garamond",Georgia,serif;color:var(--navy,#0e2a45)}
+.ttd-topic p,.ttd-spot p,.ttd-lead{margin:0 0 8px;color:var(--ink2,#5a6570);font-size:15.5px;line-height:1.5}
+.ttd-spot a,.ttd-page .faq-a a{color:var(--navy,#0e2a45)}
+.ttd-lead{margin:0 0 18px}
+
+
+/* Professional Family Events flow */
+.fe-calendar{padding:48px 0 24px}
+.fe-calendar.ng-fade,.fe-calendar .ng-fade,.fe-places-strip.ng-fade,.fe-places-strip .ng-fade,.fam-hub.ng-fade,.fam-soft-cta.ng-fade{opacity:1!important;transform:none!important;transition:none!important}
+
+.fe-sec-lead,.fe-calendar .fe-sec-lead{margin:10px 0 22px;max-width:40em;color:var(--ink);font-size:16.5px;line-height:1.5}
+.fe-calendar h2,.fe-places-strip h2{margin:0;font-size:clamp(28px,4vw,42px);color:var(--navy)}
+.fe-more-filters{margin:14px 0 8px}
+.fe-more-filters summary{
+  cursor:pointer;font:500 13px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--navy);padding:8px 0;list-style:none
+}
+.fe-more-filters summary::-webkit-details-marker{display:none}
+.fe-more-filters summary:after{content:" +";color:var(--gold)}
+.fe-more-filters[open] summary:after{content:" −"}
+.fe-more-filters .bar{margin-top:10px}
+.home-weekend.fe-weekend-picks{padding-top:36px;padding-bottom:12px}
+.fe-places-strip{padding:48px 0 28px}
+.fe-places-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+.fe-places-card{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;
+  overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--sh1);
+  transition:transform .2s,box-shadow .2s
+}
+.fe-places-card:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
+.fe-places-card .ph{aspect-ratio:16/10;overflow:hidden;background:#eef3f6}
+.fe-places-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fe-places-card .bd{padding:14px 16px 16px}
+.fe-places-card h3{margin:0 0 6px;font-size:22px;line-height:1.2;color:var(--navy)}
+.fe-places-card p{margin:0;font-size:14.5px;line-height:1.4;color:var(--ink2)}
+@media (max-width:900px){
+  .fe-places-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  .fe-calendar{padding:32px 0 16px}
+  .fe-places-strip{padding:32px 0 16px}
+  .fe-places-grid{grid-template-columns:1fr;gap:12px}
+}
+
+/* Family hub — swipe carousel on the phone, three across on desktop */
+.fam-hub{padding:40px 0 28px;background:var(--cream,#FBF7F0)}
+.fam-hub-track{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+}
+.fam-hub-card{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--line,#E9DFCF);border-radius:22px;
+  overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--sh1);
+  transition:transform .2s,box-shadow .2s;
+  min-width:0;
+}
+@media (hover:hover){
+  .fam-hub-card:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
+}
+.fam-hub-card:focus-visible{outline:2px solid #0B7F8A;outline-offset:3px}
+.fam-hub-card .ph{aspect-ratio:4/3;overflow:hidden;background:#eef3f6}
+.fam-hub-card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fam-hub-card .bd{padding:18px 20px 22px}
+.fam-hub-card h2{margin:0 0 8px;font-size:clamp(24px,3vw,30px);line-height:1.15;color:var(--navy,#0E2A45)}
+.fam-hub-card p{margin:0;font-size:16px;line-height:1.45;color:var(--ink,#22303B)}
+@media (max-width:800px){
+  .fam-hub{padding:28px 0 20px}
+  .fam-hub .wrap{padding-right:0}
+  .fam-hub-track{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-padding-left:0;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  .fam-hub-track::-webkit-scrollbar{display:none}
+  .fam-hub-card{
+    flex:0 0 78%;
+    scroll-snap-align:start;
+  }
+  .fam-hub-card:last-child{margin-right:16px}
+  .fam-hub-card .bd{padding:14px 16px 16px}
+  .fam-hub-card h2{margin:0 0 5px;font-size:24px}
+  .fam-hub-card p{
+    font-size:13.5px;line-height:1.4;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+}
+
+
+/* Family Events page — hero actions, weekend flyer, area filters */
+#fe-calendar,#happening-weekend{scroll-margin-top:88px}
+html{scroll-padding-top:88px}
+.tng-fe-tiles{display:none!important}
+
+.fe-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.fe-hero-actions .btn.coral{color:#fff;background:#0B7F8A;box-shadow:0 8px 22px rgba(11,127,138,.35)}
+.fe-hero-actions .btn.coral:hover{background:#096E77}
+
+.fe-weekend-happen{padding:36px 0 12px;background:var(--cream,#FBF7F0)}
+.fe-weekend-happen h2{margin:0;font-size:clamp(28px,4vw,42px);color:var(--navy,#0E2A45)}
+.fe-weekend-happen .fe-sec-lead{margin:10px 0 22px}
+.fe-weekend-flyer{margin:0 auto;max-width:560px}
+.fe-weekend-flyer img{width:100%;height:auto;border-radius:22px;box-shadow:var(--sh1);background:#fff}
+.fe-weekend-more{margin:22px 0 0;text-align:center}
+.fe-weekend-list{list-style:none;margin:0;padding:0;max-width:720px}
+.fe-weekend-list li{padding:12px 0;border-bottom:1px solid var(--line,#E9DFCF)}
+.fe-weekend-list a{color:var(--navy,#0E2A45);font:500 18px/1.3 "Cormorant Garamond",Cormorant,serif}
+.fe-weekend-list span{display:block;margin-top:4px;color:var(--ink2,#4A5560);font-size:14.5px}
+
+.fe-filters .bar.fe-areas{margin:0 0 16px;gap:8px}
+.fe-filters .fe-areas button{
+  letter-spacing:.08em;
+  padding:12px 16px;
+}
+.fe-filters .fe-areas button[aria-pressed="true"],
+.fe-filters .fe-areas button.on{
+  background:#0B7F8A;
+  border-color:#0B7F8A;
+  color:#fff;
+}
+
+#fe-grid .st-areatag{
+  position:absolute;top:8px;right:8px;z-index:3;
+  background:#0B7F8A;color:#fff;
+  font:600 10px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 8px;border-radius:999px;
+  box-shadow:0 1px 2px rgba(14,42,69,.16),0 3px 10px rgba(14,42,69,.16);
+  max-width:calc(100% - 16px);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+@media (max-width:700px){
+  .shero.fe-hero .box{height:500px}
+  .fe-hero-actions{margin-top:16px;gap:10px}
+  .fe-hero-actions .btn{padding:14px 18px;font-size:12px;letter-spacing:.1em}
+  .fe-weekend-happen{padding:28px 0 8px}
+  .fe-weekend-flyer{max-width:100%}
+  #fe-calendar,#happening-weekend{scroll-margin-top:72px}
+}
+@media (max-width:559px){
+  #fe-grid .st-areatag{font-size:9px;padding:4px 6px}
+}
+
+/* Compact Family Events page: calendar visible near the top */
+.fe-pagehead{padding:8px 0 6px;background:var(--cream,#FBF7F0)}
+.fe-pagehead-in{max-width:1100px}
+.fe-pagehead h1{margin:0;font-size:clamp(30px,6vw,42px);line-height:1.15;color:var(--navy,#0E2A45);font-weight:500}
+.fe-pagehead p{margin:8px 0 0;color:var(--ink2,#4A5560);font-size:16px;line-height:1.45;max-width:36em}
+.fe-pagehead-actions{margin:14px 0 0}
+.fe-pagehead-actions .btn{min-height:48px}
+
+.fe-weekend-happen.is-compact{padding:8px 0 10px;background:transparent}
+.fe-weekend-happen.is-compact .fe-weekend-compact{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:12px 14px;border:1px solid var(--line,#E9DFCF);border-radius:18px;background:var(--ivory,#fff);
+}
+.fe-weekend-happen.is-compact h2{margin:0;font-size:clamp(20px,4.4vw,26px);line-height:1.2}
+.fe-weekend-happen.is-compact .fe-weekend-copy p{margin:4px 0 8px;color:var(--ink2,#4A5560);font-size:14.5px}
+.fe-weekend-happen.is-compact .fe-weekend-copy .btn{padding:10px 16px;min-height:44px}
+.fe-weekend-happen.is-compact a.fe-weekend-flyer{
+  flex:0 0 88px;width:88px;height:88px;margin:0;border-radius:12px;overflow:hidden;display:block;box-shadow:none
+}
+.fe-weekend-happen.is-compact a.fe-weekend-flyer img{width:88px;height:88px;object-fit:cover;border-radius:12px;display:block}
+
+.fe-calendar{padding:10px 0 24px}
+.fe-calendar h2{font-size:clamp(24px,4.5vw,34px);margin:0 0 10px}
+.fe-filters-compact{padding:0 0 8px}
+.fe-filters-compact .fe-filter-main{
+  display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center
+}
+.fe-filters-compact .bar{margin:0;gap:8px}
+.fe-filters-compact .fe-dates,
+.fe-filters-compact .fe-areas{flex:1 1 auto}
+.fe-filters-compact .fe-search{flex:1 1 180px;min-width:160px;margin:0}
+.fe-filters-compact .fe-search input{width:100%;min-height:44px}
+.fe-filters-compact button{padding:10px 14px;min-height:44px}
+.fe-filters-compact .fe-more-filters{margin:8px 0 0}
+.fe-filters-compact .fe-more-filters summary{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--gold2,#d6c4a8);border-radius:999px;
+  padding:10px 16px;min-height:44px;background:var(--ivory,#fff)
+}
+.fe-filters-compact .fe-more-filters .bar{
+  margin-top:10px;padding:12px;border:1px solid var(--line,#E9DFCF);border-radius:16px;background:#fff
+}
+.fe-filters-compact .fe-date,
+.fe-filters-compact .fe-type{display:flex;flex-direction:column;gap:4px;font:500 12px/1.2 Jost,sans-serif;color:var(--navy,#0E2A45)}
+.fe-filters-compact .fe-date input,
+.fe-filters-compact .fe-type select{min-height:44px}
+.fe-filters-compact .fe-filter-tools{margin:8px 0 0}
+.fe-filters-compact .fe-count{margin:8px 0 6px}
+.fe-filters-compact .fe-ccps-next{margin:0 0 8px;font-size:14.5px}
+
+@media (max-width:700px){
+  .fe-pagehead{padding:4px 0 8px}
+  .fe-weekend-happen.is-compact{padding:0 0 10px}
+  .fe-weekend-happen.is-compact .fe-weekend-compact{padding:10px 12px}
+  .fe-weekend-happen.is-compact a.fe-weekend-flyer,
+  .fe-weekend-happen.is-compact a.fe-weekend-flyer img{width:72px;height:72px;flex-basis:72px}
+  .fe-calendar{padding:6px 0 16px}
+  .fe-filters-compact button{padding:9px 12px;letter-spacing:.06em}
+}
+
+/* Tighter first screen so event cards appear on a phone */
+.fe-pagehead-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.fe-pagehead h1{flex:1 1 auto}
+ .fe-pagehead > .fe-pagehead-in > p:not(.fe-pagehead-actions){flex:1 1 100%;margin-top:0}
+.fe-pagehead-actions{margin:0;flex:0 0 auto}
+@media (max-width:700px){
+  .fe-pagehead-in > p:not(.fe-pagehead-actions){display:none}
+  .fe-pagehead-actions{margin:0}
+  .fe-weekend-happen.is-compact .fe-weekend-copy .btn{padding:8px 12px;min-height:40px;font-size:13px}
+  .fe-weekend-happen.is-compact{padding:0 0 8px}
+  .fe-weekend-happen.is-compact .fe-weekend-compact{padding:8px 10px;gap:10px}
+  .fe-weekend-happen.is-compact a.fe-weekend-flyer,
+  .fe-weekend-happen.is-compact a.fe-weekend-flyer img{width:64px;height:64px;flex-basis:64px}
+  .fe-filters-compact .fe-filter-main{gap:6px}
+  .fe-filters-compact button{padding:8px 10px;min-height:40px;font-size:11px;letter-spacing:.06em}
+  .fe-filters-compact .fe-ccps-next{display:none}
+  .fe-filters-compact .fe-count{margin:6px 0 4px;font-size:13.5px}
+  .crumbs{padding-top:8px;padding-bottom:4px;font-size:13px}
+}
+
+.fe-weekend-happen.is-compact .fe-weekend-copy h2 a{color:inherit;text-decoration:none}
+.fe-weekend-happen.is-compact .fe-weekend-copy h2 a:hover{color:var(--coral,#0B7F8A)}
+.fe-areas-row{display:flex;align-items:center;gap:8px;min-width:0}
+.fe-areas-row .fe-areas{flex:1 1 auto;min-width:0}
+.fe-areas-row .fe-more-filters{flex:0 0 auto;margin:0}
+.fe-filters-compact .fe-dates,
+.fe-filters-compact .fe-areas{
+  display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;overscroll-behavior-x:contain
+}
+.fe-filters-compact .fe-dates::-webkit-scrollbar,
+.fe-filters-compact .fe-areas::-webkit-scrollbar{display:none}
+.fe-filters-compact .fe-dates button,
+.fe-filters-compact .fe-areas button{flex:0 0 auto}
+.fe-filters-compact .fe-areas-row .fe-more-filters .bar,
+.fe-filters-compact .fe-more-filters .bar{
+  flex-wrap:wrap;overflow:visible;position:relative
+}
+.fe-more-filters .fe-more-panel,
+.fe-filters-compact .fe-more-filters .bar{width:100%}
+@media (max-width:700px){
+  .fe-pagehead-in{flex-wrap:nowrap;align-items:center;gap:8px}
+  .fe-pagehead h1{font-size:26px;flex:1 1 auto;min-width:0;line-height:1.1}
+  .fe-pagehead-actions{margin:0;flex:0 0 auto}
+  .fe-pagehead-actions .btn{padding:8px 12px;min-height:40px;font-size:13px;white-space:nowrap;letter-spacing:.04em}
+  .fe-calendar > .wrap > h2{font-size:22px;margin:0 0 8px}
+  .fe-weekend-happen.is-compact .fe-weekend-copy p{margin:2px 0 0}
+}
+
+@media (max-width:700px){
+  .fe-filters-compact .fe-dates{gap:6px}
+  .fe-filters-compact .fe-dates button{padding:8px 8px}
+  .fe-areas-row{position:relative}
+  .fe-filters-compact .fe-areas{
+    mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 18px),transparent);
+    -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 18px),transparent);
+  }
+  .fe-filters-compact .fe-more-filters[open]{flex:1 1 100%}
+  .fe-filters-compact .fe-more-filters[open] .bar{
+    flex-wrap:wrap;overflow:visible;margin-top:10px;
+    padding:12px;background:var(--cream,#FBF7F0);
+    border:1px solid rgba(14,42,69,.12);border-radius:14px;gap:8px
+  }
+}
+
+.fe-filters-compact .fe-filter-main > .fe-more-filters{margin:6px 0 0}
+@media (max-width:700px){
+  .fe-filters-compact .fe-areas{
+    flex-wrap:nowrap;overflow-x:auto;
+    mask-image:none;-webkit-mask-image:none;
+  }
+  .fe-filters-compact .fe-filter-main > .fe-more-filters{
+    display:block;flex:none;width:100%;margin:8px 0 0;
+  }
+  .fe-filters-compact .fe-filter-main > .fe-more-filters summary{
+    display:inline-flex;
+  }
 }

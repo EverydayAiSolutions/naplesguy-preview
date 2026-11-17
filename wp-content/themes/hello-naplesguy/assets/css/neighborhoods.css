@@ -310,7 +310,7 @@
 .dd-teal{background:#ECF6F2;border-color:#CFE5DD}.dd-teal h3 svg{color:#1F7A66}
 .dd-butter{background:#FCF5DE;border-color:#F0E2B0}.dd-butter h3 svg{color:#9A6B12}
 .dd-sage{background:#EEF4E6;border-color:#D3E3C2}.dd-sage h3 svg{color:#4C7A2A}
-.dd-coral{background:#FFF;border-color:#F2C9C0}.dd-coral h3 svg{color:var(--coral)}
+.dd-coral{background:#FFF;border-color:#C9E3E5}.dd-coral h3 svg{color:var(--coral)}
 .nbg-ftable{display:grid;gap:8px}
 .nbg-ftable .fr{display:grid;grid-template-columns:minmax(150px,1.1fr) minmax(120px,.8fr) 2.4fr;gap:12px;background:#fff;border:1px solid rgba(14,42,69,.08);border-radius:12px;padding:12px 14px;align-items:start}
 .nbg-ftable .fi{font:600 15px/1.35 Jost,sans-serif;color:var(--navy)}
@@ -381,3 +381,11 @@
 .nbg-gi .gi-go{margin-top:auto;font-weight:600;font-size:14px;text-decoration:underline;text-decoration-color:var(--gold)}
 @media (max-width:980px){.nbg-gidx{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.nbg-gidx{grid-template-columns:1fr}}
+
+/* Standard community pages (no researched photo): text hero + facts + market CTA */
+.nbg-hero-in.nbg-hero-textonly{grid-template-columns:1fr;padding:28px 36px}
+.nbg-hero-textonly .nbg-hero-tx{padding:0}
+.nbg-sec .cfacts{margin-top:22px}
+@media (max-width:700px){
+  .nbg-hero-in.nbg-hero-textonly{padding:18px 16px}
+}

@@ -1,0 +1,43 @@
+/* Selling Your Home — seller-first layout. Light cards, no dark/purple/peach blocks. */
+.sell-block{margin:0 0 8px}
+.sell-grid,.sell-cal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0 20px}
+.sell-cal{grid-template-columns:repeat(3,1fr)}
+.sell-card{background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:20px 22px;min-width:0}
+.sell-card h3{margin:0 0 8px;font-size:24px;line-height:1.2;color:var(--navy)}
+.sell-card p{margin:0 0 10px;color:var(--ink2)}
+.sell-card p:last-child{margin-bottom:0}
+.sell-card .btn{margin-top:8px}
+.sell-card-form{background:#fff}
+.sell-note{font-size:14.5px;color:var(--ink2);margin:10px 0 0}
+.sell-form{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:12px}
+.sell-form p{margin:0;min-width:0}
+.sell-form .full{grid-column:1/-1}
+.sell-form label{display:block;font:600 12px/1.3 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:5px}
+.sell-form input{width:100%;box-sizing:border-box;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff;font:16px/1.4 Jost,sans-serif;color:var(--navy)}
+.sell-form .btn{width:100%;justify-content:center}
+.sell-form .g-hp{position:absolute;left:-9999px}
+.sell-stats{margin:8px 0 20px}
+.sell-checks{display:flex;flex-direction:column;gap:8px}
+.sell-check{display:flex;align-items:flex-start;gap:10px;font:400 15px/1.4 Jost,sans-serif;letter-spacing:0;text-transform:none;color:var(--navy);margin:0}
+.sell-check input{margin-top:3px;width:18px;height:18px;flex:0 0 18px;accent-color:var(--coral)}
+.sell-link-card{display:block;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
+.sell-link-card:hover{border-color:var(--gold);box-shadow:var(--sh1)}
+.sell-kicker{display:block;font:500 11px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.sell-link-card h3{color:var(--navy)}
+.sell-go{display:inline-block;margin-top:8px;font:600 14px/1.3 Jost,sans-serif;color:var(--coral)}
+.sell-prep li{margin-bottom:12px}
+.g-art .sell-calc{margin-top:12px}
+@media (max-width:900px){
+  .sell-cal{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .sell-grid,.sell-form{grid-template-columns:1fr}
+  .sell-card{padding:18px 16px}
+  .sell-card h3{font-size:22px}
+}
+
+.g-calc .sell-check{text-transform:none;letter-spacing:0;font:400 15px/1.45 Jost,sans-serif;color:var(--navy)}
+#seller-estimator > b{letter-spacing:.14em;line-height:1.45;white-space:normal}
+#seller-estimator .g-compare{min-width:0;font-size:14px}
+#seller-estimator .g-compare caption{letter-spacing:.1em;line-height:1.4;white-space:normal}
+#seller-estimator .g-compare th,#seller-estimator .g-compare td{overflow-wrap:anywhere;word-break:break-word}

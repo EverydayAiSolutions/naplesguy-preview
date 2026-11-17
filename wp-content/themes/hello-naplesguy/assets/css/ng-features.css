@@ -1,16 +1,18 @@
-/* The Naples Guy: site-wide features (ivory / gold / navy, terracotta buttons) */
+/* The Naples Guy: site-wide features (ivory / gold / navy, turquoise buttons) */
 
 /* Fade-in on scroll */
 .js .ng-fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.65,.3,1)}
 .js .ng-fade.ng-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .ng-fade{opacity:1!important;transform:none!important;transition:none!important}}
+@media print{.js .ng-fade,.reveal{opacity:1!important;transform:none!important;transition:none!important}}
+footer.lux .ng-fade,footer.lux .reveal{opacity:1!important;transform:none!important;transition:none!important}
 
 /* Sticky mobile contact bar */
 .ng-mbar{display:none}
 @media (max-width:767px){
   .ng-mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(255,253,249,.96);-webkit-backdrop-filter:saturate(1.2) blur(8px);backdrop-filter:saturate(1.2) blur(8px);border-top:1px solid var(--goldlt);box-shadow:0 -6px 22px rgba(60,45,20,.10)}
-  .ng-mbar-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 14px;border-radius:999px;background:var(--coral);color:#fff;font:500 12.5px/1.15 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 16px rgba(213,96,60,.26);white-space:nowrap}
-  .ng-mbar-btn:active{background:var(--coraldk)}
+  .ng-mbar-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 14px;border-radius:999px;background:var(--coral,#0B7F8A);color:#fff;font:500 12.5px/1.15 Jost,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 16px rgba(11,127,138,.26);white-space:nowrap}
+  .ng-mbar-btn:active{background:var(--coraldk,#096E77)}
   .ng-mbar-btn svg{flex:none}
   .ng-mbar-btn b{font-weight:600;letter-spacing:.03em}
   .ng-mbar-btn.call{flex:1 1 auto}
@@ -149,7 +151,7 @@
 .ng-remap-map.failed{display:none}
 .ng-remap-map .leaflet-container,.ng-remap-map.leaflet-container{font-family:Jost,sans-serif}
 .ng-pin-wrap{position:relative}
-.ng-pin{display:block;width:18px;height:18px;border-radius:50%;background:var(--coral);border:3px solid #fff;box-shadow:0 2px 8px rgba(14,42,69,.35)}
+.ng-pin{display:block;width:18px;height:18px;border-radius:50%;background:var(--coral,#0B7F8A);border:3px solid #fff;box-shadow:0 2px 8px rgba(14,42,69,.35)}
 .ng-pin-lbl{position:absolute;left:22px;top:-1px;white-space:nowrap;font:500 12px/1 Jost,sans-serif;letter-spacing:.02em;color:var(--navy);background:rgba(255,253,249,.92);padding:4px 7px;border-radius:999px;box-shadow:0 1px 4px rgba(60,45,20,.18);pointer-events:none}
 .ng-pop{display:flex;flex-direction:column;gap:3px;text-decoration:none;color:var(--ink);min-width:150px}
 .ng-pop strong{font:500 19px/1.15 "Cormorant Garamond",Cormorant,serif;color:var(--navy)}
