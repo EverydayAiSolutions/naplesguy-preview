@@ -587,6 +587,19 @@
 }
 
 /* Family hub — swipe carousel on the phone, three across on desktop */
+/* Family hub hero: keep the licensed beach photo bright and clearly framed */
+.fam-hero.has-slides .glow,
+.fam-hero .hs-glow{
+  background:linear-gradient(180deg,rgba(14,42,69,.18),rgba(14,42,69,.04) 46%,rgba(14,42,69,.22))!important;
+}
+@media (max-width:700px){
+  .fam-hero .hs-slide[data-kb="a"].is-on img{animation-name:hs-kb-fam}
+}
+@keyframes hs-kb-fam{
+  from{transform:scale(1.04) translate(0,0)}
+  to{transform:scale(1.08) translate(0,1.4%)}
+}
+
 .fam-hub{padding:40px 0 28px;background:var(--cream,#FBF7F0)}
 .fam-hub-track{
   display:grid;
