@@ -200,3 +200,37 @@ body.ng-fam-events .fm-search{margin-top:22px}
   body.ng-fam-events .fm-search{margin-top:16px}
 }
 
+
+/* v35: today line, flyers carousel */
+.fm-today{max-width:980px;margin:18px auto 0;font:400 15px/1.3 Jost,sans-serif;color:var(--ink2);letter-spacing:.01em}
+.fm-today strong{font-weight:600;color:var(--navy)}
+.fm-today-k{text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;font-weight:500;color:#0B7F8A;margin-right:4px}
+body.ng-fam-events .fm-today + .fm-search{margin-top:10px}
+.fl{max-width:980px;margin:26px auto 6px}
+.fl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.fl-head h2{margin:0;font:500 24px/1.15 'Cormorant Garamond',Georgia,serif;color:var(--navy);letter-spacing:.005em}
+.fl-arrows{display:flex;gap:8px}
+.fl-arrows[hidden]{display:none}
+.fl-arr{width:40px;height:40px;border-radius:999px;border:0;background:#0B7F8A;color:#fff;font:400 24px/1 Jost,sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0 0 3px}
+.fl-arr:hover{background:#096E77}
+.fl-arr:disabled{opacity:.35;cursor:default}
+.fl-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:2px 2px 10px;scrollbar-width:thin}
+.fl-item{flex:0 0 auto;scroll-snap-align:start;display:block;text-decoration:none;color:inherit}
+.fl-item img{display:block;height:300px;width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:var(--px-sh2);background:#fff}
+.fl-cap{display:block;margin-top:8px;font:400 12.5px/1.3 Jost,sans-serif;color:var(--ink2)}
+.fl-box{position:fixed;inset:0;z-index:9999;background:rgba(10,30,48,.82);display:flex;align-items:center;justify-content:center;padding:56px 16px 24px}
+.fl-box[hidden]{display:none}
+.fl-box img{max-width:min(92vw,900px);max-height:calc(100vh - 90px);width:auto;height:auto;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.35);background:#fff}
+.fl-x{position:absolute;top:12px;right:14px;width:44px;height:44px;border-radius:999px;border:0;background:#fff;color:var(--navy);font:400 28px/1 Jost,sans-serif;cursor:pointer}
+.fl-bp,.fl-bn{position:absolute;top:50%;transform:translateY(-50%)}
+.fl-bp{left:12px}.fl-bn{right:12px}
+.fl-bp[hidden],.fl-bn[hidden]{display:none}
+html.fl-lock{overflow:hidden}
+@media (max-width:700px){
+  .fm-today{margin-top:14px;font-size:14.5px}
+  .fl{margin-top:22px}
+  .fl-head h2{font-size:21px}
+  .fl-arrows{display:none}
+  .fl-row{gap:12px;margin-right:-20px;padding-right:20px}
+  .fl-item img{height:240px}
+}
