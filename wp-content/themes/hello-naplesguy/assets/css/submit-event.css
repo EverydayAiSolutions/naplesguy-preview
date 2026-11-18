@@ -1,0 +1,61 @@
+/* Submit Your Event page + CTA on Family pages */
+.se-hero.px-banner{height:clamp(300px,46vh,500px)}
+.se-hero .px-banner-shade{background:linear-gradient(180deg,rgba(10,30,48,.22) 0%,rgba(10,30,48,0) 28%,rgba(10,30,48,.12) 58%,rgba(10,30,48,.58) 100%)}
+.se-page{background:var(--ivory,#FFFDF9);padding:0 0 24px}
+.se-intro{max-width:800px;margin:0 auto;padding:40px 40px 8px}
+.se-intro p{margin:0;color:var(--ink2,#4A5560);font:400 19px/1.65 Jost,sans-serif}
+.se-card{max-width:860px;margin:16px auto 28px;background:var(--cream,#FBF7F0);border:1px solid var(--line,#E9DFCF);border-radius:22px;padding:36px 40px 28px;box-shadow:var(--sh1)}
+.se-card h2{margin:8px 0 18px;font:500 30px/1.15 "Cormorant Garamond",Cormorant,serif;color:var(--navy,#0E2A45)}
+.se-card h2 + .se-field{margin-top:0}
+.se-card h2:not(:first-child){margin-top:28px;padding-top:22px;border-top:1px solid var(--line,#E9DFCF)}
+.se-form{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+.se-form h2,.se-form .se-full,.se-form .g-hp{grid-column:1/-1}
+.se-field{margin:0}
+.se-field label{display:block;font:500 12px/1.4 Jost,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--navy,#0E2A45);margin-bottom:8px}
+.se-req,.se-opt{letter-spacing:.06em;text-transform:none;font-weight:400;color:var(--mut,#7A7266);font-size:11px}
+.se-field input,.se-field textarea,.se-field select{width:100%;border:1px solid var(--line,#E9DFCF);border-radius:10px;padding:12px 14px;font:400 16px/1.4 Jost,sans-serif;background:#fff;color:var(--ink,#22303B);appearance:auto}
+.se-field input:focus,.se-field textarea:focus,.se-field select:focus{outline:2px solid var(--coral,#0B7F8A);outline-offset:1px;border-color:var(--coral,#0B7F8A)}
+.se-field textarea{min-height:120px;resize:vertical}
+.se-hint{display:block;margin-top:6px;color:var(--mut,#7A7266);font:400 13.5px/1.45 Jost,sans-serif;letter-spacing:0;text-transform:none}
+.se-err{display:block;margin-top:6px;color:var(--coral,#0B7F8A);font:500 13.5px/1.4 Jost,sans-serif}
+.se-has-err input,.se-has-err textarea{border-color:var(--coral,#0B7F8A)}
+.se-check label{display:flex;gap:12px;align-items:flex-start;text-transform:none;letter-spacing:0;font:400 15.5px/1.5 Jost,sans-serif;color:var(--ink,#22303B);background:#fff;border:1px solid var(--line,#E9DFCF);border-radius:12px;padding:14px 16px}
+.se-check input[type=checkbox]{width:20px;height:20px;margin-top:2px;flex:none;accent-color:#0B7F8A}
+.se-actions{margin-top:8px}
+.se-actions .btn{min-width:220px}
+.se-contact{margin:18px 0 0;color:var(--ink2,#4A5560);font:400 15.5px/1.5 Jost,sans-serif}
+.se-contact a{color:var(--navy,#0E2A45);border-bottom:1px solid var(--goldlt,#E6D6B5)}
+.se-thanks{max-width:760px;margin:28px auto 48px;padding:0 40px}
+.se-thanks-card{background:var(--cream,#FBF7F0);border:1px solid var(--line,#E9DFCF);border-radius:22px;padding:40px 40px 32px;box-shadow:var(--sh1);text-align:center}
+.se-eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;font:500 12px/1 Jost,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold,#B08D57);margin:0 0 12px}
+.se-eyebrow:before,.se-eyebrow:after{content:"";height:1px;width:36px;background:currentColor;opacity:.75}
+.se-thanks-card h2{margin:0 0 12px;font:500 clamp(32px,4vw,44px)/1.1 "Cormorant Garamond",Cormorant,serif;color:var(--navy,#0E2A45)}
+.se-thanks-card p{margin:0 0 12px;color:var(--ink2,#4A5560);font:400 18px/1.6 Jost,sans-serif}
+.se-thanks-links{margin:22px 0 8px !important}
+.se-cta{padding:36px 0 8px;background:transparent}
+.se-cta-in{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;text-align:center}
+.se-cta p{font:400 24px/1.3 "Cormorant Garamond",Cormorant,serif;color:var(--navy,#0E2A45);margin:0}
+.se-cta .btn{padding:15px 26px}
+footer.lux .se-foot{margin-top:16px;font:400 14.5px/1.5 Jost,sans-serif}
+footer.lux .se-foot a{color:inherit;border-bottom:1px solid rgba(255,255,255,.35)}
+@media (max-width:700px){
+  .se-hero.px-banner{height:280px}
+  .se-intro{padding:28px 16px 8px}
+  .se-intro p{font-size:17px}
+  .se-card{margin:8px 16px 20px;padding:24px 18px 20px;border-radius:18px}
+  .se-form{grid-template-columns:1fr;gap:16px}
+  .se-thanks{padding:0 16px;margin:20px auto 36px}
+  .se-thanks-card{padding:28px 20px 24px}
+  .se-cta{padding:24px 0 4px}
+  .se-cta-in{flex-direction:column;gap:12px}
+  .se-cta p{font-size:20px}
+  .se-actions .btn{width:100%}
+}
+
+.se-form > h2:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.se-times{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:18px 24px}
+.se-field input[type=file]{padding:10px 12px;background:#fff;cursor:pointer}
+.se-hero .px-banner-in h1,.se-hero .px-sub,.se-hero .px-eyebrow,.se-hero .px-crumbs{text-shadow:0 2px 16px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.35)}
+@media (max-width:700px){
+  .se-times{grid-template-columns:1fr;gap:16px}
+}
