@@ -1,0 +1,162 @@
+/* Preview-only top-bar options for /mockups/topbar-a/ and /mockups/topbar-b/. Not live. */
+/* ==========================================================================
+   Preview-only top utility bar options (?topbar=a|b). Default is unchanged.
+   A: slim warm taupe bar, ivory type. B: no bar; header call button + footer line.
+   Do not deploy until Jeff approves. Not a big dark block. No purple/peach/orange.
+   ========================================================================== */
+.header-call,
+.nav-ask-jeff,
+.foot-serve,
+.home-serve{display:none}
+
+/* --- Option A: keep a thin bar, restyle to warm dark taupe + ivory --- */
+body.ng-topbar-a .util{
+  background:#3A332D;
+  color:#FFFDF9;
+  font:400 12px/1.2 Jost,sans-serif;
+  letter-spacing:.06em;
+  min-height:28px;
+  padding:0;
+  border-bottom:1px solid rgba(205,178,127,.28);
+}
+body.ng-topbar-a .util .in{
+  min-height:28px;
+  padding-top:5px;
+  padding-bottom:5px;
+  gap:18px;
+}
+body.ng-topbar-a .util .it,
+body.ng-topbar-a .util .it.calltext,
+body.ng-topbar-a .util a,
+body.ng-topbar-a .util .calltext a{
+  min-height:0;
+  padding-top:0;
+  padding-bottom:0;
+  color:#FFFDF9;
+}
+body.ng-topbar-a .util .it.calltext{padding:4px 0;line-height:1.2}
+body.ng-topbar-a .util .calltext a{
+  color:#FFFDF9;
+  border-bottom:1px solid rgba(255,253,249,.42);
+}
+body.ng-topbar-a .util .calltext a:hover,
+body.ng-topbar-a .util .calltext a:focus-visible{
+  border-bottom-color:#FFFDF9;
+  color:#FFFDF9;
+}
+body.ng-topbar-a .util .it svg{color:#CDB27F}
+body.ng-topbar-a .util .serve{
+  color:rgba(255,253,249,.72);
+  font-size:11px;
+  letter-spacing:.14em;
+}
+body.home.ng-topbar-a .util{min-height:26px}
+body.home.ng-topbar-a .util .in{min-height:26px;padding-top:4px;padding-bottom:4px}
+@media (max-width:900px){
+  body.ng-topbar-a .util .in{gap:12px;padding-top:4px;padding-bottom:4px}
+}
+@media (max-width:700px){
+  body.ng-topbar-a .util,
+  body.ng-topbar-a .util .it,
+  body.ng-topbar-a .util a{
+    min-height:0;
+    padding-top:0;
+    padding-bottom:0;
+  }
+  body.ng-topbar-a .util{min-height:28px}
+  body.ng-topbar-a .util .in{min-height:28px;padding-top:5px;padding-bottom:5px}
+}
+/* Keep the v48 phone homepage: no utility bar, so the 2x2 tiles still fill the screen */
+@media (max-width:767px){
+  body.home.ng-topbar-a .util{display:none !important}
+}
+
+/* --- Option B: drop the bar; small turquoise Call or Text Jeff in the header --- */
+body.ng-topbar-b .util{display:none !important}
+body.ng-topbar-b .header-call{
+  display:inline-flex;
+  padding:9px 16px;
+  font:500 11.5px/1 Jost,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  background:#0B7F8A;
+  color:#fff;
+  box-shadow:0 4px 14px rgba(11,127,138,.22);
+  white-space:nowrap;
+  flex:none;
+}
+body.ng-topbar-b .header-call:hover,
+body.ng-topbar-b .header-call:focus-visible{background:#096E77;color:#fff}
+body.ng-topbar-b .foot-serve{
+  display:block;
+  margin:18px 0 20px;
+  font:400 11px/1.4 Jost,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold2);
+}
+body.ng-topbar-b .home-serve{display:inline}
+
+/* Desktop home: phone number lives in the header button, not a second line */
+@media (min-width:768px){
+  body.home.ng-topbar-b .home-phone-line{display:none !important}
+}
+
+/* Mid widths: keep both pills, slightly tighter so hubs still fit */
+@media (max-width:1280px){
+  body.ng-topbar-b .header-call{padding:8px 14px;font-size:11px;letter-spacing:.1em}
+  body.ng-topbar-b header.site .header-ask{padding:10px 14px}
+}
+@media (max-width:1100px){
+  body.ng-topbar-b .header-call{padding:8px 12px;letter-spacing:.08em}
+  body.ng-topbar-b header.site .header-ask{padding:10px 12px;margin-left:4px}
+}
+
+/* Phone / tablet: Call button stays in the slim header, then the menu on the far right. Ask Jeff moves into the menu. */
+@media (max-width:900px){
+  body.ng-topbar-b header.site .header-call{
+    display:inline-flex;
+    order:20;
+    margin-left:auto;
+    padding:8px 12px;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    min-height:36px;
+  }
+  body.ng-topbar-b header.site .header-ask{display:none}
+  body.ng-topbar-b .nav-ask-jeff{display:block}
+  body.ng-topbar-b header.site .burger{order:21;margin-left:8px}
+  body.ng-topbar-b header.site nav.main{order:22}
+  body.ng-topbar-b header.site .logo{height:42px}
+}
+
+/* Phone homepage: one slim row (logo, Call button, menu). No extra phone line. */
+@media (max-width:767px){
+  body.home.ng-topbar-b .home-phone-line{display:none !important}
+  body.home.ng-topbar-b header.site .header-call{
+    display:inline-flex !important;
+    order:20;
+    flex:0 0 auto;
+    margin-left:auto;
+    padding:7px 11px;
+    font-size:10px;
+    letter-spacing:.08em;
+    min-height:34px;
+  }
+  body.home.ng-topbar-b header.site .burger{order:21;margin-left:8px}
+  body.home.ng-topbar-b header.site nav.main{order:22}
+  body.home.ng-topbar-b header.site .logo{height:40px}
+  body.home.ng-topbar-b header.site .in{
+    flex-wrap:nowrap;
+    gap:8px;
+    padding:6px 12px;
+  }
+}
+@media (max-width:390px){
+  body.ng-topbar-b .header-call,
+  body.home.ng-topbar-b header.site .header-call{
+    padding:7px 10px;
+    font-size:9.5px;
+    letter-spacing:.06em;
+  }
+}
