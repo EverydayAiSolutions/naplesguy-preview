@@ -183,12 +183,11 @@
   .evd-carousel{margin-right:-20px;padding-right:20px}
   .evd-card{width:250px}.evd-pic{height:200px}.evd-card h3{font-size:23px}
   .evd-car-nav{display:none}
-  .evd-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:960;align-items:center;gap:12px;padding:7px 7px 7px 20px;border-radius:999px;
+  .evd-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:calc(74px + env(safe-area-inset-bottom));z-index:960;align-items:center;gap:12px;padding:7px 7px 7px 20px;border-radius:999px;
     background:rgba(255,253,249,.88);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.9);box-shadow:0 14px 40px -12px rgba(43,31,15,.4);
     transform:translateY(160%);transition:transform .5s var(--ease)}
   .evd-sticky.show{transform:none}
   .evd-sticky-date{flex:1;min-width:0;font-size:12px;line-height:1.35;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .evd-sticky-date strong{display:block;font:500 15px/1.2 var(--serif);color:var(--esp)}
   .evd-sticky .evd-btn{min-height:44px;padding:0 18px;font-size:10.5px}
-  body.ng-ev-page footer, body.ng-ev-page .site-footer{padding-bottom:96px}
 }

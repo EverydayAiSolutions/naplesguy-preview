@@ -2299,3 +2299,59 @@ body.ng-topbar-b .home-serve{display:inline}
     letter-spacing:.06em;
   }
 }
+
+/* ===== Footer: compact SolHaus (ivory/taupe), replaces the navy footer.lux ===== */
+footer.ng-foot{background:linear-gradient(180deg,#FBF7F0 0%,#F4ECDF 100%);color:#4A4038;border-top:1px solid #CDB27F;box-shadow:inset 0 1px 0 #FFFDF9;font:400 14px/1.55 Jost,sans-serif;position:relative}
+footer.ng-foot a{color:#2E2823;text-decoration:none}
+footer.ng-foot a:hover,footer.ng-foot a:focus-visible{color:#0B7F8A}
+footer.ng-foot .ngf-in{max-width:1240px;margin:0 auto;padding:34px 40px 22px;display:grid;grid-template-columns:minmax(230px,300px) 1fr auto;gap:22px 40px;align-items:center}
+footer.ng-foot .ngf-logo img{height:52px;width:auto;display:block}
+footer.ng-foot .ngf-tag{margin:10px 0 0;color:#5A5047;font-size:14px;line-height:1.45;max-width:300px}
+footer.ng-foot .ngf-serve{margin:6px 0 0;font:500 10.5px/1.4 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#B08D57}
+footer.ng-foot .ngf-hubs{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 22px}
+footer.ng-foot .ngf-hubs a{font:500 13.5px/1 Jost,sans-serif;letter-spacing:.08em;padding:10px 0;position:relative;white-space:nowrap}
+footer.ng-foot .ngf-hubs a:after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:#B08D57;transform:scaleX(0);transition:transform .3s}
+footer.ng-foot .ngf-hubs a:hover:after{transform:scaleX(1)}
+footer.ng-foot .ngf-contact{display:grid;gap:8px;justify-items:end}
+footer.ng-foot .ngf-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 22px;border-radius:999px;background:#0B7F8A;color:#fff!important;font:500 13.5px/1 Jost,sans-serif;letter-spacing:.03em;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(11,127,138,.5);transition:background .25s}
+footer.ng-foot .ngf-btn:hover,footer.ng-foot .ngf-btn:focus-visible{background:#096E77;color:#fff!important}
+footer.ng-foot .ngf-mail{display:inline-flex;align-items:center;gap:8px;font-size:14px;min-height:30px}
+footer.ng-foot .ngf-mail svg,footer.ng-foot .ngf-btn svg{flex:none}
+footer.ng-foot .ngf-mail svg{color:#B08D57}
+footer.ng-foot .ngf-mini{margin:0;font-size:13px;color:#857A6E;text-align:right}
+footer.ng-foot .ngf-mini a{border-bottom:1px solid #E6D6B5}
+footer.ng-foot .ngf-more{max-width:1240px;margin:0 auto;padding:0 40px}
+footer.ng-foot .ngf-more summary{list-style:none;cursor:pointer;display:none}
+footer.ng-foot .ngf-more summary::-webkit-details-marker{display:none}
+footer.ng-foot .ngf-more-list{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 20px;padding:14px 0;border-top:1px solid #E9DFCF}
+footer.ng-foot .ngf-more-list a{font-size:13px;color:#5A5047;padding:4px 0}
+footer.ng-foot .ngf-bot{max-width:1240px;margin:0 auto;padding:12px 40px 18px;border-top:1px solid #E9DFCF;font-size:12px;line-height:1.6;color:#857A6E;text-align:center}
+footer.ng-foot .ngf-bot p{margin:0;color:#857A6E;font-size:inherit;line-height:1.6}
+footer.ng-foot .ngf-bot a{color:#5A5047;border-bottom:1px solid transparent}
+footer.ng-foot .ngf-bot a:hover{border-bottom-color:#CDB27F}
+footer.ng-foot .ngf-lic{margin-bottom:6px!important}
+footer.ng-foot .ng-broker-logo{height:16px;vertical-align:-3px;margin-left:.4em}
+@media (max-width:1100px){
+  footer.ng-foot .ngf-in{grid-template-columns:1fr auto;gap:18px 32px}
+  footer.ng-foot .ngf-hubs{grid-column:1/-1;grid-row:2;justify-content:flex-start;border-top:1px solid #E9DFCF;padding-top:10px}
+}
+@media (max-width:899px){
+  footer.ng-foot .ngf-in{grid-template-columns:1fr;padding:24px 20px 10px;gap:14px;text-align:center;justify-items:center}
+  footer.ng-foot .ngf-logo img{height:44px;margin:0 auto}
+  footer.ng-foot .ngf-tag{margin:8px auto 0;font-size:13.5px}
+  footer.ng-foot .ngf-hubs{grid-row:auto;display:grid;grid-template-columns:1fr 1fr;gap:0 14px;width:100%;padding-top:4px;border-top:1px solid #E9DFCF}
+  footer.ng-foot .ngf-hubs a{font-size:13px;letter-spacing:.04em;padding:12px 0;border-bottom:1px solid #EFE6D6;white-space:normal;text-align:left}
+  footer.ng-foot .ngf-hubs a:after{display:none}
+  footer.ng-foot .ngf-contact{justify-items:center;width:100%;gap:4px}
+  footer.ng-foot .ngf-btn{width:100%;max-width:360px}
+  footer.ng-foot .ngf-mini{text-align:center}
+  footer.ng-foot .ngf-more{padding:0 20px}
+  footer.ng-foot .ngf-more summary{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-top:1px solid #E9DFCF;font:500 11px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#5A5047}
+  footer.ng-foot .ngf-more summary:after{content:"";width:7px;height:7px;border-right:1.5px solid #B08D57;border-bottom:1.5px solid #B08D57;transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+  footer.ng-foot .ngf-more[open] summary:after{transform:rotate(225deg) translateY(-1px)}
+  footer.ng-foot .ngf-more-list{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;padding:4px 0 10px;border-top:0;text-align:left}
+  footer.ng-foot .ngf-more-list a{padding:9px 0;font-size:13px}
+  footer.ng-foot .ngf-bot{padding:10px 20px 14px;font-size:11.5px}
+  footer.ng-foot .ngf-sep{display:none}
+}
+@media print{footer.ng-foot .ngf-btn{box-shadow:none}}
