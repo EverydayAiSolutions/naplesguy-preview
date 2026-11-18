@@ -2044,3 +2044,96 @@ body.home .util .it.calltext{padding:7px 0;line-height:1.2}
 @media (prefers-reduced-motion:reduce){
   body.home .home-tile .ph img{animation:none;transform:scale(1.04)}
 }
+
+/* ==========================================================================
+   Homepage v49: slim desktop/laptop/tablet card row. The wow slideshow and
+   headline stay the stars. Phone (below 768px) Option C tiles are unchanged.
+   Height-aware so 1024x600 through 1920x1080 fit the first screen, no scroll.
+   ========================================================================== */
+@media (min-width:768px){
+  body.home .cards.home-cards-row{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:clamp(10px,1.2vw,16px);
+    max-width:1180px;
+    width:100%;
+    margin:0 auto 8px;
+    padding:0 32px;
+  }
+  body.home .cards.home-cards-row .card{
+    border-radius:12px;
+    background:var(--ivory);
+    box-shadow:0 6px 18px rgba(8,28,46,.18);
+  }
+  body.home .cards.home-cards-row .card.lift:hover{
+    transform:translateY(-3px);
+  }
+  body.home .cards.home-cards-row .card .ph{
+    height:clamp(48px,7.5vh,72px);
+    background:var(--sand);
+  }
+  body.home .cards.home-cards-row .card .bd{
+    padding:7px 12px 8px;
+    min-height:0;
+    gap:8px;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+  }
+  body.home .cards.home-cards-row .card h2{
+    font-size:clamp(14px,1.15vw,17px);
+    line-height:1.15;
+    font-weight:600;
+    text-align:left;
+  }
+  body.home .cards.home-cards-row .card .go{
+    display:flex;
+    width:24px;
+    height:24px;
+    flex:none;
+    border:0;
+    border-radius:50%;
+    background:#0B7F8A;
+    color:#fff;
+  }
+  body.home .cards.home-cards-row .card:hover .go,
+  body.home .cards.home-cards-row .card:focus-visible .go{
+    background:#096E77;
+    color:#fff;
+  }
+  body.home .home-legal{
+    padding:0 16px 8px;
+  }
+}
+
+/* Short laptop viewports: keep a slim row so the beach and headline breathe */
+@media (min-width:768px) and (max-height:740px){
+  body.home .hero.home-welcome .txt{padding:12px 28px 4px}
+  body.home .hero.home-welcome h1{
+    font-size:clamp(34px,4.2vw,52px);
+    margin-top:10px;
+  }
+  body.home .cards.home-cards-row{
+    gap:10px;
+    margin-bottom:6px;
+    padding:0 24px;
+  }
+  body.home .cards.home-cards-row .card .ph{height:clamp(44px,8vh,56px)}
+  body.home .cards.home-cards-row .card .bd{padding:6px 10px 7px;gap:6px}
+  body.home .cards.home-cards-row .card h2{font-size:clamp(13px,1.2vw,15px)}
+  body.home .cards.home-cards-row .card .go{width:22px;height:22px}
+  body.home .home-legal{padding:0 16px 6px;font-size:11.5px}
+}
+
+/* Very short laptop screens (e.g. 1024x600): same slim stacked cards, tighter chrome */
+@media (min-width:768px) and (max-height:640px){
+  body.home header.site,
+  body.home header.site .in{min-height:56px}
+  body.home header.site .logo{height:44px}
+  body.home .util{min-height:32px}
+  body.home .util .in{min-height:32px;padding-top:4px;padding-bottom:4px}
+  body.home .hero.home-welcome h1{
+    font-size:clamp(32px,4vw,48px);
+    margin-top:8px;
+  }
+  body.home .cards.home-cards-row .card .ph{height:clamp(48px,9vh,56px)}
+}
