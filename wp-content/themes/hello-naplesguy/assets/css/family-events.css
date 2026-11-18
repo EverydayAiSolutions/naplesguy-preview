@@ -691,3 +691,14 @@ html{scroll-padding-top:88px}
 @media (max-width:559px){
   #fe-grid .st-areatag{font-size:9px;padding:4px 6px}
 }
+
+/* ===== Design D (Resort) touch for the Family Events list cards ===== */
+.fm-list .st-card{background:#FFFDF9;border-radius:4px;border:1px solid #E7DCCB;box-shadow:0 22px 44px -34px rgba(43,31,15,.5);transition:box-shadow .35s,transform .35s}
+.fm-list .st-card:hover{transform:translateY(-2px);box-shadow:0 30px 56px -34px rgba(43,31,15,.6)}
+.fm-list .st-card .st-photo{border-radius:0}
+.fm-list .st-card .st-photo img{transition:transform 1s cubic-bezier(.2,.7,.1,1)}
+.fm-list .st-card:hover .st-photo img{transform:scale(1.04)}
+.fm-list .st-card .st-title{font-family:"Cormorant Garamond",Cormorant,Georgia,serif;font-weight:500;color:#2E2823;letter-spacing:-.01em}
+.fm-list .st-card .st-place{color:#857A6E}
+.fm-list .st-card .st-whenchip{background:rgba(255,253,249,.92);color:#2E2823;border:1px solid rgba(205,178,127,.7);letter-spacing:.04em}
+.fm-list .fm-kicker{color:#B08D57;letter-spacing:.26em}
