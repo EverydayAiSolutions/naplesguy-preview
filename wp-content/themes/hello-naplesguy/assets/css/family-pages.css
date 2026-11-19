@@ -236,7 +236,7 @@ html.fl-lock{overflow:hidden}
   .fl{margin-top:14px}
   .fl-head h2{font-size:17px}
   .fl-arrows{display:none}
-  .fl-row{gap:10px;margin-right:-20px;padding-right:20px}
+  .fl-row{gap:10px;margin-right:-16px;padding-right:16px}
   .fl-item{flex-basis:128px;width:128px}
   .fl-item img{width:128px}
   .fl-fb{flex:0 0 auto;padding:7px 12px;font-size:11.5px}

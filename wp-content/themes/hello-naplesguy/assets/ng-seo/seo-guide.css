@@ -360,3 +360,31 @@
   .s3-more .s1-btn{width:100%}
 }
 @media (max-width:600px){main[class*=" s1-re-"] .s1-hero-btns .s1-btn{letter-spacing:.08em;padding:0 16px;font-size:12px}}
+
+/* Site2: fee and club-cost table on community pages */
+.s3-costs{min-width:0}
+.s3-costs tbody th{font:500 14px/1.4 var(--sans);color:var(--esp);width:30%}
+.s3-costs .nbg-cite,.s3-costs-list .nbg-cite{display:block;font-size:12.5px;line-height:1.45;color:var(--mut);margin-top:6px}
+.s3-costs .nbg-cite a,.s3-costs-list .nbg-cite a{color:var(--ink2);text-decoration:underline;text-decoration-color:var(--goldlt);overflow-wrap:anywhere}
+.s3-costs-h{font:400 24px/1.2 var(--serif);color:var(--esp);margin:34px 0 12px}
+.s3-costs-list{margin:0;padding-left:20px;color:var(--ink2);line-height:1.6}
+.s3-costs-list li{margin:0 0 12px}
+@media (max-width:700px){.s3-costs thead{display:none}.s3-costs tr{display:block;padding:12px 14px;border-bottom:1px solid var(--line)}.s3-costs th,.s3-costs td{display:block;padding:0;border:0;width:auto}.s3-costs tbody th{margin-bottom:4px}}
+
+/* Site2: hub "save these", FAQs and next steps (shared on hubs and neighborhood guides) */
+.s2x{background:transparent}
+.s2x .s1-sec{padding:72px 0}
+.s2x-save{background:var(--ivory);border-top:1px solid var(--line)}
+.s2x-next{background:var(--cream);border-top:1px solid var(--line)}
+.s2x-strip{background:var(--ivory);border-top:1px solid var(--line);padding:56px 0!important}
+.s2x-upd{font:500 12px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:14px!important}
+.s2x-nums{margin-top:30px}
+.s2x-links{margin-top:26px}
+.s2x-src{margin-top:18px}
+.s2x-src a{color:var(--teal);text-decoration:underline;text-decoration-color:var(--goldlt)}
+.s2x-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.s2x .s1-faq{background:var(--cream);border-top:1px solid var(--line)}
+@media (max-width:700px){.s2x .s1-sec{padding:52px 0}.s2x-btns .s1-btn{width:100%;justify-content:center}}
+.s2x-save .s1-num{background:var(--cream)}
+.s1 h3.s3-costs-h,.s1 .s3-costs-sec h3.s3-costs-h{margin:34px 0 12px}
+.s1 ul.s3-costs-list{padding-left:22px}
